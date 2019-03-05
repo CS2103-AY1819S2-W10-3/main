@@ -5,7 +5,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Equipment's name in the Equipment Manager.
- * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
+ * Guarantees: immutable; is valid as declared in {@link #isValidSerialNumber(String)}
  */
 public class Name {
 
@@ -18,42 +18,42 @@ public class Name {
      */
     public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
 
-    public final String fullName;
+    public final String serialNumber;
 
     /**
      * Constructs a {@code Name}.
      *
-     * @param name A valid name.
+     * @param serial A valid serial.
      */
-    public Name(String name) {
-        requireNonNull(name);
-        checkArgument(isValidName(name), MESSAGE_CONSTRAINTS);
-        fullName = name;
+    public Name(String serial) {
+        requireNonNull(serial);
+        checkArgument(isValidSerialNumber(serial), MESSAGE_CONSTRAINTS);
+        serialNumber = serial;
     }
 
     /**
      * Returns true if a given string is a valid name.
      */
-    public static boolean isValidName(String test) {
+    public static boolean isValidSerialNumber(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
 
     @Override
     public String toString() {
-        return fullName;
+        return serialNumber;
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof Name // instanceof handles nulls
-                && fullName.equals(((Name) other).fullName)); // state check
+                && serialNumber.equals(((Name) other).serialNumber)); // state check
     }
 
     @Override
     public int hashCode() {
-        return fullName.hashCode();
+        return serialNumber.hashCode();
     }
 
 }
