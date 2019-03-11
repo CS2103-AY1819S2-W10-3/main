@@ -27,7 +27,7 @@ public class EquipmentCard extends UiPart<Region> {
      * As a consequence, UI elements' variable names cannot be set to such keywords
      * or an exception will be thrown by JavaFX during runtime.
      *
-     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on EquipmentManager level 4</a>
+     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on EquipmentManager </a>
      */
 
     public final Equipment equipment;
@@ -43,6 +43,8 @@ public class EquipmentCard extends UiPart<Region> {
     @FXML
     private Label address;
     @FXML
+    private Label serialNumber;
+    @FXML
     private Label email;
     @FXML
     private FlowPane tags;
@@ -51,9 +53,10 @@ public class EquipmentCard extends UiPart<Region> {
         super(FXML);
         this.equipment = equipment;
         id.setText(displayedIndex + ". ");
-        name.setText(equipment.getName().serialNumber);
+        name.setText(equipment.getName().name);
         phone.setText(equipment.getPhone().value);
         address.setText(equipment.getAddress().value);
+        serialNumber.setText(equipment.getSerialNumber().serialNumber);
         email.setText(equipment.getEmail().value);
         equipment.getTags().forEach(tag -> {
             String tagName = tag.tagName;
