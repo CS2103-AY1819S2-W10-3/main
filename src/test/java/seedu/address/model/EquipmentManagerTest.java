@@ -11,6 +11,9 @@ import static seedu.address.testutil.TypicalEquipments.AMY;
 import static seedu.address.testutil.TypicalEquipments.BOB;
 import static seedu.address.testutil.TypicalEquipments.getTypicalAddressBook;
 
+import static seedu.address.testutil.TypicalWorkLists.LISTA;
+//import static seedu.address.testutil.TypicalWorkLists.LISTB;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -75,14 +78,31 @@ public class EquipmentManagerTest {
     }
 
     @Test
+    public void hasWorkList_nullWorkList_throwsNullPointerException() {
+        thrown.expect(NullPointerException.class);
+        equipmentManager.hasWorkList(null);
+    }
+
+    @Test
     public void hasPerson_personNotInAddressBook_returnsFalse() {
         assertFalse(equipmentManager.hasPerson(ALICE));
+    }
+
+    @Test
+    public void hasWorkList_workListNotInEquipmentManager_returnsFalse() {
+        assertFalse(equipmentManager.hasWorkList(LISTA));
     }
 
     @Test
     public void hasPerson_personInAddressBook_returnsTrue() {
         equipmentManager.addPerson(ALICE);
         assertTrue(equipmentManager.hasPerson(ALICE));
+    }
+
+    @Test
+    public void hasWorkList_workListInEquipmentManager_returnsTrue() {
+        equipmentManager.addWorkList(LISTA);
+        assertTrue(equipmentManager.hasWorkList(LISTA));
     }
 
     @Test
@@ -97,6 +117,12 @@ public class EquipmentManagerTest {
     public void getPersonList_modifyList_throwsUnsupportedOperationException() {
         thrown.expect(UnsupportedOperationException.class);
         equipmentManager.getPersonList().remove(0);
+    }
+
+    @Test
+    public void getWorkListList_modifyList_throwsUnsupportedOperationException() {
+        thrown.expect(UnsupportedOperationException.class);
+        equipmentManager.getWorkListList().remove(0);
     }
 
     @Test
