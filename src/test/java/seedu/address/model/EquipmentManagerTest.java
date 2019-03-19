@@ -101,7 +101,7 @@ public class EquipmentManagerTest {
 
     @Test
     public void deleteWorkList_workListDoesNotExist() {
-        assertFalse(equipmentManager.removeWorkList(LISTB););
+        assertFalse(equipmentManager.removeWorkList(LISTB));
     }
 
     @Test
