@@ -40,61 +40,61 @@ public class UniqueWorkListListTest {
         typicalWorkListB.addEquipment(BOB);
     }
 
-    private final UniqueWorkListList uniqueWorkListList = new UniqueWorkListList();
+    private final UniqueWorkListList UniqueWorkListList = new UniqueWorkListList();
 
     @Test
     public void contains_nullWorkList_throwsNullPointerException() {
         thrown.expect(NullPointerException.class);
-        uniqueWorkListList.contains(null);
+        UniqueWorkListList.contains(null);
     }
 
     @Test
     public void contains_workListNotInList_returnsFalse() {
-        assertFalse(uniqueWorkListList.contains(typicalWorkListA));
+        assertFalse(UniqueWorkListList.contains(typicalWorkListA));
     }
 
     @Test
     public void contains_workListInList_returnsTrue() {
-        uniqueWorkListList.add(typicalWorkListA);
-        assertTrue(uniqueWorkListList.contains(typicalWorkListA));
+        UniqueWorkListList.add(typicalWorkListA);
+        assertTrue(UniqueWorkListList.contains(typicalWorkListA));
     }
 
     @Test
     public void add_nullWorkList_throwsNullPointerException() {
         thrown.expect(NullPointerException.class);
-        uniqueWorkListList.add(null);
+        UniqueWorkListList.add(null);
     }
 
     @Test
     public void add_duplicateWorkList_throwsDuplicateWorkListException() {
-        uniqueWorkListList.add(typicalWorkListA);
+        UniqueWorkListList.add(typicalWorkListA);
         thrown.expect(DuplicateEquipmentException.class);
-        uniqueWorkListList.add(typicalWorkListA);
+        UniqueWorkListList.add(typicalWorkListA);
     }
 
     @Test
     public void remove_nullWorkList_throwsNullPointerException() {
         thrown.expect(NullPointerException.class);
-        uniqueWorkListList.remove(null);
+        UniqueWorkListList.remove(null);
     }
 
     @Test
     public void remove_workListDoesNotExist_throwsWorkListNotFoundException() {
         thrown.expect(EquipmentNotFoundException.class);
-        uniqueWorkListList.remove(typicalWorkListA);
+        UniqueWorkListList.remove(typicalWorkListA);
     }
 
     @Test
     public void remove_existingWorkList_removesWorkList() {
-        uniqueWorkListList.add(typicalWorkListA);
-        uniqueWorkListList.remove(typicalWorkListA);
-        uniqueWorkListList expecteduniqueWorkListList = new uniqueWorkListList();
-        assertEquals(expecteduniqueWorkListList, uniqueWorkListList);
+        UniqueWorkListList.add(typicalWorkListA);
+        UniqueWorkListList.remove(typicalWorkListA);
+        UniqueWorkListList expectedUniqueWorkListList = new UniqueWorkListList();
+        assertEquals(expectedUniqueWorkListList, UniqueWorkListList);
     }
 
     @Test
     public void asUnmodifiableObservableList_modifyList_throwsUnsupportedOperationException() {
         thrown.expect(UnsupportedOperationException.class);
-        uniqueWorkListList.asUnmodifiableObservableList().remove(0);
+        UniqueWorkListList.asUnmodifiableObservableList().remove(0);
     }
 }
