@@ -21,9 +21,7 @@ public class TypicalWorkLists {
         ListA.addEquipment(ALICE);
         ListB.addEquipment(BOB);
     }
-
-    private TypicalEquipments() {} // prevents instantiation
-
+    
     /**
      * Returns an {@code EquipmentManager} with all the typical persons.
      */
