@@ -96,7 +96,7 @@ public class UniqueWorkListList implements Iterable<WorkList> {
     /**
      * Returns true if {@code worklist} contains only unique WorkList.
      */
-    private boolean workListAreUnique(List<WorkList> worklist) {
+    public boolean workListAreUnique(List<WorkList> worklist) {
         for (int i = 0; i < worklist.size() - 1; i++) {
             for (int j = i + 1; j < worklist.size(); j++) {
                 if (worklist.get(i).isSameWorkList(worklist.get(j))) {
