@@ -131,23 +131,6 @@ public class ModelManager implements Model {
         versionedEquipmentManager.updatePerson(target, editedEquipment);
     }
 
-    //=========== Filtered Equipment List Accessors =============================================================
-
-    /**
-     * Returns an unmodifiable view of the list of {@code Equipment} backed by the internal list of
-     * {@code versionedEquipmentManager}
-     */
-    @Override
-    public ObservableList<Equipment> getFilteredPersonList() {
-        return filteredEquipments;
-    }
-
-    @Override
-    public void updateFilteredPersonList(Predicate<Equipment> predicate) {
-        requireNonNull(predicate);
-        filteredEquipments.setPredicate(predicate);
-    }
-
     //=========== Filtered WorkList List Accessors =============================================================
 
     /**
@@ -164,6 +147,22 @@ public class ModelManager implements Model {
         filteredWorkList.setPredicate(predicate);
     }
 
+    //=========== Filtered Equipment List Accessors =============================================================
+
+    /**
+     * Returns an unmodifiable view of the list of {@code Equipment} backed by the internal list of
+     * {@code versionedEquipmentManager}
+     */
+    @Override
+    public ObservableList<Equipment> getFilteredPersonList() {
+        return filteredEquipments;
+    }
+
+    @Override
+    public void updateFilteredPersonList(Predicate<Equipment> predicate) {
+        requireNonNull(predicate);
+        filteredEquipments.setPredicate(predicate);
+    }
     //=========== Undo/Redo =================================================================================
 
     @Override
