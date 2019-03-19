@@ -101,7 +101,7 @@ public class EquipmentManagerTest {
 
     @Test
     public void deleteWorkList_workListDoesNotExist() {
-        thrown.expect(NullPointerException.class);
+        equipmentManager.addWorkList(LISTB);
         equipmentManager.removeWorkList(LISTB);
     }
 
