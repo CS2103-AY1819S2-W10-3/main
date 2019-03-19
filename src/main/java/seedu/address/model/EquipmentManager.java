@@ -138,6 +138,7 @@ public class EquipmentManager implements ReadOnlyEquipmentManager {
      * {@code key} must exist in the Equipment Manager.
      */
     public void removeWorkList(WorkList key) {
+        requireNonNull(key);
         worklist.remove(key);
         indicateModified();
     }
