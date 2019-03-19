@@ -70,6 +70,15 @@ public class UniqueWorkListList implements Iterable<WorkList> {
     }
 
     /**
+     * See whether the given list of WorkList is unique,
+     * @param workListList a list of WorkList
+     * @return true if the list of WorkList contains unique WorkLists.
+     */
+    public boolean areWorkListUnique(List<WorkList> workListList) {
+        return this.workListAreUnique(workListList);
+    }
+
+    /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
     public ObservableList<WorkList> asUnmodifiableObservableList() {
@@ -96,7 +105,7 @@ public class UniqueWorkListList implements Iterable<WorkList> {
     /**
      * Returns true if {@code worklist} contains only unique WorkList.
      */
-    public boolean workListAreUnique(List<WorkList> worklist) {
+    private boolean workListAreUnique(List<WorkList> worklist) {
         for (int i = 0; i < worklist.size() - 1; i++) {
             for (int j = i + 1; j < worklist.size(); j++) {
                 if (worklist.get(i).isSameWorkList(worklist.get(j))) {

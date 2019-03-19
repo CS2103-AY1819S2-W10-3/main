@@ -36,6 +36,7 @@ public class UniqueWorkListListTest {
     {
         typicalWorkListA.addEquipment(ALICE);
         typicalWorkListB.addEquipment(BOB);
+        listOfWorklist.add(typicalWorkListA);
     }
 
     @Test
@@ -63,7 +64,7 @@ public class UniqueWorkListListTest {
 
     @Test
     public void workListAreUniqueOrNot() {
-        assertTrue(uniqueWorkListList.workListAreUnique(uniqueWorkListList.asUnmodifiableObservableList()));
+        assertTrue(uniqueWorkListList.areWorkListUnique(listOfWorklist));
     }
 
     @Test
