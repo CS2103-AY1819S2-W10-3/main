@@ -15,13 +15,13 @@ import seedu.address.model.equipment.WorkList;
  */
 public class TypicalWorkLists {
 
-    public static final WorkList ListA = new WorkList("2019-01-01", "ALICE");
-    public static final WorkList ListB = new WorkList("2018-01-01", "BOB");
+    public static final WorkList LISTA = new WorkList("2019-01-01", "ALICE");
+    public static final WorkList LISTB = new WorkList("2018-01-01", "BOB");
     {
-        ListA.addEquipment(ALICE);
-        ListB.addEquipment(BOB);
+        LISTA.addEquipment(ALICE);
+        LISTB.addEquipment(BOB);
     }
-    
+
     /**
      * Returns an {@code EquipmentManager} with all the typical persons.
      */
@@ -34,6 +34,6 @@ public class TypicalWorkLists {
     }
 
     public static List<WorkList> getTypicalWorkLists() {
-        return new ArrayList<>(Arrays.asList(ListA, ListB));
+        return new ArrayList<>(Arrays.asList(LISTA, LISTB));
     }
 }
