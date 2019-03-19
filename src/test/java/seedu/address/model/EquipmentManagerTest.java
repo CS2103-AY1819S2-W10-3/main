@@ -12,7 +12,7 @@ import static seedu.address.testutil.TypicalEquipments.BOB;
 import static seedu.address.testutil.TypicalEquipments.getTypicalAddressBook;
 
 import static seedu.address.testutil.TypicalWorkLists.LISTA;
-//import static seedu.address.testutil.TypicalWorkLists.LISTB;
+import static seedu.address.testutil.TypicalWorkLists.LISTB;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -97,6 +97,11 @@ public class EquipmentManagerTest {
     public void hasPerson_personInAddressBook_returnsTrue() {
         equipmentManager.addPerson(ALICE);
         assertTrue(equipmentManager.hasPerson(ALICE));
+    }
+
+    @Test
+    public void deleteWorkList_workListDoesNotExist() {
+        assertFalse(equipmentManager.removeWorkList(LISTB););
     }
 
     @Test
