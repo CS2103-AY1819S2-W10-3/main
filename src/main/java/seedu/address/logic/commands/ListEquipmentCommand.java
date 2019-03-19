@@ -9,12 +9,11 @@ import seedu.address.model.Model;
 /**
  * Lists all equipments in the equipment manager to the user.
  */
-public class ListCommand extends Command {
+public class ListEquipmentCommand extends Command {
 
     public static final String COMMAND_WORD = "list-e";
 
     public static final String MESSAGE_SUCCESS = "Listed all equipment";
-
 
     @Override
     public CommandResult execute(Model model, CommandHistory history) {
