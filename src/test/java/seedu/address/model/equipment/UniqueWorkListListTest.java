@@ -29,14 +29,6 @@ public class UniqueWorkListListTest {
 
     private final UniqueWorkListList uniqueWorkListList = new UniqueWorkListList();
 
-    public WorkList getTypicalWorkListA() {
-        return typicalWorkListA;
-    }
-
-    public WorkList getTypicalWorkListB() {
-        return typicalWorkListB;
-    }
-
     {
         typicalWorkListA.addEquipment(ALICE);
         typicalWorkListB.addEquipment(BOB);
