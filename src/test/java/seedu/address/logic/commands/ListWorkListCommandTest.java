@@ -1,9 +1,9 @@
 package seedu.address.logic.commands;
 
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
+//import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
 import static seedu.address.testutil.TypicalEquipments.getTypicalAddressBook;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+//import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -33,5 +33,4 @@ public class ListWorkListCommandTest {
         assertCommandSuccess(new ListWorkListCommand(), model, commandHistory,
                 ListWorkListCommand.MESSAGE_SUCCESS, expectedModel);
     }
-    
 }
