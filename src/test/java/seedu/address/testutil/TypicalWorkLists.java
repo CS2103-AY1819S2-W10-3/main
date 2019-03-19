@@ -2,6 +2,7 @@ package seedu.address.testutil;
 
 import static seedu.address.testutil.TypicalEquipments.ALICE;
 import static seedu.address.testutil.TypicalEquipments.BOB;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
