@@ -33,11 +33,5 @@ public class ListWorkListCommandTest {
         assertCommandSuccess(new ListWorkListCommand(), model, commandHistory,
                 ListWorkListCommand.MESSAGE_SUCCESS, expectedModel);
     }
-
-    @Test
-    public void execute_listIsFiltered_showsEverything() {
-        showPersonAtIndex(model, INDEX_FIRST_PERSON);
-        assertCommandSuccess(new ListWorkListCommand(), model, commandHistory,
-                ListWorkListCommand.MESSAGE_SUCCESS, expectedModel);
-    }
+    
 }
