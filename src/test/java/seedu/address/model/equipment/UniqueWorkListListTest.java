@@ -5,7 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 //import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 //import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
-import static seedu.address.testutil.TypicalEquipments.ALICE;
+import static seedu.address.testutil.TypicalEquipments.ACHORVALECC;
 import static seedu.address.testutil.TypicalEquipments.BOB;
 
 //import java.util.Arrays;
@@ -34,7 +34,7 @@ public class UniqueWorkListListTest {
     private final UniqueWorkListList uniqueWorkListList = new UniqueWorkListList();
 
     {
-        typicalWorkListA.addEquipment(ALICE);
+        typicalWorkListA.addEquipment(ACHORVALECC);
         typicalWorkListB.addEquipment(BOB);
         listOfWorklist.add(typicalWorkListA);
     }
