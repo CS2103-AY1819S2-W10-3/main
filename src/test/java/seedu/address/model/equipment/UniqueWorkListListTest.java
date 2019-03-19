@@ -10,9 +10,9 @@ import static seedu.address.testutil.TypicalEquipments.BOB;
 
 //import java.util.Arrays;
 //import java.util.Collections;
-import java.util.List;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -29,7 +29,7 @@ public class UniqueWorkListListTest {
     private final WorkList typicalWorkListA = new WorkList("2019-01-01", "Alice");
     private final WorkList typicalWorkListB = new WorkList("2018-01-01", "Bob");
 
-    private final List<WorkList> list_of_worklist = new LinkedList<>();
+    private final List<WorkList> listOfWorklist = new LinkedList<>();
 
     private final UniqueWorkListList uniqueWorkListList = new UniqueWorkListList();
 

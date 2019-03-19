@@ -1,7 +1,7 @@
 package seedu.address.model.tag;
 
 import org.junit.Test;
-import org.junit.runner.notification.RunListener;
+//import org.junit.runner.notification.RunListener;
 
 import seedu.address.testutil.Assert;
 
