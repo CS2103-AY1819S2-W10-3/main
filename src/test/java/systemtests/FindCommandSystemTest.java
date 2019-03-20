@@ -1,36 +1,35 @@
 package systemtests;
 
 import static org.junit.Assert.assertFalse;
-import static seedu.address.commons.core.Messages.MESSAGE_EQUIPMENTS_LISTED_OVERVIEW;
-import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
-import static seedu.address.testutil.TypicalEquipments.ANCHORVALECC;
-import static seedu.address.testutil.TypicalEquipments.AYERRAJAHCC;
-import static seedu.address.testutil.TypicalEquipments.BUKITGCC;
-import static seedu.address.testutil.TypicalEquipments.CHENGSANCC;
-import static seedu.address.testutil.TypicalEquipments.HWIYOHCC;
-import static seedu.address.testutil.TypicalEquipments.JURONGREENCC;
-import static seedu.address.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
-import static seedu.address.testutil.TypicalEquipments.TECKGHEECC;
+import static seedu.equipmentmanager.commons.core.Messages.MESSAGE_EQUIPMENTS_LISTED_OVERVIEW;
+import static seedu.equipmentmanager.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.ANCHORVALECC;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.AYERRAJAHCC;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.BUKITGCC;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.CHENGSANCC;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.HWIYOHCC;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.JURONGREENCC;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.TECKGHEECC;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
 
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.DeleteCommand;
-import seedu.address.logic.commands.FindCommand;
-import seedu.address.logic.commands.RedoCommand;
-import seedu.address.logic.commands.UndoCommand;
-import seedu.address.model.Model;
-import seedu.address.model.ModelManagerTest;
-import seedu.address.model.tag.Tag;
+import seedu.equipmentmanager.commons.core.index.Index;
+import seedu.equipmentmanager.logic.commands.DeleteCommand;
+import seedu.equipmentmanager.logic.commands.FindCommand;
+import seedu.equipmentmanager.logic.commands.RedoCommand;
+import seedu.equipmentmanager.logic.commands.UndoCommand;
+import seedu.equipmentmanager.model.Model;
+import seedu.equipmentmanager.model.tag.Tag;
 
 public class FindCommandSystemTest extends EquipmentManagerSystemTest {
 
     @Test
     public void find() {
-        /* Case: find multiple persons in address book, command with leading spaces and trailing spaces
+        /* Case: find multiple persons in equipmentmanager book, command with leading spaces and trailing spaces
          * -> 7 persons found
          */
         String command = "   " + FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_CC + "   ";
@@ -55,23 +54,23 @@ public class FindCommandSystemTest extends EquipmentManagerSystemTest {
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find multiple persons in address book, 2 keywords -> 2 equipments found */
+        /* Case: find multiple persons in equipmentmanager book, 2 keywords -> 2 equipments found */
         command = FindCommand.COMMAND_WORD + " Hwi Ayer";
         ModelHelper.setFilteredList(expectedModel, HWIYOHCC, AYERRAJAHCC);
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find multiple persons in address book, 2 keywords in reversed order -> 2 equipments found */
+        /* Case: find multiple persons in equipmentmanager book, 2 keywords in reversed order -> 2 equipments found */
         command = FindCommand.COMMAND_WORD + " Hwi Ayer";
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find multiple persons in address book, 2 keywords with 1 repeat -> 2 equipments found */
+        /* Case: find multiple persons in equipmentmanager book, 2 keywords with 1 repeat -> 2 equipments found */
         command = FindCommand.COMMAND_WORD + " Hwi Ayer Hwi";
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find multiple persons in address book, 2 matching keywords and 1 non-matching keyword
+        /* Case: find multiple persons in equipmentmanager book, 2 matching keywords and 1 non-matching keyword
          * -> 2 equipments found
          */
         command = FindCommand.COMMAND_WORD + " Hwi Ayer NonMatchingKeyWord";
@@ -90,7 +89,7 @@ public class FindCommandSystemTest extends EquipmentManagerSystemTest {
 
 
 
-        /* Case: find same persons in address book after deleting 1 of them -> 1 equipment found */
+        /* Case: find same persons in equipmentmanager book after deleting 1 of them -> 1 equipment found */
         executeCommand(DeleteCommand.COMMAND_WORD + " 1");
         assertFalse(getModel().getAddressBook().getPersonList().contains(HWIYOHCC));
         command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_CC;
@@ -100,45 +99,45 @@ public class FindCommandSystemTest extends EquipmentManagerSystemTest {
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find equipment in address book, keyword is same as name but of different case -> 1 equipment found */
+        /* Case: find equipment in equipmentmanager book, keyword is same as name but of different case -> 1 equipment found */
         command = FindCommand.COMMAND_WORD + " AncHoRVaLe";
         ModelHelper.setFilteredList(expectedModel, ANCHORVALECC);
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find equipment in address book, keyword is substring of name -> 0 persons found */
+        /* Case: find equipment in equipmentmanager book, keyword is substring of name -> 0 persons found */
         command = FindCommand.COMMAND_WORD + " Mei";
         ModelHelper.setFilteredList(expectedModel);
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find equipment in address book, name is substring of keyword -> 0 persons found */
+        /* Case: find equipment in equipmentmanager book, name is substring of keyword -> 0 persons found */
         command = FindCommand.COMMAND_WORD + " Meiers";
         ModelHelper.setFilteredList(expectedModel);
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find equipment not in address book -> 0 persons found */
+        /* Case: find equipment not in equipmentmanager book -> 0 persons found */
         command = FindCommand.COMMAND_WORD + " Mark";
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find phone number of equipment in address book -> 0 persons found */
+        /* Case: find phone number of equipment in equipmentmanager book -> 0 persons found */
         command = FindCommand.COMMAND_WORD + " " + AYERRAJAHCC.getPhone().value;
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find address of equipment in address book -> 0 persons found */
+        /* Case: find equipmentmanager of equipment in equipmentmanager book -> 0 persons found */
         command = FindCommand.COMMAND_WORD + " " + AYERRAJAHCC.getAddress().value;
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find email of equipment in address book -> 0 persons found */
+        /* Case: find email of equipment in equipmentmanager book -> 0 persons found */
         command = FindCommand.COMMAND_WORD + " " + AYERRAJAHCC.getEmail().value;
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
-        /* Case: find tags of equipment in address book -> 0 persons found */
+        /* Case: find tags of equipment in equipmentmanager book -> 0 persons found */
         List<Tag> tags = new ArrayList<>(AYERRAJAHCC.getTags());
         command = FindCommand.COMMAND_WORD + " " + tags.get(0).tagName;
         assertCommandSuccess(command, expectedModel);
@@ -153,7 +152,7 @@ public class FindCommandSystemTest extends EquipmentManagerSystemTest {
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardDeselected();
 
-        /* Case: find equipment in empty address book -> 0 persons found */
+        /* Case: find equipment in empty equipmentmanager book -> 0 persons found */
         deleteAllPersons();
         command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_CC;
         expectedModel = getModel();

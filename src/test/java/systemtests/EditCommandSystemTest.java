@@ -3,55 +3,55 @@ package systemtests;
 //import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.ADDRESS_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.EMAIL_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.EMAIL_DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_ADDRESS_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_SERIAL_NUMBER_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.PHONE_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.PHONE_DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_FRIEND;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
-//import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
-//import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_AMY;
-//import static seedu.address.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
-import static seedu.address.testutil.TypicalEquipments.AMY;
-import static seedu.address.testutil.TypicalEquipments.BOB;
-import static seedu.address.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.ADDRESS_DESC_AMY;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.EMAIL_DESC_AMY;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.EMAIL_DESC_BOB;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.INVALID_ADDRESS_DESC;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.INVALID_SERIAL_NUMBER_DESC;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.NAME_DESC_AMY;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.NAME_DESC_BOB;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.PHONE_DESC_AMY;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.PHONE_DESC_BOB;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_AMY;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_BOB;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.TAG_DESC_FRIEND;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
+//import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+//import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_AMY;
+//import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_BOB;
+import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.equipmentmanager.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.equipmentmanager.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.AMY;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.BOB;
+import static seedu.equipmentmanager.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
+import static seedu.equipmentmanager.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+import static seedu.equipmentmanager.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 
 import org.junit.Test;
 
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.EditCommand;
-import seedu.address.logic.commands.RedoCommand;
-import seedu.address.logic.commands.UndoCommand;
-import seedu.address.model.Model;
-import seedu.address.model.equipment.Address;
-import seedu.address.model.equipment.Email;
-import seedu.address.model.equipment.Equipment;
-import seedu.address.model.equipment.Name;
-import seedu.address.model.equipment.Phone;
-import seedu.address.model.equipment.SerialNumber;
-import seedu.address.model.tag.Tag;
-import seedu.address.testutil.EquipmentBuilder;
-//import seedu.address.testutil.EquipmentUtil;
+import seedu.equipmentmanager.commons.core.Messages;
+import seedu.equipmentmanager.commons.core.index.Index;
+import seedu.equipmentmanager.logic.commands.EditCommand;
+import seedu.equipmentmanager.logic.commands.RedoCommand;
+import seedu.equipmentmanager.logic.commands.UndoCommand;
+import seedu.equipmentmanager.model.Model;
+import seedu.equipmentmanager.model.equipment.Address;
+import seedu.equipmentmanager.model.equipment.Email;
+import seedu.equipmentmanager.model.equipment.Equipment;
+import seedu.equipmentmanager.model.equipment.Name;
+import seedu.equipmentmanager.model.equipment.Phone;
+import seedu.equipmentmanager.model.equipment.SerialNumber;
+import seedu.equipmentmanager.model.tag.Tag;
+import seedu.equipmentmanager.testutil.EquipmentBuilder;
+//import seedu.equipmentmanager.testutil.EquipmentUtil;
 
 public class EditCommandSystemTest extends EquipmentManagerSystemTest {
 
@@ -117,7 +117,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
 
         /* ------------------ Performing edit operation while a filtered list is being shown ------------------------ */
 
-        /* Case: filtered equipment list, edit index within bounds of address book and equipment list -> edited */
+        /* Case: filtered equipment list, edit index within bounds of equipmentmanager book and equipment list -> edited */
         showPersonsWithName(KEYWORD_MATCHING_CC);
         index = INDEX_FIRST_PERSON;
         assertTrue(index.getZeroBased() < getModel().getFilteredPersonList().size());
@@ -126,7 +126,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         editedEquipment = new EquipmentBuilder(equipmentToEdit).withName(VALID_NAME_BOB).build();
         assertCommandSuccess(command, index, editedEquipment);
 
-        /* Case: filtered equipment list, edit index within bounds of address book but out of bounds of equipment list
+        /* Case: filtered equipment list, edit index within bounds of equipmentmanager book but out of bounds of equipment list
          * -> rejected
          */
         showPersonsWithName(KEYWORD_MATCHING_CC);
@@ -187,7 +187,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         assertCommandFailure(EditCommand.COMMAND_WORD + " " + INDEX_FIRST_PERSON.getOneBased()
                 + INVALID_EMAIL_DESC, Email.MESSAGE_CONSTRAINTS);
 
-        /* Case: invalid address -> rejected */
+        /* Case: invalid equipmentmanager -> rejected */
         assertCommandFailure(EditCommand.COMMAND_WORD + " " + INDEX_FIRST_PERSON.getOneBased()
                 + INVALID_ADDRESS_DESC, Address.MESSAGE_CONSTRAINTS);
 
@@ -210,7 +210,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_EQUIPMENT);
 
         /* Case: edit an equipment with new values same as another equipment's values
-         * but with different address -> rejected
+         * but with different equipmentmanager -> rejected
          */
         command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
                 + ADDRESS_DESC_AMY + SERIAL_NUMBER_DESC_BOB + TAG_DESC_FRIEND + TAG_DESC_HUSBAND;
