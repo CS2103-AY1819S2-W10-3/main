@@ -1,7 +1,6 @@
 package seedu.equipment.model.equipment;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.equipment.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -10,6 +9,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.equipment.model.equipment.exceptions.DuplicateEquipmentException;
+import static seedu.equipment.commons.util.CollectionUtil.requireAllNonNull;
 import seedu.equipment.model.equipment.exceptions.EquipmentNotFoundException;
 
 /**
