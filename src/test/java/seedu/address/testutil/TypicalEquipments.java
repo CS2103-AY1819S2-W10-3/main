@@ -25,7 +25,7 @@ import seedu.address.model.equipment.Equipment;
  */
 public class TypicalEquipments {
 
-    public static final Equipment ACHORVALECC = new EquipmentBuilder().withName("Achorvale CC")
+    public static final Equipment ANCHORVALECC = new EquipmentBuilder().withName("Anchorvale CC")
             .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
             .withPhone("94351253").withSerialNumber("A008844L").withTags("west").build();
     public static final Equipment HWIYOHCC = new EquipmentBuilder().withName("Hwi Yoh CC")
@@ -75,7 +75,7 @@ public class TypicalEquipments {
     }
 
     public static List<Equipment> getTypicalPersons() {
-        return new ArrayList<>(Arrays.asList(ACHORVALECC, HWIYOHCC, TECKGHEECC, AYERRAJAHCC, BUKITGCC, CHENGSANCC,
+        return new ArrayList<>(Arrays.asList(ANCHORVALECC, HWIYOHCC, TECKGHEECC, AYERRAJAHCC, BUKITGCC, CHENGSANCC,
                 JURONGREENCC));
     }
 }
