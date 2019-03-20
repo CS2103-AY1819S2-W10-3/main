@@ -29,11 +29,10 @@ import seedu.equipmentmanager.logic.commands.RedoCommand;
 import seedu.equipmentmanager.logic.commands.SelectCommand;
 import seedu.equipmentmanager.logic.commands.SortCommand;
 import seedu.equipmentmanager.logic.commands.UndoCommand;
-import seedu.equipmentmanager.logic.parser.EquipmentManagerParser;
 import seedu.equipmentmanager.logic.parser.exceptions.ParseException;
 import seedu.equipmentmanager.model.equipment.Equipment;
 import seedu.equipmentmanager.model.equipment.NameContainsKeywordsPredicate;
-import seedu.equipmentmanager.testutil.EditPersonDescriptorBuilder;
+import seedu.equipmentmanager.testutil.EditEquipmentDescriptorBuilder;
 import seedu.equipmentmanager.testutil.EquipmentBuilder;
 import seedu.equipmentmanager.testutil.EquipmentUtil;
 
@@ -66,7 +65,7 @@ public class EquipmentManagerParserTest {
     @Test
     public void parseCommand_edit() throws Exception {
         Equipment equipment = new EquipmentBuilder().build();
-        EditEquipmentDescriptor descriptor = new EditPersonDescriptorBuilder(equipment).build();
+        EditEquipmentDescriptor descriptor = new EditEquipmentDescriptorBuilder(equipment).build();
         EditCommand command = (EditCommand) parser.parseCommand(EditCommand.COMMAND_WORD + " "
                 + INDEX_FIRST_PERSON.getOneBased() + " " + EquipmentUtil.getEditPersonDescriptorDetails(descriptor));
         assertEquals(new EditCommand(INDEX_FIRST_PERSON, descriptor), command);
