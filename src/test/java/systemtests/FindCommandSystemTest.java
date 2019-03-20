@@ -3,7 +3,7 @@ package systemtests;
 import static org.junit.Assert.assertFalse;
 import static seedu.address.commons.core.Messages.MESSAGE_EQUIPMENTS_LISTED_OVERVIEW;
 import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
-import static seedu.address.testutil.TypicalEquipments.ACHORVALECC;
+import static seedu.address.testutil.TypicalEquipments.ANCHORVALECC;
 import static seedu.address.testutil.TypicalEquipments.AYERRAJAHCC;
 import static seedu.address.testutil.TypicalEquipments.BUKITGCC;
 import static seedu.address.testutil.TypicalEquipments.CHENGSANCC;
@@ -23,6 +23,7 @@ import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.model.Model;
+import seedu.address.model.ModelManagerTest;
 import seedu.address.model.tag.Tag;
 
 public class FindCommandSystemTest extends EquipmentManagerSystemTest {
@@ -34,7 +35,7 @@ public class FindCommandSystemTest extends EquipmentManagerSystemTest {
          */
         String command = "   " + FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_CC + "   ";
         Model expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel, ACHORVALECC, HWIYOHCC, AYERRAJAHCC, TECKGHEECC, BUKITGCC,
+        ModelHelper.setFilteredList(expectedModel, ANCHORVALECC, HWIYOHCC, AYERRAJAHCC, TECKGHEECC, BUKITGCC,
                 CHENGSANCC, JURONGREENCC);
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
@@ -87,19 +88,21 @@ public class FindCommandSystemTest extends EquipmentManagerSystemTest {
         expectedResultMessage = RedoCommand.MESSAGE_FAILURE;
         assertCommandFailure(command, expectedResultMessage);
 
+
+
         /* Case: find same persons in address book after deleting 1 of them -> 1 equipment found */
         executeCommand(DeleteCommand.COMMAND_WORD + " 1");
         assertFalse(getModel().getAddressBook().getPersonList().contains(HWIYOHCC));
         command = FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_CC;
         expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel, ACHORVALECC, AYERRAJAHCC, TECKGHEECC, BUKITGCC,
+        ModelHelper.setFilteredList(expectedModel, ANCHORVALECC, AYERRAJAHCC, TECKGHEECC, BUKITGCC,
                 CHENGSANCC, JURONGREENCC);
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
         /* Case: find equipment in address book, keyword is same as name but of different case -> 1 equipment found */
-        command = FindCommand.COMMAND_WORD + " AcHoRVaLe";
-        ModelHelper.setFilteredList(expectedModel, ACHORVALECC);
+        command = FindCommand.COMMAND_WORD + " AncHoRVaLe";
+        ModelHelper.setFilteredList(expectedModel, ANCHORVALECC);
         assertCommandSuccess(command, expectedModel);
         assertSelectedCardUnchanged();
 
