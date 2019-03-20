@@ -26,23 +26,27 @@ import seedu.address.model.equipment.Equipment;
 public class TypicalEquipments {
 
     public static final Equipment ANCHORVALECC = new EquipmentBuilder().withName("Anchorvale CC")
-            .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
+            .withAddress("59 Anchorvale Rd, Singapore 544965").withEmail("alice@example.com")
             .withPhone("94351253").withSerialNumber("A008844L").withTags("west").build();
     public static final Equipment HWIYOHCC = new EquipmentBuilder().withName("Hwi Yoh CC")
-            .withAddress("311, Clementi Ave 2, #02-25")
+            .withAddress("535 Serangoon North Ave 4, #01-179, Singapore 550535")
             .withEmail("johnd@example.com").withPhone("98765432").withSerialNumber("A008855L")
             .withTags("urgent", "west").build();
     public static final Equipment TECKGHEECC = new EquipmentBuilder().withName("Teck Ghee CC").withPhone("95352563")
-            .withEmail("heinz@example.com").withAddress("wall street").withSerialNumber("A0223344X").build();
-    public static final Equipment AYERRAJAHCC = new EquipmentBuilder().withName("Ayer Rajah CC").withPhone("87652533")
-            .withEmail("cornelia@example.com").withAddress("10th street").withSerialNumber("A008800L")
-            .withTags("west").build();
+            .withEmail("heinz@example.com").withAddress("861 Ang Mo Kio Ave 10, Singapore 569734")
+            .withSerialNumber("A0223344X").build();
+    public static final Equipment AYERRAJAHCC = new EquipmentBuilder().withName("Ayer Rajah CC")
+            .withPhone("87652533").withEmail("cornelia@example.com").withAddress("150 Pandan Gardens, Singapore 609335")
+            .withSerialNumber("A008800L").withTags("west").build();
     public static final Equipment BUKITGCC = new EquipmentBuilder().withName("Bukit Gombak CC").withPhone("9482224")
-            .withEmail("werner@example.com").withAddress("michegan ave").withSerialNumber("A008811L").build();
+            .withEmail("werner@example.com").withAddress("386 Bukit Batok West Ave 5, Singapore 650386")
+            .withSerialNumber("A008811L").build();
     public static final Equipment CHENGSANCC = new EquipmentBuilder().withName("Cheng San CC").withPhone("9482427")
-            .withEmail("lydia@example.com").withAddress("little tokyo").withSerialNumber("A008822L").build();
+            .withEmail("lydia@example.com").withAddress("6 Ang Mo Kio Street 53, Singapore 569205")
+            .withSerialNumber("A008822L").build();
     public static final Equipment JURONGREENCC = new EquipmentBuilder().withName("Jurong Green CC").withPhone("9482442")
-            .withEmail("anna@example.com").withAddress("4th street").withSerialNumber("A008821L").build();
+            .withEmail("anna@example.com").withAddress("6 Jurong West Ave 1, Singapore 649520")
+            .withSerialNumber("A008821L").build();
 
     // Manually added
     public static final Equipment HOON = new EquipmentBuilder().withName("Hoon Meier").withPhone("8482424")
