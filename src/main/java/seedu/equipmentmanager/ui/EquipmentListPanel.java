@@ -21,14 +21,14 @@ public class EquipmentListPanel extends UiPart<Region> {
     private final Logger logger = LogsCenter.getLogger(EquipmentListPanel.class);
 
     @FXML
-    private ListView<Equipment> personListView;
+    private ListView<Equipment> equipmentListView;
 
     public EquipmentListPanel(ObservableList<Equipment> equipmentList, ObservableValue<Equipment> selectedPerson,
                               Consumer<Equipment> onSelectedPersonChange) {
         super(FXML);
-        personListView.setItems(equipmentList);
-        personListView.setCellFactory(listView -> new PersonListViewCell());
-        personListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        equipmentListView.setItems(equipmentList);
+        equipmentListView.setCellFactory(listView -> new EquipmentListViewCell());
+        equipmentListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             logger.fine("Selection in equipment list panel changed to : '" + newValue + "'");
             onSelectedPersonChange.accept(newValue);
         });
@@ -37,16 +37,16 @@ public class EquipmentListPanel extends UiPart<Region> {
 
             // Don't modify selection if we are already selecting the selected equipment,
             // otherwise we would have an infinite loop.
-            if (Objects.equals(personListView.getSelectionModel().getSelectedItem(), newValue)) {
+            if (Objects.equals(equipmentListView.getSelectionModel().getSelectedItem(), newValue)) {
                 return;
             }
 
             if (newValue == null) {
-                personListView.getSelectionModel().clearSelection();
+                equipmentListView.getSelectionModel().clearSelection();
             } else {
-                int index = personListView.getItems().indexOf(newValue);
-                personListView.scrollTo(index);
-                personListView.getSelectionModel().clearAndSelect(index);
+                int index = equipmentListView.getItems().indexOf(newValue);
+                equipmentListView.scrollTo(index);
+                equipmentListView.getSelectionModel().clearAndSelect(index);
             }
         });
     }
@@ -54,7 +54,7 @@ public class EquipmentListPanel extends UiPart<Region> {
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Equipment} using a {@code EquipmentCard}.
      */
-    class PersonListViewCell extends ListCell<Equipment> {
+    class EquipmentListViewCell extends ListCell<Equipment> {
         @Override
         protected void updateItem(Equipment equipment, boolean empty) {
             super.updateItem(equipment, empty);
