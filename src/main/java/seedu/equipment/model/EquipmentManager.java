@@ -100,7 +100,7 @@ public class EquipmentManager implements ReadOnlyEquipmentManager {
      */
     public void addWorkList(WorkList w) {
         worklist.add(w);
-        indicateModified();;
+        indicateModified();
     }
 
     /**

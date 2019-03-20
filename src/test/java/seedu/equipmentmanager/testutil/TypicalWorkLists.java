@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import seedu.equipmentmanager.model.EquipmentManager;
-//import Equipment;
 import seedu.equipmentmanager.model.WorkList;
 
 /**

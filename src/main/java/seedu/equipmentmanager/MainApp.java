@@ -70,9 +70,10 @@ public class MainApp extends Application {
     }
 
     /**
-     * Returns a {@code ModelManager} with the data from {@code storage}'s equipmentmanager book and {@code userPrefs}. <br>
-     * The data from the sample equipmentmanager book will be used instead if {@code storage}'s equipmentmanager book is not found,
-     * or an empty equipmentmanager book will be used instead if errors occur when reading {@code storage}'s equipmentmanager book.
+     * Returns a {@code ModelManager} with the data from {@code storage}'s equipmentmanager book and {@code userPrefs}.
+     * The data from the sample equipmentmanager book will be used instead if {@code storage}'s equipmentmanager book
+     * is not found, or an empty equipmentmanager book will be used instead if errors occur
+     * when reading {@code storage}'s equipmentmanager book.
      */
     private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {
         Optional<ReadOnlyEquipmentManager> addressBookOptional;
