@@ -15,15 +15,12 @@ import java.util.List;
 
 import seedu.equipment.commons.core.index.Index;
 import seedu.equipment.logic.CommandHistory;
-import seedu.equipment.logic.commands.Command;
-import seedu.equipment.logic.commands.CommandResult;
-import seedu.equipment.logic.commands.EditCommand;
 import seedu.equipment.logic.commands.exceptions.CommandException;
 import seedu.equipment.model.EquipmentManager;
 import seedu.equipment.model.Model;
 import seedu.equipment.model.equipment.Equipment;
 import seedu.equipment.model.equipment.NameContainsKeywordsPredicate;
-import seedu.equipment.testutil.EditPersonDescriptorBuilder;
+import seedu.equipment.testutil.EditEquipmentDescriptorBuilder;
 
 /**
  * Contains helper methods for testing commands.
@@ -72,10 +69,10 @@ public class CommandTestUtil {
     public static final EditCommand.EditEquipmentDescriptor DESC_BOB;
 
     static {
-        DESC_AMY = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY)
+        DESC_AMY = new EditEquipmentDescriptorBuilder().withName(VALID_NAME_AMY)
                 .withPhone(VALID_PHONE_AMY).withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY)
                 .withSerialNumber(VALID_SERIAL_NUMBER_AMY).withTags(VALID_TAG_FRIEND).build();
-        DESC_BOB = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB)
+        DESC_BOB = new EditEquipmentDescriptorBuilder().withName(VALID_NAME_BOB)
                 .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB)
                 .withSerialNumber(VALID_SERIAL_NUMBER_BOB).withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
     }
