@@ -8,7 +8,11 @@ import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
+<<<<<<< HEAD
 import seedu.equipmentmanager.ui.StatusBarFooter;
+=======
+import seedu.equipment.ui.StatusBarFooter;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 /**
  * This rule makes the time stamp in the status bar predictable during a test.

@@ -10,7 +10,11 @@ import guitests.GuiRobot;
 import guitests.guihandles.exceptions.NodeNotFoundException;
 import javafx.scene.Node;
 import javafx.stage.Stage;
+<<<<<<< HEAD
 import seedu.equipmentmanager.commons.core.LogsCenter;
+=======
+import seedu.equipment.commons.core.LogsCenter;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 /**
  * Provides access to a stage in a JavaFx application for GUI testing purposes.

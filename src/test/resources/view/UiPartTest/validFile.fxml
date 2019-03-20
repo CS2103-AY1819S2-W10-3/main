@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import seedu.equipmentmanager.ui.TestFxmlObject?>
+=======
+<?import seedu.equipment.ui.TestFxmlObject?>
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 <TestFxmlObject xmlns:fx="http://javafx.com/fxml/1" fx:id="validFileRoot">Hello World!</TestFxmlObject>

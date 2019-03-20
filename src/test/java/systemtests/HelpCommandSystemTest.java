@@ -4,18 +4,31 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
+<<<<<<< HEAD
 import static seedu.equipmentmanager.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.equipmentmanager.ui.testutil.GuiTestAssert.assertListMatching;
+=======
+import static seedu.equipment.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+import static seedu.equipment.ui.testutil.GuiTestAssert.assertListMatching;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 import org.junit.Test;
 
 import guitests.GuiRobot;
 import guitests.guihandles.HelpWindowHandle;
+<<<<<<< HEAD
 import seedu.equipmentmanager.logic.commands.DeleteCommand;
 import seedu.equipmentmanager.logic.commands.HelpCommand;
 import seedu.equipmentmanager.logic.commands.SelectCommand;
 import seedu.equipmentmanager.ui.BrowserPanel;
 import seedu.equipmentmanager.ui.StatusBarFooter;
+=======
+import seedu.equipment.logic.commands.DeleteCommand;
+import seedu.equipment.logic.commands.HelpCommand;
+import seedu.equipment.logic.commands.SelectCommand;
+import seedu.equipment.ui.BrowserPanel;
+import seedu.equipment.ui.StatusBarFooter;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 /**
  * A system test class for the help window, which contains interaction with other UI components.

@@ -159,7 +159,6 @@ test {
         }
 
         if (runGuiTests) {
-            test.include 'systemtests/**'
             test.include 'seedu/equipmentmanager/ui/**'
         }
 

@@ -1,19 +1,19 @@
 {
-  "_comment": "AddressBook save file which contains the same Person values as in TypicalPersons#getTypicalAddressBook()",
+  "_comment": "AddressBook save file which contains the same Person values as in TypicalEquipment#getTypicalEquipmentManager()",
   "persons" : [ {
     "name" : "Anchorvale CC",
     "phone" : "64894959",
     "email" : "anchorvalecc@gmail.com",
     "address" : "59 Anchorvale Rd, Singapore 544965",
     "serial number": "X14D669807",
-    "tagged" : [ "NorthEast" ]
+    "tagged" : [ "west" ]
   }, {
     "name" : "Hwi Yoh CC",
     "phone" : "64840338",
     "email" : "hwiyohcc@gmail.com",
     "address" : "535 Serangoon North Ave 4, #01-179, Singapore 550535",
     "serial number": "X10E453103",
-    "tagged" : [ "urgent", "NorthEast" ]
+    "tagged" : [ "urgent", "west" ]
   }, {
     "name" : "Teck Ghee CC",
     "phone" : "64567123",

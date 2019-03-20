@@ -3,6 +3,7 @@ package systemtests;
 //import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
+<<<<<<< HEAD
 import static seedu.equipmentmanager.logic.commands.CommandTestUtil.ADDRESS_DESC_AMY;
 import static seedu.equipmentmanager.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
 import static seedu.equipmentmanager.logic.commands.CommandTestUtil.EMAIL_DESC_AMY;
@@ -52,6 +53,57 @@ import seedu.equipmentmanager.model.equipment.SerialNumber;
 import seedu.equipmentmanager.model.tag.Tag;
 import seedu.equipmentmanager.testutil.EquipmentBuilder;
 //import seedu.equipmentmanager.testutil.EquipmentUtil;
+=======
+import static seedu.equipment.logic.commands.CommandTestUtil.ADDRESS_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.EMAIL_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.EMAIL_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_ADDRESS_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_SERIAL_NUMBER_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.NAME_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.NAME_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.PHONE_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.PHONE_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.TAG_DESC_FRIEND;
+import static seedu.equipment.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
+//import static seedu.equipment.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+//import static seedu.equipment.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_AMY;
+//import static seedu.equipment.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.equipment.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.equipment.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.equipment.testutil.TypicalEquipments.AMY;
+import static seedu.equipment.testutil.TypicalEquipments.BOB;
+import static seedu.equipment.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
+import static seedu.equipment.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+import static seedu.equipment.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
+
+import org.junit.Test;
+
+import seedu.equipment.commons.core.Messages;
+import seedu.equipment.commons.core.index.Index;
+import seedu.equipment.logic.commands.EditCommand;
+import seedu.equipment.logic.commands.RedoCommand;
+import seedu.equipment.logic.commands.UndoCommand;
+import seedu.equipment.model.Model;
+import seedu.equipment.model.equipment.Address;
+import seedu.equipment.model.equipment.Email;
+import seedu.equipment.model.equipment.Equipment;
+import seedu.equipment.model.equipment.Name;
+import seedu.equipment.model.equipment.Phone;
+import seedu.equipment.model.equipment.SerialNumber;
+import seedu.equipment.model.tag.Tag;
+import seedu.equipment.testutil.EquipmentBuilder;
+//import seedu.equipment.testutil.EquipmentUtil;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 public class EditCommandSystemTest extends EquipmentManagerSystemTest {
 
@@ -117,7 +169,11 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
 
         /* ------------------ Performing edit operation while a filtered list is being shown ------------------------ */
 
+<<<<<<< HEAD
         /* Case: filtered equipment list, edit index within bounds of equipmentmanager book and equipment list -> edited */
+=======
+        /* Case: filtered equipment list, edit index within bounds of equipment book and equipment list -> edited */
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
         showPersonsWithName(KEYWORD_MATCHING_CC);
         index = INDEX_FIRST_PERSON;
         assertTrue(index.getZeroBased() < getModel().getFilteredEquipmentList().size());
@@ -126,7 +182,11 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         editedEquipment = new EquipmentBuilder(equipmentToEdit).withName(VALID_NAME_BOB).build();
         assertCommandSuccess(command, index, editedEquipment);
 
+<<<<<<< HEAD
         /* Case: filtered equipment list, edit index within bounds of equipmentmanager book but out of bounds of equipment list
+=======
+        /* Case: filtered equipment list, edit index within bounds of equipment book but out of bounds of equipment list
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
          * -> rejected
          */
         showPersonsWithName(KEYWORD_MATCHING_CC);
@@ -187,7 +247,11 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         assertCommandFailure(EditCommand.COMMAND_WORD + " " + INDEX_FIRST_PERSON.getOneBased()
                 + INVALID_EMAIL_DESC, Email.MESSAGE_CONSTRAINTS);
 
+<<<<<<< HEAD
         /* Case: invalid equipmentmanager -> rejected */
+=======
+        /* Case: invalid equipment -> rejected */
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
         assertCommandFailure(EditCommand.COMMAND_WORD + " " + INDEX_FIRST_PERSON.getOneBased()
                 + INVALID_ADDRESS_DESC, Address.MESSAGE_CONSTRAINTS);
 
@@ -210,7 +274,11 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_EQUIPMENT);
 
         /* Case: edit an equipment with new values same as another equipment's values
+<<<<<<< HEAD
          * but with different equipmentmanager -> rejected
+=======
+         * but with different equipment -> rejected
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
          */
         command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
                 + ADDRESS_DESC_AMY + SERIAL_NUMBER_DESC_BOB + TAG_DESC_FRIEND + TAG_DESC_HUSBAND;

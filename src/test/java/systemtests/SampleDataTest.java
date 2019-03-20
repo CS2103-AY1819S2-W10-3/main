@@ -1,6 +1,10 @@
 package systemtests;
 
+<<<<<<< HEAD
 import static seedu.equipmentmanager.ui.testutil.GuiTestAssert.assertListMatching;
+=======
+import static seedu.equipment.ui.testutil.GuiTestAssert.assertListMatching;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,10 +12,17 @@ import java.nio.file.Path;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
 import seedu.equipmentmanager.model.EquipmentManager;
 import seedu.equipmentmanager.model.equipment.Equipment;
 import seedu.equipmentmanager.model.util.SampleDataUtil;
 import seedu.equipmentmanager.testutil.TestUtil;
+=======
+import seedu.equipment.model.EquipmentManager;
+import seedu.equipment.model.equipment.Equipment;
+import seedu.equipment.model.util.SampleDataUtil;
+import seedu.equipment.testutil.TestUtil;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 public class SampleDataTest extends EquipmentManagerSystemTest {
     /**

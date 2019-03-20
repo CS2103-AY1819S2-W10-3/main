@@ -6,10 +6,17 @@ import java.net.URL;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
 import seedu.equipmentmanager.commons.core.Messages;
 import seedu.equipmentmanager.logic.commands.DisplayCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.ui.BrowserPanel;
+=======
+import seedu.equipment.commons.core.Messages;
+import seedu.equipment.logic.commands.DisplayCommand;
+import seedu.equipment.model.Model;
+import seedu.equipment.ui.BrowserPanel;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 public class DisplayCommandSystemTest extends EquipmentManagerSystemTest {
 

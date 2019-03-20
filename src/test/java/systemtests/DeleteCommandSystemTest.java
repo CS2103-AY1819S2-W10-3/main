@@ -1,6 +1,7 @@
 package systemtests;
 
 import static org.junit.Assert.assertTrue;
+<<<<<<< HEAD
 import static seedu.equipmentmanager.commons.core.Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX;
 import static seedu.equipmentmanager.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import static seedu.equipmentmanager.logic.commands.DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS;
@@ -20,6 +21,27 @@ import seedu.equipmentmanager.logic.commands.RedoCommand;
 import seedu.equipmentmanager.logic.commands.UndoCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.equipment.Equipment;
+=======
+import static seedu.equipment.commons.core.Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX;
+import static seedu.equipment.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
+import static seedu.equipment.logic.commands.DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS;
+import static seedu.equipment.testutil.TestUtil.getLastIndex;
+import static seedu.equipment.testutil.TestUtil.getMidIndex;
+import static seedu.equipment.testutil.TestUtil.getPerson;
+import static seedu.equipment.testutil.TypicalEquipments.KEYWORD_MATCHING_HWI;
+//import static seedu.equipment.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
+import static seedu.equipment.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
+
+import org.junit.Test;
+
+import seedu.equipment.commons.core.Messages;
+import seedu.equipment.commons.core.index.Index;
+import seedu.equipment.logic.commands.DeleteCommand;
+import seedu.equipment.logic.commands.RedoCommand;
+import seedu.equipment.logic.commands.UndoCommand;
+import seedu.equipment.model.Model;
+import seedu.equipment.model.equipment.Equipment;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 public class DeleteCommandSystemTest extends EquipmentManagerSystemTest {
 
@@ -59,13 +81,21 @@ public class DeleteCommandSystemTest extends EquipmentManagerSystemTest {
 
         /* ------------------ Performing delete operation while a filtered list is being shown ---------------------- */
 
+<<<<<<< HEAD
         /* Case: filtered equipment list, delete index within bounds of equipmentmanager book and equipment list -> deleted */
+=======
+        /* Case: filtered equipment list, delete index within bounds of equipment book and equipment list -> deleted */
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
         showPersonsWithName(KEYWORD_MATCHING_HWI);
         Index index = INDEX_FIRST_PERSON;
         assertTrue(index.getZeroBased() < getModel().getFilteredEquipmentList().size());
         assertCommandSuccess(index);
 
+<<<<<<< HEAD
         /* Case: filtered equipment list, delete index within bounds of equipmentmanager book but out of bounds of equipment list
+=======
+        /* Case: filtered equipment list, delete index within bounds of equipment book but out of bounds of equipment list
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
          * -> rejected
          */
         showPersonsWithName(KEYWORD_MATCHING_HWI);
@@ -115,7 +145,11 @@ public class DeleteCommandSystemTest extends EquipmentManagerSystemTest {
     }
 
     /**
+<<<<<<< HEAD
      * Removes the {@code Equipment} at the specified {@code index} in {@code model}'s equipmentmanager book.
+=======
+     * Removes the {@code Equipment} at the specified {@code index} in {@code model}'s equipment book.
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
      * @return the removed equipment
      */
     private Equipment removePerson(Model model, Index index) {

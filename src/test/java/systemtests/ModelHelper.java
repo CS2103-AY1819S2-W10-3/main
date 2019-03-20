@@ -5,8 +5,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+<<<<<<< HEAD
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.equipment.Equipment;
+=======
+import seedu.equipment.model.Model;
+import seedu.equipment.model.equipment.Equipment;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 /**
  * Contains helper methods to set up {@code Model} for testing.

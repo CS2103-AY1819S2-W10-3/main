@@ -4,9 +4,15 @@ import static guitests.guihandles.WebViewUtil.waitUntilBrowserLoaded;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+<<<<<<< HEAD
 import static seedu.equipmentmanager.ui.StatusBarFooter.SYNC_STATUS_INITIAL;
 import static seedu.equipmentmanager.ui.StatusBarFooter.SYNC_STATUS_UPDATED;
 import static seedu.equipmentmanager.ui.testutil.GuiTestAssert.assertListMatching;
+=======
+import static seedu.equipment.ui.StatusBarFooter.SYNC_STATUS_INITIAL;
+import static seedu.equipment.ui.StatusBarFooter.SYNC_STATUS_UPDATED;
+import static seedu.equipment.ui.testutil.GuiTestAssert.assertListMatching;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -36,6 +42,7 @@ import guitests.guihandles.MainMenuHandle;
 import guitests.guihandles.MainWindowHandle;
 import guitests.guihandles.ResultDisplayHandle;
 import guitests.guihandles.StatusBarFooterHandle;
+<<<<<<< HEAD
 import seedu.equipmentmanager.TestApp;
 import seedu.equipmentmanager.commons.core.index.Index;
 import seedu.equipmentmanager.logic.commands.ClearCommand;
@@ -48,6 +55,20 @@ import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.testutil.TypicalEquipments;
 import seedu.equipmentmanager.ui.BrowserPanel;
 import seedu.equipmentmanager.ui.CommandBox;
+=======
+import seedu.equipment.TestApp;
+import seedu.equipment.commons.core.index.Index;
+import seedu.equipment.logic.commands.ClearCommand;
+import seedu.equipment.logic.commands.FindCommand;
+import seedu.equipment.logic.commands.ListEquipmentCommand;
+import seedu.equipment.logic.commands.ListWorkListCommand;
+import seedu.equipment.logic.commands.SelectCommand;
+import seedu.equipment.model.EquipmentManager;
+import seedu.equipment.model.Model;
+import seedu.equipment.testutil.TypicalEquipments;
+import seedu.equipment.ui.BrowserPanel;
+import seedu.equipment.ui.CommandBox;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 /**
  * A system test class for EquipmentManager, which provides access to handles of GUI components and helper methods
@@ -143,7 +164,11 @@ public abstract class EquipmentManagerSystemTest {
     }
 
     /**
+<<<<<<< HEAD
      * Displays all persons in the equipmentmanager book.
+=======
+     * Displays all persons in the equipment book.
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
      */
     protected void showAllPersons() {
         executeCommand(ListEquipmentCommand.COMMAND_WORD);
@@ -176,7 +201,11 @@ public abstract class EquipmentManagerSystemTest {
     }
 
     /**
+<<<<<<< HEAD
      * Deletes all persons in the equipmentmanager book.
+=======
+     * Deletes all persons in the equipment book.
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
      */
     protected void deleteAllPersons() {
         executeCommand(ClearCommand.COMMAND_WORD);

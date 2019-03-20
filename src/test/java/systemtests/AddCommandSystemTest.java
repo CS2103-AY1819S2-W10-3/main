@@ -1,5 +1,6 @@
 package systemtests;
 
+<<<<<<< HEAD
 import static seedu.equipmentmanager.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.equipmentmanager.logic.commands.CommandTestUtil.ADDRESS_DESC_AMY;
 import static seedu.equipmentmanager.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
@@ -49,6 +50,57 @@ import seedu.equipmentmanager.model.equipment.Name;
 //import Tag;
 import seedu.equipmentmanager.testutil.EquipmentBuilder;
 import seedu.equipmentmanager.testutil.EquipmentUtil;
+=======
+import static seedu.equipment.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.equipment.logic.commands.CommandTestUtil.ADDRESS_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.EMAIL_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.EMAIL_DESC_BOB;
+//import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_ADDRESS_DESC;
+//import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
+//import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
+//import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_SERIAL_NUMBER_DESC;
+//import static seedu.equipment.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
+import static seedu.equipment.logic.commands.CommandTestUtil.NAME_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.NAME_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.PHONE_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.PHONE_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_AMY;
+import static seedu.equipment.logic.commands.CommandTestUtil.SERIAL_NUMBER_DESC_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.TAG_DESC_FRIEND;
+import static seedu.equipment.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
+import static seedu.equipment.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
+//import static seedu.equipment.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
+import static seedu.equipment.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_BOB;
+import static seedu.equipment.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.equipment.testutil.TypicalEquipments.ANCHORVALECC;
+import static seedu.equipment.testutil.TypicalEquipments.AMY;
+import static seedu.equipment.testutil.TypicalEquipments.BOB;
+import static seedu.equipment.testutil.TypicalEquipments.HOON;
+import static seedu.equipment.testutil.TypicalEquipments.IDA;
+import static seedu.equipment.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
+import static seedu.equipment.testutil.TypicalEquipments.TECKGHEECC;
+
+import org.junit.Test;
+
+import seedu.equipment.commons.core.Messages;
+import seedu.equipment.commons.core.index.Index;
+import seedu.equipment.logic.commands.AddCommand;
+import seedu.equipment.logic.commands.RedoCommand;
+import seedu.equipment.logic.commands.UndoCommand;
+import seedu.equipment.model.Model;
+//import Address;
+//import Email;
+import seedu.equipment.model.equipment.Equipment;
+import seedu.equipment.model.equipment.Name;
+//import Phone;
+//import Tag;
+import seedu.equipment.testutil.EquipmentBuilder;
+import seedu.equipment.testutil.EquipmentUtil;
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
 
 public class AddCommandSystemTest extends EquipmentManagerSystemTest {
 
@@ -58,7 +110,11 @@ public class AddCommandSystemTest extends EquipmentManagerSystemTest {
 
         /* ------------------------ Perform add operations on the shown unfiltered list ----------------------------- */
 
+<<<<<<< HEAD
         /* Case: add a equipment without tags to a non-empty equipmentmanager book, command with leading spaces
+=======
+        /* Case: add a equipment without tags to a non-empty equipment book, command with leading spaces
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
          * and trailing spaces -> added
          */
         Equipment toAdd = AMY;
@@ -85,7 +141,11 @@ public class AddCommandSystemTest extends EquipmentManagerSystemTest {
                 + SERIAL_NUMBER_DESC_BOB + TAG_DESC_FRIEND;
         assertCommandSuccess(command, toAdd);
 
+<<<<<<< HEAD
         /* Case: add to empty equipmentmanager book -> added */
+=======
+        /* Case: add to empty equipment book -> added */
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
         deleteAllPersons();
         assertCommandSuccess(ANCHORVALECC);
 
@@ -126,7 +186,11 @@ public class AddCommandSystemTest extends EquipmentManagerSystemTest {
         command = EquipmentUtil.getAddCommand(toAdd);
         assertCommandFailure(command, AddCommand.MESSAGE_DUPLICATE_EQUIPMENT);
 
+<<<<<<< HEAD
         /* Case: add a duplicate equipment except with different equipmentmanager -> rejected */
+=======
+        /* Case: add a duplicate equipment except with different equipment -> rejected */
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
         toAdd = new EquipmentBuilder(HOON).withAddress(VALID_ADDRESS_BOB).build();
         command = EquipmentUtil.getAddCommand(toAdd);
         assertCommandFailure(command, AddCommand.MESSAGE_DUPLICATE_EQUIPMENT);
@@ -147,7 +211,11 @@ public class AddCommandSystemTest extends EquipmentManagerSystemTest {
         command = AddCommand.COMMAND_WORD + NAME_DESC_AMY + PHONE_DESC_AMY + ADDRESS_DESC_AMY + SERIAL_NUMBER_DESC_AMY;
         assertCommandFailure(command, String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
 
+<<<<<<< HEAD
         /* Case: missing equipmentmanager -> rejected */
+=======
+        /* Case: missing equipment -> rejected */
+>>>>>>> 166fafa10330a5bb1b0f3f2671f0c6e4d51aee61
         command = AddCommand.COMMAND_WORD + NAME_DESC_AMY + PHONE_DESC_AMY + EMAIL_DESC_AMY + SERIAL_NUMBER_DESC_AMY;
         assertCommandFailure(command, String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
 
