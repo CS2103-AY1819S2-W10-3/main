@@ -1,5 +1,7 @@
 package seedu.equipment.model.equipment;
 
+import static java.util.Objects.requireNonNull;
+import static seedu.equipment.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -10,8 +12,6 @@ import javafx.collections.ObservableList;
 import seedu.equipment.model.equipment.exceptions.DuplicateEquipmentException;
 import seedu.equipment.model.equipment.exceptions.EquipmentNotFoundException;
 
-import static java.util.Objects.requireNonNull;
-import static seedu.equipment.commons.util.CollectionUtil.requireAllNonNull;
 
 /**
  * A list of equipments that enforces uniqueness between its elements and does not allow nulls.
