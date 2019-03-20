@@ -59,13 +59,13 @@ public class SelectCommandSystemTest extends EquipmentManagerSystemTest {
          * -> rejected
          */
         showPersonsWithName(KEYWORD_MATCHING_HWI);
-        int invalidIndex = getModel().getAddressBook().getPersonList().size();
+        int invalidIndex = getModel().getEquipmentManager().getPersonList().size();
         assertCommandFailure(SelectCommand.COMMAND_WORD + " " + invalidIndex,
                 MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
 
         /* Case: filtered equipment list, select index within bounds of equipmentmanager book and equipment list -> selected */
         Index validIndex = Index.fromOneBased(1);
-        assertTrue(validIndex.getZeroBased() < getModel().getFilteredPersonList().size());
+        assertTrue(validIndex.getZeroBased() < getModel().getFilteredEquipmentList().size());
         command = SelectCommand.COMMAND_WORD + " " + validIndex.getOneBased();
         assertCommandSuccess(command, validIndex);
 
@@ -80,7 +80,7 @@ public class SelectCommandSystemTest extends EquipmentManagerSystemTest {
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, SelectCommand.MESSAGE_USAGE));
 
         /* Case: invalid index (size + 1) -> rejected */
-        invalidIndex = getModel().getFilteredPersonList().size() + 1;
+        invalidIndex = getModel().getFilteredEquipmentList().size() + 1;
         assertCommandFailure(SelectCommand.COMMAND_WORD + " " + invalidIndex,
                 MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
 

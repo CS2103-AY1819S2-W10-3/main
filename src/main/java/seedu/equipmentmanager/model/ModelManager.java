@@ -77,54 +77,54 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public Path getAddressBookFilePath() {
+    public Path getEquipmentManagerFilePath() {
         return userPrefs.getAddressBookFilePath();
     }
 
     @Override
-    public void setAddressBookFilePath(Path addressBookFilePath) {
-        requireNonNull(addressBookFilePath);
-        userPrefs.setAddressBookFilePath(addressBookFilePath);
+    public void setEquipmentManagerFilePath(Path equipmentManagerFilePath) {
+        requireNonNull(equipmentManagerFilePath);
+        userPrefs.setAddressBookFilePath(equipmentManagerFilePath);
     }
 
     //=========== EquipmentManager ================================================================================
 
     @Override
-    public void setAddressBook(ReadOnlyEquipmentManager addressBook) {
+    public void setEquipmentManager(ReadOnlyEquipmentManager addressBook) {
         versionedEquipmentManager.resetData(addressBook);
     }
 
     @Override
-    public ReadOnlyEquipmentManager getAddressBook() {
+    public ReadOnlyEquipmentManager getEquipmentManager() {
         return versionedEquipmentManager;
     }
 
     @Override
-    public boolean hasPerson(Equipment equipment) {
+    public boolean hasEquipment(Equipment equipment) {
         requireNonNull(equipment);
         return versionedEquipmentManager.hasPerson(equipment);
     }
 
     @Override
-    public void deletePerson(Equipment target) {
+    public void deleteEquipment(Equipment target) {
         versionedEquipmentManager.removePerson(target);
     }
 
     @Override
-    public void addPerson(Equipment equipment) {
+    public void addEquipment(Equipment equipment) {
         versionedEquipmentManager.addPerson(equipment);
-        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        updateFilteredEquipmentList(PREDICATE_SHOW_ALL_EQUIPMENTS);
     }
 
     @Override
-    public void setPerson(Equipment target, Equipment editedEquipment) {
+    public void setEquipment(Equipment target, Equipment editedEquipment) {
         requireAllNonNull(target, editedEquipment);
 
         versionedEquipmentManager.setPerson(target, editedEquipment);
     }
 
     @Override
-    public void updatePerson(Equipment target, Equipment editedEquipment) {
+    public void updateEquipment(Equipment target, Equipment editedEquipment) {
         requireAllNonNull(target, editedEquipment);
 
         versionedEquipmentManager.updatePerson(target, editedEquipment);
@@ -153,46 +153,46 @@ public class ModelManager implements Model {
      * {@code versionedEquipmentManager}
      */
     @Override
-    public ObservableList<Equipment> getFilteredPersonList() {
+    public ObservableList<Equipment> getFilteredEquipmentList() {
         return filteredEquipments;
     }
 
     @Override
-    public void updateFilteredPersonList(Predicate<Equipment> predicate) {
+    public void updateFilteredEquipmentList(Predicate<Equipment> predicate) {
         requireNonNull(predicate);
         filteredEquipments.setPredicate(predicate);
     }
     //=========== Undo/Redo =================================================================================
 
     @Override
-    public boolean canUndoAddressBook() {
+    public boolean canUndoEquipmentManager() {
         return versionedEquipmentManager.canUndo();
     }
 
     @Override
-    public boolean canRedoAddressBook() {
+    public boolean canRedoEquipmentManager() {
         return versionedEquipmentManager.canRedo();
     }
 
     @Override
-    public void undoAddressBook() {
+    public void undoEquipmentManager() {
         versionedEquipmentManager.undo();
     }
 
     @Override
-    public void redoAddressBook() {
+    public void redoEquipmentManager() {
         versionedEquipmentManager.redo();
     }
 
     @Override
-    public void commitAddressBook() {
+    public void commitEquipmentManager() {
         versionedEquipmentManager.commit();
     }
 
     //=========== Selected equipment ===========================================================================
 
     @Override
-    public ReadOnlyProperty<Equipment> selectedPersonProperty() {
+    public ReadOnlyProperty<Equipment> selectedEquipmentProperty() {
         return selectedPerson;
     }
 
@@ -202,7 +202,7 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void setSelectedPerson(Equipment equipment) {
+    public void setSelectedEquipment(Equipment equipment) {
         if (equipment != null && !filteredEquipments.contains(equipment)) {
             throw new EquipmentNotFoundException();
         }
@@ -246,7 +246,7 @@ public class ModelManager implements Model {
     @Override
     public void sortByName() {
         versionedEquipmentManager.sortByName();
-        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        updateFilteredEquipmentList(PREDICATE_SHOW_ALL_EQUIPMENTS);
     }
 
     @Override

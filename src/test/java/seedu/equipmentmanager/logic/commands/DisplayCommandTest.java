@@ -8,8 +8,6 @@ import org.junit.Test;
 
 import seedu.equipmentmanager.commons.core.Messages;
 import seedu.equipmentmanager.logic.CommandHistory;
-import seedu.equipmentmanager.logic.commands.CommandResult;
-import seedu.equipmentmanager.logic.commands.DisplayCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.ModelManager;
 import seedu.equipmentmanager.model.UserPrefs;
@@ -23,7 +21,7 @@ public class DisplayCommandTest {
     @Before
     public void setUp() {
         model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
-        expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        expectedModel = new ModelManager(model.getEquipmentManager(), new UserPrefs());
     }
 
     @Test

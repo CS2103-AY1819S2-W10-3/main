@@ -19,7 +19,7 @@ public class SortCommand extends Command {
     public CommandResult execute(Model model, CommandHistory history) {
         requireNonNull(model);
         model.sortByName();
-        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
+        model.updateFilteredEquipmentList(Model.PREDICATE_SHOW_ALL_EQUIPMENTS);
         return new CommandResult(MESSAGE_SUCCESS);
     }
 }

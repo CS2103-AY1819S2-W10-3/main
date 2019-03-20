@@ -66,7 +66,7 @@ public class EditCommand extends Command {
     @Override
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
-        List<Equipment> lastShownList = model.getFilteredPersonList();
+        List<Equipment> lastShownList = model.getFilteredEquipmentList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
@@ -75,13 +75,13 @@ public class EditCommand extends Command {
         Equipment equipmentToEdit = lastShownList.get(index.getZeroBased());
         Equipment editedEquipment = createEditedPerson(equipmentToEdit, editEquipmentDescriptor);
 
-        if (!equipmentToEdit.isSameEquipment(editedEquipment) && model.hasPerson(editedEquipment)) {
+        if (!equipmentToEdit.isSameEquipment(editedEquipment) && model.hasEquipment(editedEquipment)) {
             throw new CommandException(MESSAGE_DUPLICATE_EQUIPMENT);
         }
 
-        model.setPerson(equipmentToEdit, editedEquipment);
-        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
-        model.commitAddressBook();
+        model.setEquipment(equipmentToEdit, editedEquipment);
+        model.updateFilteredEquipmentList(Model.PREDICATE_SHOW_ALL_EQUIPMENTS);
+        model.commitEquipmentManager();
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, editedEquipment));
     }
 

@@ -117,8 +117,8 @@ public class CommandTestUtil {
             String expectedMessage) {
         // we are unable to defensively copy the model for comparison later, so we can
         // only do so by copying its components.
-        EquipmentManager expectedEquipmentManager = new EquipmentManager(actualModel.getAddressBook());
-        List<Equipment> expectedFilteredList = new ArrayList<>(actualModel.getFilteredPersonList());
+        EquipmentManager expectedEquipmentManager = new EquipmentManager(actualModel.getEquipmentManager());
+        List<Equipment> expectedFilteredList = new ArrayList<>(actualModel.getFilteredEquipmentList());
         Equipment expectedSelectedEquipment = actualModel.getSelectedPerson();
 
         CommandHistory expectedCommandHistory = new CommandHistory(actualCommandHistory);
@@ -128,8 +128,8 @@ public class CommandTestUtil {
             throw new AssertionError("The expected CommandException was not thrown.");
         } catch (CommandException e) {
             assertEquals(expectedMessage, e.getMessage());
-            assertEquals(expectedEquipmentManager, actualModel.getAddressBook());
-            assertEquals(expectedFilteredList, actualModel.getFilteredPersonList());
+            assertEquals(expectedEquipmentManager, actualModel.getEquipmentManager());
+            assertEquals(expectedFilteredList, actualModel.getFilteredEquipmentList());
             assertEquals(expectedSelectedEquipment, actualModel.getSelectedPerson());
             assertEquals(expectedCommandHistory, actualCommandHistory);
         }
@@ -140,22 +140,22 @@ public class CommandTestUtil {
      * {@code model}'s equipmentmanager book.
      */
     public static void showPersonAtIndex(Model model, Index targetIndex) {
-        assertTrue(targetIndex.getZeroBased() < model.getFilteredPersonList().size());
+        assertTrue(targetIndex.getZeroBased() < model.getFilteredEquipmentList().size());
 
-        Equipment equipment = model.getFilteredPersonList().get(targetIndex.getZeroBased());
+        Equipment equipment = model.getFilteredEquipmentList().get(targetIndex.getZeroBased());
         final String[] splitName = equipment.getName().name.split("\\s+");
-        model.updateFilteredPersonList(new NameContainsKeywordsPredicate(Arrays.asList(splitName[0])));
+        model.updateFilteredEquipmentList(new NameContainsKeywordsPredicate(Arrays.asList(splitName[0])));
 
-        assertEquals(1, model.getFilteredPersonList().size());
+        assertEquals(1, model.getFilteredEquipmentList().size());
     }
 
     /**
      * Deletes the first equipment in {@code model}'s filtered list from {@code model}'s equipmentmanager book.
      */
     public static void deleteFirstPerson(Model model) {
-        Equipment firstEquipment = model.getFilteredPersonList().get(0);
-        model.deletePerson(firstEquipment);
-        model.commitAddressBook();
+        Equipment firstEquipment = model.getFilteredEquipmentList().get(0);
+        model.deleteEquipment(firstEquipment);
+        model.commitEquipmentManager();
     }
 
 }

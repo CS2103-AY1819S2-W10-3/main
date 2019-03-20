@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import seedu.equipmentmanager.logic.CommandHistory;
-import seedu.equipmentmanager.logic.commands.ListWorkListCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.ModelManager;
 import seedu.equipmentmanager.model.UserPrefs;
@@ -26,7 +25,7 @@ public class ListWorkListCommandTest {
     @Before
     public void setUp() {
         model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
-        expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        expectedModel = new ModelManager(model.getEquipmentManager(), new UserPrefs());
     }
 
     @Test

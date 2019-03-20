@@ -16,7 +16,6 @@ import java.util.Collections;
 import org.junit.Test;
 
 import seedu.equipmentmanager.logic.CommandHistory;
-import seedu.equipmentmanager.logic.commands.FindCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.ModelManager;
 import seedu.equipmentmanager.model.UserPrefs;
@@ -62,9 +61,9 @@ public class FindCommandTest {
         String expectedMessage = String.format(MESSAGE_EQUIPMENTS_LISTED_OVERVIEW, 0);
         NameContainsKeywordsPredicate predicate = preparePredicate(" ");
         FindCommand command = new FindCommand(predicate);
-        expectedModel.updateFilteredPersonList(predicate);
+        expectedModel.updateFilteredEquipmentList(predicate);
         assertCommandSuccess(command, model, commandHistory, expectedMessage, expectedModel);
-        assertEquals(Collections.emptyList(), model.getFilteredPersonList());
+        assertEquals(Collections.emptyList(), model.getFilteredEquipmentList());
     }
 
     @Test
@@ -72,9 +71,9 @@ public class FindCommandTest {
         String expectedMessage = String.format(MESSAGE_EQUIPMENTS_LISTED_OVERVIEW, 3);
         NameContainsKeywordsPredicate predicate = preparePredicate("Ghee Bukit Cheng");
         FindCommand command = new FindCommand(predicate);
-        expectedModel.updateFilteredPersonList(predicate);
+        expectedModel.updateFilteredEquipmentList(predicate);
         assertCommandSuccess(command, model, commandHistory, expectedMessage, expectedModel);
-        assertEquals(Arrays.asList(TECKGHEECC, BUKITGCC, CHENGSANCC), model.getFilteredPersonList());
+        assertEquals(Arrays.asList(TECKGHEECC, BUKITGCC, CHENGSANCC), model.getFilteredEquipmentList());
     }
 
     /**

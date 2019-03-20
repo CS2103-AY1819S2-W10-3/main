@@ -38,7 +38,7 @@ public class LogicManager implements Logic {
         equipmentManagerParser = new EquipmentManagerParser();
 
         // Set addressBookModified to true whenever the models' equipmentmanager book is modified.
-        model.getAddressBook().addListener(observable -> addressBookModified = true);
+        model.getEquipmentManager().addListener(observable -> addressBookModified = true);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class LogicManager implements Logic {
         if (addressBookModified) {
             logger.info("Address book modified, saving to file.");
             try {
-                storage.saveAddressBook(model.getAddressBook());
+                storage.saveAddressBook(model.getEquipmentManager());
             } catch (IOException ioe) {
                 throw new CommandException(FILE_OPS_ERROR_MESSAGE + ioe, ioe);
             }
@@ -68,12 +68,12 @@ public class LogicManager implements Logic {
 
     @Override
     public ReadOnlyEquipmentManager getAddressBook() {
-        return model.getAddressBook();
+        return model.getEquipmentManager();
     }
 
     @Override
     public ObservableList<Equipment> getFilteredPersonList() {
-        return model.getFilteredPersonList();
+        return model.getFilteredEquipmentList();
     }
 
     @Override
@@ -83,7 +83,7 @@ public class LogicManager implements Logic {
 
     @Override
     public Path getAddressBookFilePath() {
-        return model.getAddressBookFilePath();
+        return model.getEquipmentManagerFilePath();
     }
 
     @Override
@@ -98,11 +98,11 @@ public class LogicManager implements Logic {
 
     @Override
     public ReadOnlyProperty<Equipment> selectedPersonProperty() {
-        return model.selectedPersonProperty();
+        return model.selectedEquipmentProperty();
     }
 
     @Override
     public void setSelectedPerson(Equipment equipment) {
-        model.setSelectedPerson(equipment);
+        model.setSelectedEquipment(equipment);
     }
 }

@@ -36,20 +36,20 @@ public class TestUtil {
      * Returns the middle index of the equipment in the {@code model}'s equipment list.
      */
     public static Index getMidIndex(Model model) {
-        return Index.fromOneBased(model.getFilteredPersonList().size() / 2);
+        return Index.fromOneBased(model.getFilteredEquipmentList().size() / 2);
     }
 
     /**
      * Returns the last index of the equipment in the {@code model}'s equipment list.
      */
     public static Index getLastIndex(Model model) {
-        return Index.fromOneBased(model.getFilteredPersonList().size());
+        return Index.fromOneBased(model.getFilteredEquipmentList().size());
     }
 
     /**
      * Returns the equipment in the {@code model}'s equipment list at {@code index}.
      */
     public static Equipment getPerson(Model model, Index index) {
-        return model.getFilteredPersonList().get(index.getZeroBased());
+        return model.getFilteredEquipmentList().get(index.getZeroBased());
     }
 }

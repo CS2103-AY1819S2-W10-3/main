@@ -19,12 +19,12 @@ public class RedoCommand extends Command {
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
 
-        if (!model.canRedoAddressBook()) {
+        if (!model.canRedoEquipmentManager()) {
             throw new CommandException(MESSAGE_FAILURE);
         }
 
-        model.redoAddressBook();
-        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
+        model.redoEquipmentManager();
+        model.updateFilteredEquipmentList(Model.PREDICATE_SHOW_ALL_EQUIPMENTS);
         return new CommandResult(MESSAGE_SUCCESS);
     }
 }

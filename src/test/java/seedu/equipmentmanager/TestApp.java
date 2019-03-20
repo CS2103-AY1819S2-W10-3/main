@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import seedu.equipmentmanager.MainApp;
 import seedu.equipmentmanager.commons.core.Config;
 import seedu.equipmentmanager.commons.core.GuiSettings;
 import seedu.equipmentmanager.commons.exceptions.DataConversionException;
@@ -94,8 +93,8 @@ public class TestApp extends MainApp {
      * Returns a defensive copy of the model.
      */
     public Model getModel() {
-        Model copy = new ModelManager((model.getAddressBook()), new UserPrefs());
-        ModelHelper.setFilteredList(copy, model.getFilteredPersonList());
+        Model copy = new ModelManager((model.getEquipmentManager()), new UserPrefs());
+        ModelHelper.setFilteredList(copy, model.getFilteredEquipmentList());
         return copy;
     }
 

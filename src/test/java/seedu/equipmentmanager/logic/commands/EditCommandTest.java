@@ -45,17 +45,17 @@ public class EditCommandTest {
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedEquipment);
 
-        Model expectedModel = new ModelManager(new EquipmentManager(model.getAddressBook()), new UserPrefs());
-        expectedModel.setPerson(model.getFilteredPersonList().get(0), editedEquipment);
-        expectedModel.commitAddressBook();
+        Model expectedModel = new ModelManager(new EquipmentManager(model.getEquipmentManager()), new UserPrefs());
+        expectedModel.setEquipment(model.getFilteredEquipmentList().get(0), editedEquipment);
+        expectedModel.commitEquipmentManager();
 
         assertCommandSuccess(editCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 
     @Test
     public void execute_someFieldsSpecifiedUnfilteredList_success() {
-        Index indexLastPerson = Index.fromOneBased(model.getFilteredPersonList().size());
-        Equipment lastEquipment = model.getFilteredPersonList().get(indexLastPerson.getZeroBased());
+        Index indexLastPerson = Index.fromOneBased(model.getFilteredEquipmentList().size());
+        Equipment lastEquipment = model.getFilteredEquipmentList().get(indexLastPerson.getZeroBased());
 
         EquipmentBuilder personInList = new EquipmentBuilder(lastEquipment);
         Equipment editedEquipment = personInList.withName(VALID_NAME_BOB).withPhone(VALID_PHONE_BOB)
@@ -68,9 +68,9 @@ public class EditCommandTest {
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedEquipment);
 
-        Model expectedModel = new ModelManager(new EquipmentManager(model.getAddressBook()), new UserPrefs());
-        expectedModel.setPerson(lastEquipment, editedEquipment);
-        expectedModel.commitAddressBook();
+        Model expectedModel = new ModelManager(new EquipmentManager(model.getEquipmentManager()), new UserPrefs());
+        expectedModel.setEquipment(lastEquipment, editedEquipment);
+        expectedModel.commitEquipmentManager();
 
         assertCommandSuccess(editCommand, model, commandHistory, expectedMessage, expectedModel);
     }
@@ -78,12 +78,12 @@ public class EditCommandTest {
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON, new EditCommand.EditEquipmentDescriptor());
-        Equipment editedEquipment = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Equipment editedEquipment = model.getFilteredEquipmentList().get(INDEX_FIRST_PERSON.getZeroBased());
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedEquipment);
 
-        Model expectedModel = new ModelManager(new EquipmentManager(model.getAddressBook()), new UserPrefs());
-        expectedModel.commitAddressBook();
+        Model expectedModel = new ModelManager(new EquipmentManager(model.getEquipmentManager()), new UserPrefs());
+        expectedModel.commitEquipmentManager();
 
         assertCommandSuccess(editCommand, model, commandHistory, expectedMessage, expectedModel);
     }
@@ -92,23 +92,23 @@ public class EditCommandTest {
     public void execute_filteredList_success() {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
-        Equipment equipmentInFilteredList = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Equipment equipmentInFilteredList = model.getFilteredEquipmentList().get(INDEX_FIRST_PERSON.getZeroBased());
         Equipment editedEquipment = new EquipmentBuilder(equipmentInFilteredList).withName(VALID_NAME_BOB).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON,
                 new EditEquipmentDescriptorBuilder().withName(VALID_NAME_BOB).build());
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedEquipment);
 
-        Model expectedModel = new ModelManager(new EquipmentManager(model.getAddressBook()), new UserPrefs());
-        expectedModel.setPerson(model.getFilteredPersonList().get(0), editedEquipment);
-        expectedModel.commitAddressBook();
+        Model expectedModel = new ModelManager(new EquipmentManager(model.getEquipmentManager()), new UserPrefs());
+        expectedModel.setEquipment(model.getFilteredEquipmentList().get(0), editedEquipment);
+        expectedModel.commitEquipmentManager();
 
         assertCommandSuccess(editCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 
     @Test
     public void execute_duplicatePersonUnfilteredList_failure() {
-        Equipment firstEquipment = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Equipment firstEquipment = model.getFilteredEquipmentList().get(INDEX_FIRST_PERSON.getZeroBased());
         EditCommand.EditEquipmentDescriptor descriptor = new EditEquipmentDescriptorBuilder(firstEquipment).build();
         EditCommand editCommand = new EditCommand(INDEX_SECOND_PERSON, descriptor);
 
@@ -120,7 +120,7 @@ public class EditCommandTest {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
         // edit equipment in filtered list into a duplicate in equipmentmanager book
-        Equipment equipmentInList = model.getAddressBook().getPersonList().get(INDEX_SECOND_PERSON.getZeroBased());
+        Equipment equipmentInList = model.getEquipmentManager().getPersonList().get(INDEX_SECOND_PERSON.getZeroBased());
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON,
                 new EditEquipmentDescriptorBuilder(equipmentInList).build());
 
@@ -129,7 +129,7 @@ public class EditCommandTest {
 
     @Test
     public void execute_invalidPersonIndexUnfilteredList_failure() {
-        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
+        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredEquipmentList().size() + 1);
         EditCommand.EditEquipmentDescriptor descriptor = new EditEquipmentDescriptorBuilder().withName(VALID_NAME_BOB)
                 .build();
         EditCommand editCommand = new EditCommand(outOfBoundIndex, descriptor);
@@ -146,7 +146,7 @@ public class EditCommandTest {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
         Index outOfBoundIndex = INDEX_SECOND_PERSON;
         // ensures that outOfBoundIndex is still in bounds of equipmentmanager book list
-        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getPersonList().size());
+        assertTrue(outOfBoundIndex.getZeroBased() < model.getEquipmentManager().getPersonList().size());
 
         EditCommand editCommand = new EditCommand(outOfBoundIndex,
                 new EditEquipmentDescriptorBuilder().withName(VALID_NAME_BOB).build());
@@ -157,28 +157,28 @@ public class EditCommandTest {
     @Test
     public void executeUndoRedo_validIndexUnfilteredList_success() throws Exception {
         Equipment editedEquipment = new EquipmentBuilder().build();
-        Equipment equipmentToEdit = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
+        Equipment equipmentToEdit = model.getFilteredEquipmentList().get(INDEX_FIRST_PERSON.getZeroBased());
         EditCommand.EditEquipmentDescriptor descriptor = new EditEquipmentDescriptorBuilder(editedEquipment).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON, descriptor);
-        Model expectedModel = new ModelManager(new EquipmentManager(model.getAddressBook()), new UserPrefs());
-        expectedModel.setPerson(equipmentToEdit, editedEquipment);
-        expectedModel.commitAddressBook();
+        Model expectedModel = new ModelManager(new EquipmentManager(model.getEquipmentManager()), new UserPrefs());
+        expectedModel.setEquipment(equipmentToEdit, editedEquipment);
+        expectedModel.commitEquipmentManager();
 
         // edit -> first equipment edited
         editCommand.execute(model, commandHistory);
 
         // undo -> reverts addressbook back to previous state and filtered equipment list to show all persons
-        expectedModel.undoAddressBook();
+        expectedModel.undoEquipmentManager();
         assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
 
         // redo -> same first equipment edited again
-        expectedModel.redoAddressBook();
+        expectedModel.redoEquipmentManager();
         assertCommandSuccess(new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
     }
 
     @Test
     public void executeUndoRedo_invalidIndexUnfilteredList_failure() {
-        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
+        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredEquipmentList().size() + 1);
         EditCommand.EditEquipmentDescriptor descriptor = new EditEquipmentDescriptorBuilder().withName(VALID_NAME_BOB)
                 .build();
         EditCommand editCommand = new EditCommand(outOfBoundIndex, descriptor);
@@ -203,23 +203,23 @@ public class EditCommandTest {
         Equipment editedEquipment = new EquipmentBuilder().build();
         EditCommand.EditEquipmentDescriptor descriptor = new EditEquipmentDescriptorBuilder(editedEquipment).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON, descriptor);
-        Model expectedModel = new ModelManager(new EquipmentManager(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new EquipmentManager(model.getEquipmentManager()), new UserPrefs());
 
         showPersonAtIndex(model, INDEX_SECOND_PERSON);
-        Equipment equipmentToEdit = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-        expectedModel.setPerson(equipmentToEdit, editedEquipment);
-        expectedModel.commitAddressBook();
+        Equipment equipmentToEdit = model.getFilteredEquipmentList().get(INDEX_FIRST_PERSON.getZeroBased());
+        expectedModel.setEquipment(equipmentToEdit, editedEquipment);
+        expectedModel.commitEquipmentManager();
 
         // edit -> edits second equipment in unfiltered equipment list / first equipment in filtered equipment list
         editCommand.execute(model, commandHistory);
 
         // undo -> reverts addressbook back to previous state and filtered equipment list to show all persons
-        expectedModel.undoAddressBook();
+        expectedModel.undoEquipmentManager();
         assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
 
-        assertNotEquals(model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased()), equipmentToEdit);
+        assertNotEquals(model.getFilteredEquipmentList().get(INDEX_FIRST_PERSON.getZeroBased()), equipmentToEdit);
         // redo -> edits same second equipment in unfiltered equipment list
-        expectedModel.redoAddressBook();
+        expectedModel.redoEquipmentManager();
         assertCommandSuccess(new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
     }
 

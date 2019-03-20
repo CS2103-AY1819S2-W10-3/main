@@ -15,7 +15,6 @@ import org.junit.Test;
 import seedu.equipmentmanager.commons.core.Messages;
 import seedu.equipmentmanager.commons.core.index.Index;
 import seedu.equipmentmanager.logic.CommandHistory;
-import seedu.equipmentmanager.logic.commands.SelectCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.ModelManager;
 import seedu.equipmentmanager.model.UserPrefs;
@@ -30,7 +29,7 @@ public class SelectCommandTest {
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
-        Index lastPersonIndex = Index.fromOneBased(model.getFilteredPersonList().size());
+        Index lastPersonIndex = Index.fromOneBased(model.getFilteredEquipmentList().size());
 
         assertExecutionSuccess(INDEX_FIRST_PERSON);
         assertExecutionSuccess(INDEX_THIRD_PERSON);
@@ -39,7 +38,7 @@ public class SelectCommandTest {
 
     @Test
     public void execute_invalidIndexUnfilteredList_failure() {
-        Index outOfBoundsIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
+        Index outOfBoundsIndex = Index.fromOneBased(model.getFilteredEquipmentList().size() + 1);
 
         assertExecutionFailure(outOfBoundsIndex, Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
     }
@@ -59,7 +58,7 @@ public class SelectCommandTest {
 
         Index outOfBoundsIndex = INDEX_SECOND_PERSON;
         // ensures that outOfBoundIndex is still in bounds of equipmentmanager book list
-        assertTrue(outOfBoundsIndex.getZeroBased() < model.getAddressBook().getPersonList().size());
+        assertTrue(outOfBoundsIndex.getZeroBased() < model.getEquipmentManager().getPersonList().size());
 
         assertExecutionFailure(outOfBoundsIndex, Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
     }
@@ -94,7 +93,7 @@ public class SelectCommandTest {
     private void assertExecutionSuccess(Index index) {
         SelectCommand selectCommand = new SelectCommand(index);
         String expectedMessage = String.format(SelectCommand.MESSAGE_SELECT_EQUIPMENT_SUCCESS, index.getOneBased());
-        expectedModel.setSelectedPerson(model.getFilteredPersonList().get(index.getZeroBased()));
+        expectedModel.setSelectedEquipment(model.getFilteredEquipmentList().get(index.getZeroBased()));
 
         assertCommandSuccess(selectCommand, model, commandHistory, expectedMessage, expectedModel);
     }

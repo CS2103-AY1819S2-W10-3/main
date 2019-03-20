@@ -14,7 +14,7 @@ import seedu.equipmentmanager.model.tag.Tag;
  */
 public interface Model {
     /** {@code Predicate} that always evaluate to true */
-    Predicate<Equipment> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
+    Predicate<Equipment> PREDICATE_SHOW_ALL_EQUIPMENTS = unused -> true;
 
     /** {@code Predicate} that always evaluate to true */
     Predicate<WorkList> PREDICATE_SHOW_ALL_WORKLISTS = unused -> true;
@@ -40,50 +40,50 @@ public interface Model {
     void setGuiSettings(GuiSettings guiSettings);
 
     /**
-     * Returns the user prefs' equipmentmanager book file path.
+     * Returns the user prefs' equipment manager file path.
      */
-    Path getAddressBookFilePath();
+    Path getEquipmentManagerFilePath();
 
     /**
-     * Sets the user prefs' equipmentmanager book file path.
+     * Sets the user prefs' equipment manager file path.
      */
-    void setAddressBookFilePath(Path addressBookFilePath);
+    void setEquipmentManagerFilePath(Path equipmentManagerFilePath);
 
     /**
-     * Replaces equipmentmanager book data with the data in {@code addressBook}.
+     * Replaces equipment manager data with the data in {@code equipmentManager}.
      */
-    void setAddressBook(ReadOnlyEquipmentManager addressBook);
+    void setEquipmentManager(ReadOnlyEquipmentManager equipmentManager);
 
     /** Returns the EquipmentManager */
-    ReadOnlyEquipmentManager getAddressBook();
+    ReadOnlyEquipmentManager getEquipmentManager();
 
     /**
-     * Returns true if a equipment with the same identity as {@code equipment} exists in the equipmentmanager book.
+     * Returns true if a equipment with the same identity as {@code equipment} exists in the equipment manager.
      */
-    boolean hasPerson(Equipment equipment);
+    boolean hasEquipment(Equipment equipment);
 
     /**
      * Deletes the given equipment.
-     * The equipment must exist in the equipmentmanager book.
+     * The equipment must exist in the equipment manager.
      */
-    void deletePerson(Equipment target);
+    void deleteEquipment(Equipment target);
 
     /**
      * Adds the given equipment.
-     * {@code equipment} must not already exist in the equipmentmanager book.
+     * {@code equipment} must not already exist in the equipment manager.
      */
-    void addPerson(Equipment equipment);
+    void addEquipment(Equipment equipment);
 
     /**
      * Replaces the given equipment {@code target} with {@code editedEquipment}.
-     * {@code target} must exist in the equipmentmanager book.
+     * {@code target} must exist in the equipment manager.
      * The equipment identity of {@code editedEquipment} must not be the same as another
-     * existing equipment in the equipmentmanager book.
+     * existing equipment in the equipment manager.
      */
-    void setPerson(Equipment target, Equipment editedEquipment);
+    void setEquipment(Equipment target, Equipment editedEquipment);
 
     /** Returns an unmodifiable view of the filtered equipment list */
-    ObservableList<Equipment> getFilteredPersonList();
+    ObservableList<Equipment> getFilteredEquipmentList();
 
     /** Returns an unmodifiable view of the filtered worklist list */
     ObservableList<WorkList> getFilteredWorkListList();
@@ -92,7 +92,7 @@ public interface Model {
      * Updates the filter of the filtered equipment list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
      */
-    void updateFilteredPersonList(Predicate<Equipment> predicate);
+    void updateFilteredEquipmentList(Predicate<Equipment> predicate);
 
     /**
      * Updates the filter of the filtered WorkList list to filter by the given {@code predicate}.
@@ -101,35 +101,35 @@ public interface Model {
     void updateFilteredWorkListList(Predicate<WorkList> predicate);
 
     /**
-     * Returns true if the model has previous equipmentmanager book states to restore.
+     * Returns true if the model has previous equipment manager states to restore.
      */
-    boolean canUndoAddressBook();
+    boolean canUndoEquipmentManager();
 
     /**
-     * Returns true if the model has undone equipmentmanager book states to restore.
+     * Returns true if the model has undone equipment manager states to restore.
      */
-    boolean canRedoAddressBook();
+    boolean canRedoEquipmentManager();
 
     /**
-     * Restores the model's equipmentmanager book to its previous state.
+     * Restores the model's equipment manager to its previous state.
      */
-    void undoAddressBook();
+    void undoEquipmentManager();
 
     /**
-     * Restores the model's equipmentmanager book to its previously undone state.
+     * Restores the model's equipment manager to its previously undone state.
      */
-    void redoAddressBook();
+    void redoEquipmentManager();
 
     /**
-     * Saves the current equipmentmanager book state for undo/redo.
+     * Saves the current equipment manager state for undo/redo.
      */
-    void commitAddressBook();
+    void commitEquipmentManager();
 
     /**
      * Selected equipment in the filtered equipment list.
      * null if no equipment is selected.
      */
-    ReadOnlyProperty<Equipment> selectedPersonProperty();
+    ReadOnlyProperty<Equipment> selectedEquipmentProperty();
 
     /**
      * Returns the selected equipment in the filtered equipment list.
@@ -140,12 +140,12 @@ public interface Model {
     /**
      * Sets the selected equipment in the filtered equipment list.
      */
-    void setSelectedPerson(Equipment equipment);
+    void setSelectedEquipment(Equipment equipment);
 
     /** Removes the given {@code tag} from all {@code Equipment}s. */
     void deleteTag(Tag tag);
 
-    void updatePerson(Equipment target, Equipment editedEquipment);
+    void updateEquipment(Equipment target, Equipment editedEquipment);
 
     /** Sorts the equipment list by name. */
     void sortByName();

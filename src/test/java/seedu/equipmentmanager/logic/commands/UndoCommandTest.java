@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import seedu.equipmentmanager.logic.CommandHistory;
-import seedu.equipmentmanager.logic.commands.UndoCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.ModelManager;
 import seedu.equipmentmanager.model.UserPrefs;
@@ -33,11 +32,11 @@ public class UndoCommandTest {
     @Test
     public void execute() {
         // multiple undoable states in model
-        expectedModel.undoAddressBook();
+        expectedModel.undoEquipmentManager();
         assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
 
         // single undoable state in model
-        expectedModel.undoAddressBook();
+        expectedModel.undoEquipmentManager();
         assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
 
         // no undoable states in model

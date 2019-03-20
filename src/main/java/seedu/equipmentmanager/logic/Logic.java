@@ -28,7 +28,7 @@ public interface Logic {
     /**
      * Returns the EquipmentManager.
      *
-     * @see Model#getAddressBook()
+     * @see Model#getEquipmentManager()
      */
     ReadOnlyEquipmentManager getAddressBook();
 
@@ -60,14 +60,14 @@ public interface Logic {
      * Selected equipment in the filtered equipment list.
      * null if no equipment is selected.
      *
-     * @see Model#selectedPersonProperty()
+     * @see Model#selectedEquipmentProperty()
      */
     ReadOnlyProperty<Equipment> selectedPersonProperty();
 
     /**
      * Sets the selected equipment in the filtered equipment list.
      *
-     * @see Model#setSelectedPerson(Equipment)
+     * @see Model#setSelectedEquipment(Equipment)
      */
     void setSelectedPerson(Equipment equipment);
 }

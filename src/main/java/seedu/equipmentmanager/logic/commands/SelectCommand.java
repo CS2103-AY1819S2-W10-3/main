@@ -35,13 +35,13 @@ public class SelectCommand extends Command {
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
 
-        List<Equipment> filteredEquipmentList = model.getFilteredPersonList();
+        List<Equipment> filteredEquipmentList = model.getFilteredEquipmentList();
 
         if (targetIndex.getZeroBased() >= filteredEquipmentList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
         }
 
-        model.setSelectedPerson(filteredEquipmentList.get(targetIndex.getZeroBased()));
+        model.setSelectedEquipment(filteredEquipmentList.get(targetIndex.getZeroBased()));
         return new CommandResult(String.format(MESSAGE_SELECT_EQUIPMENT_SUCCESS, targetIndex.getOneBased()));
 
     }

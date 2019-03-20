@@ -17,7 +17,6 @@ import java.util.Collections;
 import org.junit.Test;
 
 import seedu.equipmentmanager.logic.CommandHistory;
-import seedu.equipmentmanager.logic.commands.FilterCommand;
 import seedu.equipmentmanager.model.Model;
 import seedu.equipmentmanager.model.ModelManager;
 import seedu.equipmentmanager.model.UserPrefs;
@@ -64,18 +63,18 @@ public class FilterCommandTest {
     public void execute_zeroKeywords_noEquipmentFound() {
         String expectedMessage = String.format(MESSAGE_EQUIPMENTS_LISTED_OVERVIEW, 0);
         EquipmentContainsKeywordsPredicate predicate = preparePredicate(" ");
-        expectedModel.updateFilteredPersonList(predicate);
+        expectedModel.updateFilteredEquipmentList(predicate);
         assertCommandSuccess(new FilterCommand(predicate), model, commandHistory, expectedMessage, expectedModel);
-        assertEquals(Collections.emptyList(), model.getFilteredPersonList());
+        assertEquals(Collections.emptyList(), model.getFilteredEquipmentList());
     }
 
     @Test
     public void execute_multipleKeywords_multipleEquipmentsFound() {
         String expectedMessage = String.format(MESSAGE_EQUIPMENTS_LISTED_OVERVIEW, 4);
         EquipmentContainsKeywordsPredicate predicate = preparePredicate("west urgent");
-        expectedModel.updateFilteredPersonList(predicate);
+        expectedModel.updateFilteredEquipmentList(predicate);
         assertCommandSuccess(new FilterCommand(predicate), model, commandHistory, expectedMessage, expectedModel);
-        assertEquals(Arrays.asList(HWIYOHCC, AYERRAJAHCC, BUKITGCC, JURONGREENCC), model.getFilteredPersonList());
+        assertEquals(Arrays.asList(HWIYOHCC, AYERRAJAHCC, BUKITGCC, JURONGREENCC), model.getFilteredEquipmentList());
     }
     private EquipmentContainsKeywordsPredicate preparePredicate(String userInput) {
         return new EquipmentContainsKeywordsPredicate(Arrays.asList(userInput.split("\\s+")));

@@ -28,7 +28,7 @@ import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_SERIAL
 //import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_SERIAL_NUMBER_BOB;
 import static seedu.equipmentmanager.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.equipmentmanager.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.equipmentmanager.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.equipmentmanager.model.Model.PREDICATE_SHOW_ALL_EQUIPMENTS;
 import static seedu.equipmentmanager.testutil.TypicalEquipments.AMY;
 import static seedu.equipmentmanager.testutil.TypicalEquipments.BOB;
 import static seedu.equipmentmanager.testutil.TypicalEquipments.KEYWORD_MATCHING_CC;
@@ -79,7 +79,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         /* Case: redo editing the last equipment in the list -> last equipment edited again */
         command = RedoCommand.COMMAND_WORD;
         expectedResultMessage = RedoCommand.MESSAGE_SUCCESS;
-        model.setPerson(getModel().getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased()), editedEquipment);
+        model.setEquipment(getModel().getFilteredEquipmentList().get(INDEX_FIRST_PERSON.getZeroBased()), editedEquipment);
         assertCommandSuccess(command, model, expectedResultMessage);
 
         /* Case: edit an equipment with new values same as existing values -> edited */
@@ -90,9 +90,9 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         /* Case: edit an equipment with new values same as another equipment's values but with
          * different serial number -> edited
          */
-        assertTrue(getModel().getAddressBook().getPersonList().contains(BOB));
+        assertTrue(getModel().getEquipmentManager().getPersonList().contains(BOB));
         index = INDEX_SECOND_PERSON;
-        assertNotEquals(getModel().getFilteredPersonList().get(index.getZeroBased()), BOB);
+        assertNotEquals(getModel().getFilteredEquipmentList().get(index.getZeroBased()), BOB);
         command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
                 + ADDRESS_DESC_BOB + SERIAL_NUMBER_DESC_AMY + TAG_DESC_FRIEND + TAG_DESC_HUSBAND;
         editedEquipment = new EquipmentBuilder(BOB).withSerialNumber(VALID_SERIAL_NUMBER_AMY).build();
@@ -101,7 +101,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         /* Case: clear tags -> cleared */
         index = INDEX_FIRST_PERSON;
         command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + " " + PREFIX_TAG.getPrefix();
-        Equipment equipmentToEdit = getModel().getFilteredPersonList().get(index.getZeroBased());
+        Equipment equipmentToEdit = getModel().getFilteredEquipmentList().get(index.getZeroBased());
         editedEquipment = new EquipmentBuilder(equipmentToEdit).withTags().build();
         assertCommandSuccess(command, index, editedEquipment);
 
@@ -109,7 +109,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
          * different serial number -> edited
          */
         index = INDEX_SECOND_PERSON;
-        assertNotEquals(getModel().getFilteredPersonList().get(index.getZeroBased()), AMY);
+        assertNotEquals(getModel().getFilteredEquipmentList().get(index.getZeroBased()), AMY);
         command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_AMY + PHONE_DESC_AMY + EMAIL_DESC_AMY
                 + ADDRESS_DESC_AMY + SERIAL_NUMBER_DESC_AMY + TAG_DESC_FRIEND;
         editedEquipment = new EquipmentBuilder(AMY).withSerialNumber(VALID_SERIAL_NUMBER_AMY).build();
@@ -120,9 +120,9 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
         /* Case: filtered equipment list, edit index within bounds of equipmentmanager book and equipment list -> edited */
         showPersonsWithName(KEYWORD_MATCHING_CC);
         index = INDEX_FIRST_PERSON;
-        assertTrue(index.getZeroBased() < getModel().getFilteredPersonList().size());
+        assertTrue(index.getZeroBased() < getModel().getFilteredEquipmentList().size());
         command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + " " + NAME_DESC_BOB;
-        equipmentToEdit = getModel().getFilteredPersonList().get(index.getZeroBased());
+        equipmentToEdit = getModel().getFilteredEquipmentList().get(index.getZeroBased());
         editedEquipment = new EquipmentBuilder(equipmentToEdit).withName(VALID_NAME_BOB).build();
         assertCommandSuccess(command, index, editedEquipment);
 
@@ -130,7 +130,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
          * -> rejected
          */
         showPersonsWithName(KEYWORD_MATCHING_CC);
-        int invalidIndex = getModel().getAddressBook().getPersonList().size();
+        int invalidIndex = getModel().getEquipmentManager().getPersonList().size();
         assertCommandFailure(EditCommand.COMMAND_WORD + " " + invalidIndex + NAME_DESC_BOB,
                 Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
 
@@ -159,7 +159,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
                 String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE));
 
         /* Case: invalid index (size + 1) -> rejected */
-        invalidIndex = getModel().getFilteredPersonList().size() + 1;
+        invalidIndex = getModel().getFilteredEquipmentList().size() + 1;
         assertCommandFailure(EditCommand.COMMAND_WORD + " " + invalidIndex + NAME_DESC_BOB,
                 Messages.MESSAGE_INVALID_EQUIPMENT_DISPLAYED_INDEX);
 
@@ -259,8 +259,8 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
     private void assertCommandSuccess(String command, Index toEdit, Equipment editedEquipment,
             Index expectedSelectedCardIndex) {
         Model expectedModel = getModel();
-        expectedModel.setPerson(expectedModel.getFilteredPersonList().get(toEdit.getZeroBased()), editedEquipment);
-        expectedModel.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        expectedModel.setEquipment(expectedModel.getFilteredEquipmentList().get(toEdit.getZeroBased()), editedEquipment);
+        expectedModel.updateFilteredEquipmentList(PREDICATE_SHOW_ALL_EQUIPMENTS);
 
         assertCommandSuccess(command, expectedModel,
                 String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedEquipment), expectedSelectedCardIndex);
@@ -291,7 +291,7 @@ public class EditCommandSystemTest extends EquipmentManagerSystemTest {
     private void assertCommandSuccess(String command, Model expectedModel, String expectedResultMessage,
             Index expectedSelectedCardIndex) {
         executeCommand(command);
-        expectedModel.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        expectedModel.updateFilteredEquipmentList(PREDICATE_SHOW_ALL_EQUIPMENTS);
         assertApplicationDisplaysExpected("", expectedResultMessage, expectedModel);
         assertCommandBoxShowsDefaultStyle();
         if (expectedSelectedCardIndex != null) {
