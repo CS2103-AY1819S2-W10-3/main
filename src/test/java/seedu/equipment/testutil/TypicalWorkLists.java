@@ -2,8 +2,8 @@ package seedu.equipment.testutil;
 
 import static seedu.equipment.logic.commands.CommandTestUtil.ASSIGNEE_DESC_LISTA;
 import static seedu.equipment.logic.commands.CommandTestUtil.DATE_DESC_LISTA;
-import static seedu.equipment.testutil.TypicalEquipments.ANCHORVALECC;
-import static seedu.equipment.testutil.TypicalEquipments.BOB;
+//import static seedu.equipment.testutil.TypicalEquipments.ANCHORVALECC;
+//import static seedu.equipment.testutil.TypicalEquipments.BOB;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,23 +17,28 @@ import seedu.equipment.model.WorkList;
  */
 public class TypicalWorkLists {
 
-    public static final WorkList LISTA = new WorkList("2019-01-01", "Anchorvale CC");
-    public static final WorkList LISTB = new WorkList("2018-01-01", "BOB");
-    public static final WorkList LISTC = new WorkList(DATE_DESC_LISTA, ASSIGNEE_DESC_LISTA);
-    {
-        LISTA.addEquipment(ANCHORVALECC);
-        LISTB.addEquipment(BOB);
-    }
+    public static final WorkList LISTA = new WorkListBuilder().withDate("01 January 2019")
+            .withAssignee("Mei Yen").build();
+    public static final WorkList LISTB = new WorkListBuilder().withDate("01 January 2018")
+            .withAssignee("Bob").build();
+    public static final WorkList LISTC = new WorkListBuilder().withDate(DATE_DESC_LISTA)
+            .withAssignee(ASSIGNEE_DESC_LISTA).build();
+    //{
+    //    LISTA.addEquipment(ANCHORVALECC);
+    //   LISTB.addEquipment(BOB);
+    //}
+
+    private TypicalWorkLists() {} //prevents instantiation
 
     /**
      * Returns an {@code EquipmentManager} with all the typical persons.
      */
     public static EquipmentManager getTypicalEquipmentManager() {
-        EquipmentManager ab = new EquipmentManager();
+        EquipmentManager em = new EquipmentManager();
         for (WorkList worklist : getTypicalWorkLists()) {
-            ab.addWorkList(worklist);
+            em.addWorkList(worklist);
         }
-        return ab;
+        return em;
     }
 
     public static List<WorkList> getTypicalWorkLists() {

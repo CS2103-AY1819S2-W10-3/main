@@ -6,6 +6,7 @@ import java.util.Set;
 
 import seedu.equipment.commons.util.CollectionUtil;
 
+import seedu.equipment.model.equipment.Date;
 import seedu.equipment.model.equipment.Equipment;
 
 /**
@@ -14,7 +15,7 @@ import seedu.equipment.model.equipment.Equipment;
 public class WorkList {
 
     //Identity fields
-    private final String date;
+    private final Date date;
     private final String assignee;
     private final WorkListId id;
 
@@ -24,7 +25,7 @@ public class WorkList {
     /**
      * Every field must be present and not null.
      */
-    public WorkList(String date, String name) {
+    public WorkList(Date date, String name) {
         CollectionUtil.requireAllNonNull(date, name);
         this.date = date;
         this.assignee = name;
@@ -32,7 +33,7 @@ public class WorkList {
         this.id = new WorkListId();
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 

@@ -42,9 +42,9 @@ public class CommandTestUtil {
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
     public static final String VALID_TAG_UNUSED = "unused"; // do not use this tag when creating a equipment
-    public static final String VALID_DATE_LISTA = "2019-02-12";
+    public static final String VALID_DATE_LISTA = "22 February 2019";
     public static final String VALID_ASSIGNEE_LISTA = "Mei Yen";
-    public static final String VALID_DATE_LISTB = "2019-02-22";
+    public static final String VALID_DATE_LISTB = "22 February 2018";
     public static final String VALID_ASSIGNEE_LISTB = "Rachel";
 
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;

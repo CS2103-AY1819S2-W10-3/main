@@ -34,7 +34,7 @@ public class Date implements Comparable<Date> {
     }
 
     /**
-     * Returns if a given string is a valid email.
+     * Returns if a given string is a valid date.
      */
     public static boolean isValidDate(String test) {
         return test.matches(VALIDATION_REGEX);

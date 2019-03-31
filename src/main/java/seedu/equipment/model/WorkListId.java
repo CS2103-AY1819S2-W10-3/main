@@ -1,6 +1,7 @@
 package seedu.equipment.model;
 
 /**
+ *
  * Representing the worklistid and the id is increasing based on the id history.
  */
 public class WorkListId {
@@ -14,6 +15,7 @@ public class WorkListId {
      */
     public WorkListId() {
         thisId = idHist + 1;
+        idHist++;
     }
 
     public int getId() {
