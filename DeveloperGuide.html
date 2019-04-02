@@ -586,10 +586,10 @@ The following class plays an important role at the architecture level:</p>
 <div class="sect3">
 <h4 id="introduction-2"><a class="link" href="#introduction-2">4.1.1. Introduction</a></h4>
 <div class="paragraph">
-<p>We have implemented a <code>FilterCommand</code> that allow users to filter the current shown list with any fields.</p>
+<p>We have implemented a <code>FilterCommand</code> that allow users to filter the current shown list with the specified fields.</p>
 </div>
 <div class="paragraph">
-<p>The filter feature allow users to filter the current shown list with any fields, and can filter by multiple fields.</p>
+<p>The filter feature allow users to filter the current shown list with any specified fields, and also can filter by multiple fields.</p>
 </div>
 <div class="paragraph">
 <p>The <code>FilterCommand</code> is able to filter the shown list according to the user&#8217;s preference at a time.</p>
@@ -598,12 +598,54 @@ The following class plays an important role at the architecture level:</p>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.2. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The following sequence diagram shows how the filter command works:</p>
+<p>The <strong>filter</strong> mechanism is supported by <code>FilterCommandParser</code>. It implements <code>Parser</code> that implements the following operation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FilterCommand#execute()</code>  -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
+It then splits the arguments using ArgumentTokenizer#tokenize() and returns an ArgumentMultimap. Keywords of the same prefix are then grouped using ArgumentMultimap#getAllValues().</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <strong>filter</strong> mechanism is also facilitated by <code>FilterCommand</code>. It extends <code>Command</code> and implements the following operation:</p>
+</div>
+<div class="paragraph">
+<p>FilterCommand#execute() — Executes the command by updating the current <code>FilteredPersonList</code> with the <code>EquipmentContainsKeywordPredicate</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>EquipmentContainsKeywordsPredicate</code> takes in the lists of keywords for the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Address</p>
+</li>
+<li>
+<p>Date</p>
+</li>
+<li>
+<p>Phone</p>
+</li>
+<li>
+<p>Tags</p>
+</li>
+<li>
+<p>Serial Number</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FilterCommandSequenceDiagram.png" alt="FilterCommandSequenceDiagram" width="800">
 </div>
+</div>
+<div class="paragraph">
+<p>Example</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how the filter mechanism behaves at each step when filtering.</p>
@@ -612,21 +654,27 @@ The following class plays an important role at the architecture level:</p>
 <p>Step 1. The user launches the application.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>filter /region north</code></p>
+<p>Step 2. The user executes <code>filter n/jurong a/west t/urgent</code> command to get all fields whose equipment contains the keywords</p>
 </div>
 <div class="paragraph">
-<p>Step 3. After <code>EquipmentManagerParser</code> detects <code>filter</code> as the command word, a FilterCommandParser is created to parse
-the arguments supplied to the command.</p>
+<p>Step 3. After <code>EquipmentManagerParser</code> detects <strong>filter</strong> as the command word, a <code>FilterCommandParser#parse()</code> is called and
+the EquipmentContainsKeywordsPredicate is constructed with the arguments of the filter command.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. The <code>FilterCommandParser</code> trims and splits the arguments by white spaces.</p>
+<p>Step 4. <code>FilterCommand#execute()</code> is then called.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. Then, <code>EquipmentContainsKeywordsPredicate</code> checks that the <strong>Equipment Manager</strong> has either the respective serial
-number, tags, address, name, preventive maintenance date, phone.</p>
+<p>Step 5. The entire equipment list is filtered by the predicate <code>EquipmentContainsKeywordsPredicate</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. The argument is filtered against the predicate and returned to the GUI.</p>
+<p>Step 6. The filtered list of wishes is returned to the GUI.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. Then, <code>EquipmentContainsKeywordsPredicate</code> checks that the <strong>Equipment Manager</strong> has either the respective
+attributes - serial number, tags, address, name, preventive maintenance date, phone.</p>
+</div>
+<div class="paragraph">
+<p>Step 8. The argument is filtered against the predicate and returned to the GUI.</p>
 </div>
 </div>
 <div class="sect3">
@@ -637,27 +685,54 @@ number, tags, address, name, preventive maintenance date, phone.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> filter by specific field</p>
+<p><strong>Alternative 1 (current choice):</strong> Require user to prepend every keyword argument with the appropriate attribute prefix.
+Supports multiple fields in the same command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: It is easy to implement and it is also consistent with how <code>FindCommand</code></p>
+<p>Pros: It is easy to implement and easy to match keyword against a Equipment if the matching attribute is known.</p>
 </li>
 <li>
-<p>Cons: The overall list is not 100% sorted by specific field</p>
+<p>Pros: User has more control over the results returned.</p>
+</li>
+<li>
+<p>Pros: User can also filter by multiple fields.
+e.g: <code>filter n/jurong t/west</code></p>
+</li>
+<li>
+<p>Cons: User is required to type slightly more.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> filter by tags</p>
+<p><strong>Alternative 2:</strong> filter by specific fields</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: It is more specific and more strictly</p>
+<p>Pros: It is easy to implement and it is also consistent with how <code>FilterCommand</code> works.</p>
+</li>
+<li>
+<p>Cons: User has less control over the results returned.</p>
+</li>
+<li>
+<p>Cons: User can input anything and the results returned is not specific by type.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3:</strong> filter by tags</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It is more specific and more restricted.</p>
 </li>
 <li>
 <p>Cons: More difficult to implement</p>
+</li>
+<li>
+<p>Cons: Too restricted as it is only filtered by tags.</p>
 </li>
 </ul>
 </div>
@@ -1981,4 +2056,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 09:38:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 11:06:52 UTC</div></div></div></body></html>
