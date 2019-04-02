@@ -667,14 +667,11 @@ the EquipmentContainsKeywordsPredicate is constructed with the arguments of the 
 <p>Step 5. The entire equipment list is filtered by the predicate <code>EquipmentContainsKeywordsPredicate</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. The filtered list of wishes is returned to the GUI.</p>
-</div>
-<div class="paragraph">
-<p>Step 7. Then, <code>EquipmentContainsKeywordsPredicate</code> checks that the <strong>Equipment Manager</strong> has either the respective
+<p>Step 6. Then, <code>EquipmentContainsKeywordsPredicate</code> checks that the <strong>Equipment Manager</strong> has either the respective
 attributes - serial number, tags, address, name, preventive maintenance date, phone.</p>
 </div>
 <div class="paragraph">
-<p>Step 8. The argument is filtered against the predicate and returned to the GUI.</p>
+<p>Step 7. The argument is filtered against the predicate and returned to the GUI.</p>
 </div>
 </div>
 <div class="sect3">
@@ -746,7 +743,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 <div class="sect3">
 <h4 id="introduction-3"><a class="link" href="#introduction-3">4.2.1. Introduction</a></h4>
 <div class="paragraph">
-<p>We have implemented a <code>SortCommand</code> that allow users to sort the current shown list with any fields.</p>
+<p>We have implemented a <code>SortCommand</code> that allow users to sort the current shown list with specific fields.</p>
 </div>
 </div>
 <div class="sect3">
@@ -789,22 +786,24 @@ e.g: <code>filter n/jurong t/west</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Input: <code>sort date</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Output: The list is sorted in alphabetical order.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
 <p>Input: <code>sort phone</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Output: The list is sorted in ascending order.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<code>SortCommand</code> only supports sorting by address and phone number.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -2056,4 +2055,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 11:06:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 12:33:30 UTC</div></div></div></body></html>
