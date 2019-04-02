@@ -203,6 +203,3091 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Equipment Manager</strong> is a desktop CLI (Command Line Interface) application that allows engineers to keep track on the Preventive Maintenance schedule of all Resuscitation Devices in singapore. It has a GUI (Graphic User Interface) that allows users to get further information on each equipment.</p>
+</div>
+<div class="paragraph">
+<p>Our purpose is to help engineers plan the number of equipment that they would like to carry out preventive maintenance and keep track on each equipment details such as status, location and more information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-this-user-guide"><a class="link" href="#about-this-user-guide">About This User Guide</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to <strong>Equipment Manager</strong> User Guide!<br></p>
+</div>
+<div class="paragraph">
+<p>This User Guide document will equip you with all the information you need in order to use the v1.4 application. Before reading this user guide,
+this section will explain the key things to take note of.<br></p>
+</div>
+<div class="paragraph">
+<p>If this is not a problem for you, jump to the <a href="#quick-start">Quick Start</a> to get started. If you already have Equipment Manager up and running, then head over to <a href="#Features">Features</a>. Enjoy!</p>
+</div>
+<div class="sect2">
+<h3 id="icons-meaning"><a class="link" href="#icons-meaning">Icons Meaning</a></h3>
+<div class="paragraph">
+<p>The following section provides a quick understanding on each of the legends used throughout the user guide.
+These legends alert reader on special information such as tips, notes and warnings.<br></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Legend</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The more information icon indicates any additional tips users can consider while using <strong>Equipment Manager</strong> application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/lightbulb.png" alt="lightbulb" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lightbulb icon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The exclamation mark icon indicates any warnings that users can take note of while using <strong>Equipment Manager</strong> application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/advanced.png" alt="advanced" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The book icon indicates that it is an additional information for advanced users.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="link" href="#quick-start">Quick Start</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get Equipment manager up and running, simply follow these few steps.</p>
+</div>
+<div class="sect2">
+<h3 id="setting-up-of-equipment-manager"><a class="link" href="#setting-up-of-equipment-manager">Setting up of Equipment Manager</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest <code>equipmentmanager.jar</code> <a href="https://github.com/CS2103-AY1819S2-W10-3/main/releases/">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for your Equipment Manager.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The <em>Graphical User Interface</em> (GUI) should appear in a few seconds.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="graphical-user-interface-gui"><a class="link" href="#graphical-user-interface-gui">Graphical User Interface (GUI)</a></h3>
+<div id="GUI" class="imageblock">
+<div class="content">
+<img src="../images/ui_labelled.png" alt="ui labelled" width="790">
+</div>
+<div class="title">Figure 1. A total of six regions to note in our GUI</div>
+</div>
+<div class="paragraph">
+<p>The GUI for <em>Equipment Manager</em> as shown in <a href="#GUI">A total of six regions to note in our GUI</a> consists of six regions:</p>
+</div>
+<div class="paragraph">
+<p>[1] Menu Bar &#160; &#160; &#160; [2] Result Panel &#160; &#160; &#160; [3] Google Map<br>
+[4] Message Box &#160; &#160; [5] Command Box &#160; &#160; [6] Status Bar</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please remember the naming convention for the different regions in GUI as they will be used to explain when explaining Equipment Manager.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="entering-a-command"><a class="link" href="#entering-a-command">Entering a command</a></h3>
+<div class="paragraph">
+<p>Type the command in the Command Box and press <kbd>Enter</kbd> to execute it.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Some basic commands you can try to get started:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>help</code></strong>: opens up user guide</p>
+</li>
+<li>
+<p><strong><code>list</code></strong>: lists all contacts</p>
+</li>
+<li>
+<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+</li>
+<li>
+<p><strong><code>delete</code></strong><code>3</code>: deletes the 3rd contact shown in the current list</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong>: exits the app</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="#Features">Features</a> for details of each command.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Features"><a class="link" href="#Features">Features</a></h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Command Format</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/urgent</code> or as <code>n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">Viewing help : <code>help</code></a></h3>
+<div class="paragraph">
+<p>This command opens up the User Guide in a separate window and shows all the available commands. It also teaches you how to use them effectively.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can view help by click the `Help button on the Menu Bar.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If it is your first time reading this, then good job on opening the User Guide!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-equipment-code-add-e-code"><a class="link" href="#adding-an-equipment-code-add-e-code">Adding an equipment: <code>add-e</code></a></h3>
+<div class="paragraph">
+<p>Adds an equipment to the Equipment Manager<br>
+Format: <code>add-e n/CLIENT_NAME p/CLIENT_PHONE_NUMBER pm/PM_DATE a/CLIENT_ADDRESS s/SERIAL_NUMBER [t/TAG]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An equipment can any number of tags (including 0).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/Clementi CC p/98765432 pm/10 May 2019 a/220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-new-worklist-code-add-w-code"><a class="link" href="#creating-a-new-worklist-code-add-w-code">Creating a new worklist: <code>add-w</code></a></h3>
+<div class="paragraph">
+<p>Create a worklist in the Equipment Manager by giving the worklist an ID<br>
+Format: <code>add-w d/DATE a/ASSIGNEE i/ID</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The user can enter multiple assignees, but only one date and id.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-w d/09 May 2019 a/Mei Yen i/13</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-to-work-list-code-put-code"><a class="link" href="#adding-to-work-list-code-put-code">Adding to work list: <code>put</code></a></h3>
+<div class="paragraph">
+<p>Adds equipment to working list in the Equipment Manager<br>
+Format: <code>put INDEX [worklist id]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The user can enter multiple field name and values.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>put 1 203</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-an-equipment-code-edit-e-code"><a class="link" href="#editing-an-equipment-code-edit-e-code">Editing an equipment: <code>edit-e</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing equipment in the <em>Equipment Manager</em>.<br>
+Format: <code>edit INDEX [n/CLIENT_NAME] [p/CLIENT_PHONE] [pm/PM_DATE] [a/CLIENT_ADDRESS] [s/SERIAL_NUMBER] [t/TAG]…​</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the equipment at the specified INDEX. The index refers to the index number shown in the displayed equipment list. The index must be a positive integer 1, 2, 3, …​</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the equipment will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the equipment’s tags by typing t/ without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 p/91234567 e/ccc@gmail.com</code><br>
+Edits the client phone number and client date address of the 1st equipment to be 91234567 and <a href="mailto:ccc@gmail.com">ccc@gmail.com</a> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 n/Hougang CC t/</code><br>
+Edits the client name of the 2nd equipment to be Huogang CC and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-equipments-code-list-e-code"><a class="link" href="#list-all-equipments-code-list-e-code">List all equipments:  <code>list-e</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all equipments in the Equipment Manager<br>
+Format: <code>list-e</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-work-list-code-list-w-code"><a class="link" href="#view-work-list-code-list-w-code">View work list: <code>list-w</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all worklists in the Equipment Manager<br>
+Format: <code>list-w</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-an-equipment-or-work-list-code-select-code"><a class="link" href="#selecting-an-equipment-or-work-list-code-select-code">Selecting an equipment or work list: <code>select</code></a></h3>
+<div class="paragraph">
+<p>Selects the equipment or work list identified by the index number used in the displayed equipment list or displayed work list. The address of the equipment will be shown as marker on the map. The details of the equipment will be shown together with the map in split window format, means top half the screen will be showing the details, and the bottom half of the screen will be showing the map.<br>
+Format: <code>select INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the equipment and loads the equipment at the specified INDEX.<br></p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed equipment list.<br></p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …​<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code><br>
+<code>select 2</code><br>
+Selects the 2nd equipment in the equipment manager.</p>
+</li>
+<li>
+<p><code>list-w</code><br>
+<code>select 1</code><br>
+Selects the 1st worklist in the equipment manager.</p>
+</li>
+<li>
+<p><code>find Clementi</code><br>
+<code>select 1</code><br>
+Selects the 1st equipment in the results of the find command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-equipment-by-location-code-find-code"><a class="link" href="#locating-equipment-by-location-code-find-code">Locating equipment by location: <code>find</code></a></h3>
+<div class="paragraph">
+<p>Finds equipment whose location contain any of the given keywords.<br>
+Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>clementi</code> will match <code>Clementi</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter.</p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Clem</code> will not match <code>Clementi</code></p>
+</li>
+<li>
+<p>Equipment matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Clementi</code><br>
+Returns <code>Clementi Police Station</code> and <code>Clementi CC</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show-in-map-code-display-code"><a class="link" href="#show-in-map-code-display-code">Show in map: <code>display</code></a></h3>
+<div class="paragraph">
+<p>Display entries on the list to the map. Addresses of the equipment will be taken to plot marker on map.
+Format: <code>display</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>display</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-the-list-code-sort-code"><a class="link" href="#sort-the-list-code-sort-code">Sort the list: <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sort the current shown list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
+</div>
+<div class="paragraph">
+<p>The user can sort the current shown list with any valid field.</p>
+</div>
+<div class="paragraph">
+<p>The sort parameters are case-insensitive.</p>
+</div>
+<div class="paragraph">
+<p>By default, <code>sort</code> sorts the list by name in lexicographical order.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Equipment, client, and work list can only be sorted by address, preventive maintenance date day and phone at the moment.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort</code><br>
+Returns the list sorted by name.</p>
+</li>
+<li>
+<p><code>sort address</code><br>
+Returns the list sorted by address.</p>
+</li>
+<li>
+<p><code>sort date</code><br>
+Returns the list sorted according to the day.</p>
+</li>
+<li>
+<p><code>sort phone</code><br>
+Returns the list sorted by phone number.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-the-list-code-filter-code"><a class="link" href="#filtering-the-list-code-filter-code">Filtering the list: <code>filter</code></a></h3>
+<div class="paragraph">
+<p>Filter the current shown list which match the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter [n/NAME_KEYWORD]&#8230;&#8203;[t/TAG_KEYWORD]&#8230;&#8203;[a/ADDRESS_KEYWORD]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least <strong>one</strong> keyword must be provided.</p>
+</li>
+<li>
+<p>Filtering multiple keywords of the same prefix will return equipment/client whose attribute corresponding to the prefix contain
+any one of the keywords.</p>
+</li>
+<li>
+<p>Filtering with keywords of different prefixes will return only equipment/client that matches with all the keywords of
+the different prefixes.</p>
+</li>
+<li>
+<p>The filter is case insensitive, e.g. jurong will match Jurong.</p>
+</li>
+</ul>
+</div>
+<div class="ulist TIP">
+<ul class="TIP">
+<li>
+<p>The user can filter the current shown list with any specified fields, and can filter by multiple fields and keywords.</p>
+</li>
+<li>
+<p>Equipment, client, and worklist can all be filtered, by any fields of them.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter n/jurong</code><br>
+Returns any equipment whose name contains jurong.</p>
+</li>
+<li>
+<p><code>filter a/bedok north</code><br>
+Returns any equipment whose address contains bedok north.</p>
+</li>
+<li>
+<p><code>filter pm/20 May</code><br>
+Returns any equipment whose preventative maintenance date contains 20 May.</p>
+</li>
+<li>
+<p><code>filter s/9888</code><br>
+Returns any equipment whose phone number contains 9888.</p>
+</li>
+<li>
+<p><code>filter s/A200</code><br>
+Returns any equipment whose serial number contains A200.</p>
+</li>
+<li>
+<p><code>filter t/urgent t/west</code><br>
+Returns any equipment whose tags contains urgent and west.</p>
+</li>
+<li>
+<p><code>filter n/jurong a/blk 123 t/urgent</code><br>
+Returns any equipment whose names that contains jurong, address that contains blk 123, and whose tags contains urgent.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="autocomplete-kbd-tab-kbd"><a class="link" href="#autocomplete-kbd-tab-kbd">Autocomplete: <kbd>tab</kbd></a></h3>
+<div class="paragraph">
+<p>If you have forgotten how to type a command, do not worry!  By typing in the first letter of the command in the command and pressing the <kbd>tab</kbd> key, it will display the full format of the command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-equipment-code-delete-e-code"><a class="link" href="#deleting-equipment-code-delete-e-code">Deleting equipment: <code>delete-e</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified equipment from the equipment list and the whole details contained under the equipment specified by INDEX</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-e INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code><br>
+<code>delete-e 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-work-list-code-delete-w-code"><a class="link" href="#deleting-work-list-code-delete-w-code">Deleting work list: <code>delete-w</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified work list from the work list.
+Format: <code>delete-w INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>delete-w 12</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enabling-notification-code-notify-code"><a class="link" href="#enabling-notification-code-notify-code">Enabling notification: <code>notify</code></a></h3>
+<div class="paragraph">
+<p>Notifies you when an equipment is due for preventive maintenance in 2 days. You can choose to get notifications or not.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="route-planning-code-route-code"><a class="link" href="#route-planning-code-route-code">Route planning: <code>route</code></a></h3>
+<div class="paragraph">
+<p>With multiple destinations that you plan to visit for preventive maintenance, using the route command can return you with the following details:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A visual representation on the map of the most efficient route you can take</p>
+</li>
+<li>
+<p>A list of location to visit in order.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>route /[worklist id]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>route 120</code></p>
+<div class="literalblock">
+<div class="content">
+<pre>Note to editor: add a png example of the routing of worklist id 120.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">Listing entered commands: <code>history</code></a></h3>
+<div class="paragraph">
+<p>Lists all the commands that you have entered in reverse chronological order.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command: <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Restores Equipment Manager to the state before the previous undoable command was executed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>list</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>list</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-all-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-all-the-previously-undone-command-code-redo-code">Redoing all the previously undone command: <code>redo</code></a></h3>
+<div class="paragraph">
+<p>Reverses the most recent <code>undo</code> command.<br>
+Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>redo</code><br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries: <code>clear</code></a></h3>
+<div class="paragraph">
+<p>If you want to clear out all the client or equipment details in Equipment Manager, you can use the clear command. For example, clear all clients or clear all equipment.<br>
+Format: <code>clear</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit-the-program-code-exit-code"><a class="link" href="#exit-the-program-code-exit-code">Exit the program: <code>exit</code></a></h3>
+<div class="paragraph">
+<p>When you are done with Equipment Manager, type exit command to exit the application. You can also click on the close button above the menu bar to exit<br>
+Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">Saving the data</a></h3>
+<div class="paragraph">
+<p>Equipment Manager data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can enable/disable data encryption}</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Equipment Manager folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Glossary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unsure of a few technical terms? We got you covered. Refer to <span class="underline"><a href="#techtable">Technical Terms</a></span> below.</p>
+</div>
+<table id="techtable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Technical Terms</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autocomplete</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides suggestions while you type into the field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Google Maps</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is a online map service provided by Google.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mainstream Operating System (OS)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows, Linux, Unix and OS-X are operating systems used widely in the world.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User Interface (UI)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows the user to interact with the application through inputs and outputs of data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the last section of the User Guide, but the most useful if you just want a list of commands to try.
+Refer to <a href="#generaltable">General Commands</a> for general commands and <a href="#managetable">Equipment Manager</a> for Equipment Manager.
+For more details on what each command does, please refer to <a href="#Features">Features</a>.</p>
+</div>
+<table id="generaltable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. General Commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clear</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
+</tr>
+</tbody>
+</table>
+<table id="managetable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Equipment Manager</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 57.1428%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Command</th>
+<th class="tableblock halign-center valign-middle">Format</th>
+<th class="tableblock halign-center valign-middle">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Select</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">select INDEX</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">s 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Put</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put INDEX [worklist id]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put 1 120</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Find</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">find KEYWORD [MORE_KEYWORDS]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fin punggol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">filter [n/NAME_KEYWORD] [pm/DATE_KEYWORD] [t/TAG_KEYWORD]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fil punggol november ongoing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-this-user-guide-2"><a class="link" href="#about-this-user-guide-2">About This User Guide</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to <strong>Equipment Manager</strong> User Guide!<br></p>
+</div>
+<div class="paragraph">
+<p>This User Guide document will equip you with all the information you need in order to use the v1.4 application. Before reading this user guide,
+this section will explain the key things to take note of.<br></p>
+</div>
+<div class="paragraph">
+<p>If this is not a problem for you, jump to the <a href="#quick-start">Quick Start</a> to get started. If you already have Equipment Manager up and running, then head over to <a href="#Features">Features</a>. Enjoy!</p>
+</div>
+<div class="sect2">
+<h3 id="icons-meaning-2"><a class="link" href="#icons-meaning-2">Icons Meaning</a></h3>
+<div class="paragraph">
+<p>The following section provides a quick understanding on each of the legends used throughout the user guide.
+These legends alert reader on special information such as tips, notes and warnings.<br></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Legend</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The more information icon indicates any additional tips users can consider while using <strong>Equipment Manager</strong> application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/lightbulb.png" alt="lightbulb" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lightbulb icon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The exclamation mark icon indicates any warnings that users can take note of while using <strong>Equipment Manager</strong> application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/advanced.png" alt="advanced" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The book icon indicates that it is an additional information for advanced users.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start-2"><a class="link" href="#quick-start-2">Quick Start</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get Equipment manager up and running, simply follow these few steps.</p>
+</div>
+<div class="sect2">
+<h3 id="setting-up-of-equipment-manager-2"><a class="link" href="#setting-up-of-equipment-manager-2">Setting up of Equipment Manager</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest <code>equipmentmanager.jar</code> <a href="https://github.com/CS2103-AY1819S2-W10-3/main/releases/">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for your Equipment Manager.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The <em>Graphical User Interface</em> (GUI) should appear in a few seconds.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="graphical-user-interface-gui-2"><a class="link" href="#graphical-user-interface-gui-2">Graphical User Interface (GUI)</a></h3>
+<div id="GUI" class="imageblock">
+<div class="content">
+<img src="../images/ui_labelled.png" alt="ui labelled" width="790">
+</div>
+<div class="title">Figure 2. A total of six regions to note in our GUI</div>
+</div>
+<div class="paragraph">
+<p>The GUI for <em>Equipment Manager</em> as shown in <a href="#GUI">A total of six regions to note in our GUI</a> consists of six regions:</p>
+</div>
+<div class="paragraph">
+<p>[1] Menu Bar &#160; &#160; &#160; [2] Result Panel &#160; &#160; &#160; [3] Google Map<br>
+[4] Message Box &#160; &#160; [5] Command Box &#160; &#160; [6] Status Bar</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please remember the naming convention for the different regions in GUI as they will be used to explain when explaining Equipment Manager.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="entering-a-command-2"><a class="link" href="#entering-a-command-2">Entering a command</a></h3>
+<div class="paragraph">
+<p>Type the command in the Command Box and press <kbd>Enter</kbd> to execute it.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Some basic commands you can try to get started:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>help</code></strong>: opens up user guide</p>
+</li>
+<li>
+<p><strong><code>list</code></strong>: lists all contacts</p>
+</li>
+<li>
+<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+</li>
+<li>
+<p><strong><code>delete</code></strong><code>3</code>: deletes the 3rd contact shown in the current list</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong>: exits the app</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="#Features">Features</a> for details of each command.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Features"><a class="link" href="#Features">Features</a></h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Command Format</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/urgent</code> or as <code>n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-help-code-help-code-2"><a class="link" href="#viewing-help-code-help-code-2">Viewing help : <code>help</code></a></h3>
+<div class="paragraph">
+<p>This command opens up the User Guide in a separate window and shows all the available commands. It also teaches you how to use them effectively.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can view help by click the `Help button on the Menu Bar.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If it is your first time reading this, then good job on opening the User Guide!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-equipment-code-add-e-code-2"><a class="link" href="#adding-an-equipment-code-add-e-code-2">Adding an equipment: <code>add-e</code></a></h3>
+<div class="paragraph">
+<p>Adds an equipment to the Equipment Manager<br>
+Format: <code>add-e n/CLIENT_NAME p/CLIENT_PHONE_NUMBER pm/PM_DATE a/CLIENT_ADDRESS s/SERIAL_NUMBER [t/TAG]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An equipment can any number of tags (including 0).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/Clementi CC p/98765432 pm/10 May 2019 a/220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-new-worklist-code-add-w-code-2"><a class="link" href="#creating-a-new-worklist-code-add-w-code-2">Creating a new worklist: <code>add-w</code></a></h3>
+<div class="paragraph">
+<p>Create a worklist in the Equipment Manager by giving the worklist an ID<br>
+Format: <code>add-w d/DATE a/ASSIGNEE i/ID</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The user can enter multiple assignees, but only one date and id.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-w d/09 May 2019 a/Mei Yen i/13</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-to-work-list-code-put-code-2"><a class="link" href="#adding-to-work-list-code-put-code-2">Adding to work list: <code>put</code></a></h3>
+<div class="paragraph">
+<p>Adds equipment to working list in the Equipment Manager<br>
+Format: <code>put INDEX [worklist id]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The user can enter multiple field name and values.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>put 1 203</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-an-equipment-code-edit-e-code-2"><a class="link" href="#editing-an-equipment-code-edit-e-code-2">Editing an equipment: <code>edit-e</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing equipment in the <em>Equipment Manager</em>.<br>
+Format: <code>edit INDEX [n/CLIENT_NAME] [p/CLIENT_PHONE] [pm/PM_DATE] [a/CLIENT_ADDRESS] [s/SERIAL_NUMBER] [t/TAG]…​</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the equipment at the specified INDEX. The index refers to the index number shown in the displayed equipment list. The index must be a positive integer 1, 2, 3, …​</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the equipment will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the equipment’s tags by typing t/ without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 p/91234567 e/ccc@gmail.com</code><br>
+Edits the client phone number and client date address of the 1st equipment to be 91234567 and <a href="mailto:ccc@gmail.com">ccc@gmail.com</a> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 n/Hougang CC t/</code><br>
+Edits the client name of the 2nd equipment to be Huogang CC and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-equipments-code-list-e-code-2"><a class="link" href="#list-all-equipments-code-list-e-code-2">List all equipments:  <code>list-e</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all equipments in the Equipment Manager<br>
+Format: <code>list-e</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-work-list-code-list-w-code-2"><a class="link" href="#view-work-list-code-list-w-code-2">View work list: <code>list-w</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all worklists in the Equipment Manager<br>
+Format: <code>list-w</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-an-equipment-or-work-list-code-select-code-2"><a class="link" href="#selecting-an-equipment-or-work-list-code-select-code-2">Selecting an equipment or work list: <code>select</code></a></h3>
+<div class="paragraph">
+<p>Selects the equipment or work list identified by the index number used in the displayed equipment list or displayed work list. The address of the equipment will be shown as marker on the map. The details of the equipment will be shown together with the map in split window format, means top half the screen will be showing the details, and the bottom half of the screen will be showing the map.<br>
+Format: <code>select INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the equipment and loads the equipment at the specified INDEX.<br></p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed equipment list.<br></p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …​<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code><br>
+<code>select 2</code><br>
+Selects the 2nd equipment in the equipment manager.</p>
+</li>
+<li>
+<p><code>list-w</code><br>
+<code>select 1</code><br>
+Selects the 1st worklist in the equipment manager.</p>
+</li>
+<li>
+<p><code>find Clementi</code><br>
+<code>select 1</code><br>
+Selects the 1st equipment in the results of the find command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-equipment-by-location-code-find-code-2"><a class="link" href="#locating-equipment-by-location-code-find-code-2">Locating equipment by location: <code>find</code></a></h3>
+<div class="paragraph">
+<p>Finds equipment whose location contain any of the given keywords.<br>
+Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>clementi</code> will match <code>Clementi</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter.</p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Clem</code> will not match <code>Clementi</code></p>
+</li>
+<li>
+<p>Equipment matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Clementi</code><br>
+Returns <code>Clementi Police Station</code> and <code>Clementi CC</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show-in-map-code-display-code-2"><a class="link" href="#show-in-map-code-display-code-2">Show in map: <code>display</code></a></h3>
+<div class="paragraph">
+<p>Display entries on the list to the map. Addresses of the equipment will be taken to plot marker on map.
+Format: <code>display</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>display</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-the-list-code-sort-code-2"><a class="link" href="#sort-the-list-code-sort-code-2">Sort the list: <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sort the current shown list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
+</div>
+<div class="paragraph">
+<p>The user can sort the current shown list with any valid field.</p>
+</div>
+<div class="paragraph">
+<p>The sort parameters are case-insensitive.</p>
+</div>
+<div class="paragraph">
+<p>By default, <code>sort</code> sorts the list by name in lexicographical order.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Equipment, client, and work list can only be sorted by address, preventive maintenance date day and phone at the moment.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort</code><br>
+Returns the list sorted by name.</p>
+</li>
+<li>
+<p><code>sort address</code><br>
+Returns the list sorted by address.</p>
+</li>
+<li>
+<p><code>sort date</code><br>
+Returns the list sorted according to the day.</p>
+</li>
+<li>
+<p><code>sort phone</code><br>
+Returns the list sorted by phone number.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-the-list-code-filter-code-2"><a class="link" href="#filtering-the-list-code-filter-code-2">Filtering the list: <code>filter</code></a></h3>
+<div class="paragraph">
+<p>Filter the current shown list which match the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter [n/NAME_KEYWORD]&#8230;&#8203;[t/TAG_KEYWORD]&#8230;&#8203;[a/ADDRESS_KEYWORD]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least <strong>one</strong> keyword must be provided.</p>
+</li>
+<li>
+<p>Filtering multiple keywords of the same prefix will return equipment/client whose attribute corresponding to the prefix contain
+any one of the keywords.</p>
+</li>
+<li>
+<p>Filtering with keywords of different prefixes will return only equipment/client that matches with all the keywords of
+the different prefixes.</p>
+</li>
+<li>
+<p>The filter is case insensitive, e.g. jurong will match Jurong.</p>
+</li>
+</ul>
+</div>
+<div class="ulist TIP">
+<ul class="TIP">
+<li>
+<p>The user can filter the current shown list with any specified fields, and can filter by multiple fields and keywords.</p>
+</li>
+<li>
+<p>Equipment, client, and worklist can all be filtered, by any fields of them.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter n/jurong</code><br>
+Returns any equipment whose name contains jurong.</p>
+</li>
+<li>
+<p><code>filter a/bedok north</code><br>
+Returns any equipment whose address contains bedok north.</p>
+</li>
+<li>
+<p><code>filter pm/20 May</code><br>
+Returns any equipment whose preventative maintenance date contains 20 May.</p>
+</li>
+<li>
+<p><code>filter s/9888</code><br>
+Returns any equipment whose phone number contains 9888.</p>
+</li>
+<li>
+<p><code>filter s/A200</code><br>
+Returns any equipment whose serial number contains A200.</p>
+</li>
+<li>
+<p><code>filter t/urgent t/west</code><br>
+Returns any equipment whose tags contains urgent and west.</p>
+</li>
+<li>
+<p><code>filter n/jurong a/blk 123 t/urgent</code><br>
+Returns any equipment whose names that contains jurong, address that contains blk 123, and whose tags contains urgent.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="autocomplete-kbd-tab-kbd-2"><a class="link" href="#autocomplete-kbd-tab-kbd-2">Autocomplete: <kbd>tab</kbd></a></h3>
+<div class="paragraph">
+<p>If you have forgotten how to type a command, do not worry!  By typing in the first letter of the command in the command and pressing the <kbd>tab</kbd> key, it will display the full format of the command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-equipment-code-delete-e-code-2"><a class="link" href="#deleting-equipment-code-delete-e-code-2">Deleting equipment: <code>delete-e</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified equipment from the equipment list and the whole details contained under the equipment specified by INDEX</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-e INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code><br>
+<code>delete-e 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-work-list-code-delete-w-code-2"><a class="link" href="#deleting-work-list-code-delete-w-code-2">Deleting work list: <code>delete-w</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified work list from the work list.
+Format: <code>delete-w INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>delete-w 12</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enabling-notification-code-notify-code-2"><a class="link" href="#enabling-notification-code-notify-code-2">Enabling notification: <code>notify</code></a></h3>
+<div class="paragraph">
+<p>Notifies you when an equipment is due for preventive maintenance in 2 days. You can choose to get notifications or not.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="route-planning-code-route-code-2"><a class="link" href="#route-planning-code-route-code-2">Route planning: <code>route</code></a></h3>
+<div class="paragraph">
+<p>With multiple destinations that you plan to visit for preventive maintenance, using the route command can return you with the following details:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A visual representation on the map of the most efficient route you can take</p>
+</li>
+<li>
+<p>A list of location to visit in order.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>route /[worklist id]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>route 120</code></p>
+<div class="literalblock">
+<div class="content">
+<pre>Note to editor: add a png example of the routing of worklist id 120.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code-2"><a class="link" href="#listing-entered-commands-code-history-code-2">Listing entered commands: <code>history</code></a></h3>
+<div class="paragraph">
+<p>Lists all the commands that you have entered in reverse chronological order.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code-2"><a class="link" href="#undoing-previous-command-code-undo-code-2">Undoing previous command: <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Restores Equipment Manager to the state before the previous undoable command was executed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>list</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>list</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-all-the-previously-undone-command-code-redo-code-2"><a class="link" href="#redoing-all-the-previously-undone-command-code-redo-code-2">Redoing all the previously undone command: <code>redo</code></a></h3>
+<div class="paragraph">
+<p>Reverses the most recent <code>undo</code> command.<br>
+Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>redo</code><br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code-2"><a class="link" href="#clearing-all-entries-code-clear-code-2">Clearing all entries: <code>clear</code></a></h3>
+<div class="paragraph">
+<p>If you want to clear out all the client or equipment details in Equipment Manager, you can use the clear command. For example, clear all clients or clear all equipment.<br>
+Format: <code>clear</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit-the-program-code-exit-code-2"><a class="link" href="#exit-the-program-code-exit-code-2">Exit the program: <code>exit</code></a></h3>
+<div class="paragraph">
+<p>When you are done with Equipment Manager, type exit command to exit the application. You can also click on the close button above the menu bar to exit<br>
+Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data-2"><a class="link" href="#saving-the-data-2">Saving the data</a></h3>
+<div class="paragraph">
+<p>Equipment Manager data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code-2"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code-2">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can enable/disable data encryption}</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq-2"><a class="link" href="#faq-2">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Equipment Manager folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary-2"><a class="link" href="#glossary-2">Glossary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unsure of a few technical terms? We got you covered. Refer to <span class="underline"><a href="#techtable">Technical Terms</a></span> below.</p>
+</div>
+<table id="techtable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Technical Terms</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autocomplete</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides suggestions while you type into the field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Google Maps</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is a online map service provided by Google.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mainstream Operating System (OS)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows, Linux, Unix and OS-X are operating systems used widely in the world.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User Interface (UI)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows the user to interact with the application through inputs and outputs of data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary-2"><a class="link" href="#command-summary-2">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the last section of the User Guide, but the most useful if you just want a list of commands to try.
+Refer to <a href="#generaltable">General Commands</a> for general commands and <a href="#managetable">Equipment Manager</a> for Equipment Manager.
+For more details on what each command does, please refer to <a href="#Features">Features</a>.</p>
+</div>
+<table id="generaltable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. General Commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clear</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
+</tr>
+</tbody>
+</table>
+<table id="managetable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Equipment Manager</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 57.1428%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Command</th>
+<th class="tableblock halign-center valign-middle">Format</th>
+<th class="tableblock halign-center valign-middle">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Select</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">select INDEX</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">s 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Put</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put INDEX [worklist id]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put 1 120</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Find</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">find KEYWORD [MORE_KEYWORDS]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fin punggol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">filter [n/NAME_KEYWORD] [pm/DATE_KEYWORD] [t/TAG_KEYWORD]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fil punggol november ongoing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start-3"><a class="link" href="#quick-start-3">Quick Start</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get Equipment manager up and running, simply follow these few steps.</p>
+</div>
+<div class="sect2">
+<h3 id="setting-up-of-equipment-manager-3"><a class="link" href="#setting-up-of-equipment-manager-3">Setting up of Equipment Manager</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest <code>equipmentmanager.jar</code> <a href="https://github.com/CS2103-AY1819S2-W10-3/main/releases/">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for your Equipment Manager.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The <em>Graphical User Interface</em> (GUI) should appear in a few seconds.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="graphical-user-interface-gui-3"><a class="link" href="#graphical-user-interface-gui-3">Graphical User Interface (GUI)</a></h3>
+<div id="GUI" class="imageblock">
+<div class="content">
+<img src="../images/ui_labelled.png" alt="ui labelled" width="790">
+</div>
+<div class="title">Figure 3. A total of six regions to note in our GUI</div>
+</div>
+<div class="paragraph">
+<p>The GUI for <em>Equipment Manager</em> as shown in <a href="#GUI">A total of six regions to note in our GUI</a> consists of six regions:</p>
+</div>
+<div class="paragraph">
+<p>[1] Menu Bar &#160; &#160; &#160; [2] Result Panel &#160; &#160; &#160; [3] Google Map<br>
+[4] Message Box &#160; &#160; [5] Command Box &#160; &#160; [6] Status Bar</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Please remember the naming convention for the different regions in GUI as they will be used to explain when explaining Equipment Manager.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="entering-a-command-3"><a class="link" href="#entering-a-command-3">Entering a command</a></h3>
+<div class="paragraph">
+<p>Type the command in the Command Box and press <kbd>Enter</kbd> to execute it.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Some basic commands you can try to get started:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>help</code></strong>: opens up user guide</p>
+</li>
+<li>
+<p><strong><code>list</code></strong>: lists all contacts</p>
+</li>
+<li>
+<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+</li>
+<li>
+<p><strong><code>delete</code></strong><code>3</code>: deletes the 3rd contact shown in the current list</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong>: exits the app</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="#Features">Features</a> for details of each command.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Features"><a class="link" href="#Features">Features</a></h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Command Format</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/urgent</code> or as <code>n/John Doe</code>.</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-help-code-help-code-3"><a class="link" href="#viewing-help-code-help-code-3">Viewing help : <code>help</code></a></h3>
+<div class="paragraph">
+<p>This command opens up the User Guide in a separate window and shows all the available commands. It also teaches you how to use them effectively.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can view help by click the `Help button on the Menu Bar.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If it is your first time reading this, then good job on opening the User Guide!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-equipment-code-add-e-code-3"><a class="link" href="#adding-an-equipment-code-add-e-code-3">Adding an equipment: <code>add-e</code></a></h3>
+<div class="paragraph">
+<p>Adds an equipment to the Equipment Manager<br>
+Format: <code>add-e n/CLIENT_NAME p/CLIENT_PHONE_NUMBER pm/PM_DATE a/CLIENT_ADDRESS s/SERIAL_NUMBER [t/TAG]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An equipment can any number of tags (including 0).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/Clementi CC p/98765432 pm/10 May 2019 a/220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-new-worklist-code-add-w-code-3"><a class="link" href="#creating-a-new-worklist-code-add-w-code-3">Creating a new worklist: <code>add-w</code></a></h3>
+<div class="paragraph">
+<p>Create a worklist in the Equipment Manager by giving the worklist an ID<br>
+Format: <code>add-w d/DATE a/ASSIGNEE i/ID</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The user can enter multiple assignees, but only one date and id.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-w d/09 May 2019 a/Mei Yen i/13</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-to-work-list-code-put-code-3"><a class="link" href="#adding-to-work-list-code-put-code-3">Adding to work list: <code>put</code></a></h3>
+<div class="paragraph">
+<p>Adds equipment to working list in the Equipment Manager<br>
+Format: <code>put INDEX [worklist id]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The user can enter multiple field name and values.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>put 1 203</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-an-equipment-code-edit-e-code-3"><a class="link" href="#editing-an-equipment-code-edit-e-code-3">Editing an equipment: <code>edit-e</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing equipment in the <em>Equipment Manager</em>.<br>
+Format: <code>edit INDEX [n/CLIENT_NAME] [p/CLIENT_PHONE] [pm/PM_DATE] [a/CLIENT_ADDRESS] [s/SERIAL_NUMBER] [t/TAG]…​</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the equipment at the specified INDEX. The index refers to the index number shown in the displayed equipment list. The index must be a positive integer 1, 2, 3, …​</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the equipment will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the equipment’s tags by typing t/ without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 p/91234567 e/ccc@gmail.com</code><br>
+Edits the client phone number and client date address of the 1st equipment to be 91234567 and <a href="mailto:ccc@gmail.com">ccc@gmail.com</a> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 n/Hougang CC t/</code><br>
+Edits the client name of the 2nd equipment to be Huogang CC and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-equipments-code-list-e-code-3"><a class="link" href="#list-all-equipments-code-list-e-code-3">List all equipments:  <code>list-e</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all equipments in the Equipment Manager<br>
+Format: <code>list-e</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-work-list-code-list-w-code-3"><a class="link" href="#view-work-list-code-list-w-code-3">View work list: <code>list-w</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all worklists in the Equipment Manager<br>
+Format: <code>list-w</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-an-equipment-or-work-list-code-select-code-3"><a class="link" href="#selecting-an-equipment-or-work-list-code-select-code-3">Selecting an equipment or work list: <code>select</code></a></h3>
+<div class="paragraph">
+<p>Selects the equipment or work list identified by the index number used in the displayed equipment list or displayed work list. The address of the equipment will be shown as marker on the map. The details of the equipment will be shown together with the map in split window format, means top half the screen will be showing the details, and the bottom half of the screen will be showing the map.<br>
+Format: <code>select INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the equipment and loads the equipment at the specified INDEX.<br></p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed equipment list.<br></p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …​<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code><br>
+<code>select 2</code><br>
+Selects the 2nd equipment in the equipment manager.</p>
+</li>
+<li>
+<p><code>list-w</code><br>
+<code>select 1</code><br>
+Selects the 1st worklist in the equipment manager.</p>
+</li>
+<li>
+<p><code>find Clementi</code><br>
+<code>select 1</code><br>
+Selects the 1st equipment in the results of the find command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-equipment-by-location-code-find-code-3"><a class="link" href="#locating-equipment-by-location-code-find-code-3">Locating equipment by location: <code>find</code></a></h3>
+<div class="paragraph">
+<p>Finds equipment whose location contain any of the given keywords.<br>
+Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>clementi</code> will match <code>Clementi</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter.</p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Clem</code> will not match <code>Clementi</code></p>
+</li>
+<li>
+<p>Equipment matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Clementi</code><br>
+Returns <code>Clementi Police Station</code> and <code>Clementi CC</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show-in-map-code-display-code-3"><a class="link" href="#show-in-map-code-display-code-3">Show in map: <code>display</code></a></h3>
+<div class="paragraph">
+<p>Display entries on the list to the map. Addresses of the equipment will be taken to plot marker on map.
+Format: <code>display</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>display</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-the-list-code-sort-code-3"><a class="link" href="#sort-the-list-code-sort-code-3">Sort the list: <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sort the current shown list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
+</div>
+<div class="paragraph">
+<p>The user can sort the current shown list with any valid field.</p>
+</div>
+<div class="paragraph">
+<p>The sort parameters are case-insensitive.</p>
+</div>
+<div class="paragraph">
+<p>By default, <code>sort</code> sorts the list by name in lexicographical order.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Equipment, client, and work list can only be sorted by address, preventive maintenance date day and phone at the moment.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort</code><br>
+Returns the list sorted by name.</p>
+</li>
+<li>
+<p><code>sort address</code><br>
+Returns the list sorted by address.</p>
+</li>
+<li>
+<p><code>sort date</code><br>
+Returns the list sorted according to the day.</p>
+</li>
+<li>
+<p><code>sort phone</code><br>
+Returns the list sorted by phone number.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-the-list-code-filter-code-3"><a class="link" href="#filtering-the-list-code-filter-code-3">Filtering the list: <code>filter</code></a></h3>
+<div class="paragraph">
+<p>Filter the current shown list which match the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter [n/NAME_KEYWORD]&#8230;&#8203;[t/TAG_KEYWORD]&#8230;&#8203;[a/ADDRESS_KEYWORD]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least <strong>one</strong> keyword must be provided.</p>
+</li>
+<li>
+<p>Filtering multiple keywords of the same prefix will return equipment/client whose attribute corresponding to the prefix contain
+any one of the keywords.</p>
+</li>
+<li>
+<p>Filtering with keywords of different prefixes will return only equipment/client that matches with all the keywords of
+the different prefixes.</p>
+</li>
+<li>
+<p>The filter is case insensitive, e.g. jurong will match Jurong.</p>
+</li>
+</ul>
+</div>
+<div class="ulist TIP">
+<ul class="TIP">
+<li>
+<p>The user can filter the current shown list with any specified fields, and can filter by multiple fields and keywords.</p>
+</li>
+<li>
+<p>Equipment, client, and worklist can all be filtered, by any fields of them.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter n/jurong</code><br>
+Returns any equipment whose name contains jurong.</p>
+</li>
+<li>
+<p><code>filter a/bedok north</code><br>
+Returns any equipment whose address contains bedok north.</p>
+</li>
+<li>
+<p><code>filter pm/20 May</code><br>
+Returns any equipment whose preventative maintenance date contains 20 May.</p>
+</li>
+<li>
+<p><code>filter s/9888</code><br>
+Returns any equipment whose phone number contains 9888.</p>
+</li>
+<li>
+<p><code>filter s/A200</code><br>
+Returns any equipment whose serial number contains A200.</p>
+</li>
+<li>
+<p><code>filter t/urgent t/west</code><br>
+Returns any equipment whose tags contains urgent and west.</p>
+</li>
+<li>
+<p><code>filter n/jurong a/blk 123 t/urgent</code><br>
+Returns any equipment whose names that contains jurong, address that contains blk 123, and whose tags contains urgent.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="autocomplete-kbd-tab-kbd-3"><a class="link" href="#autocomplete-kbd-tab-kbd-3">Autocomplete: <kbd>tab</kbd></a></h3>
+<div class="paragraph">
+<p>If you have forgotten how to type a command, do not worry!  By typing in the first letter of the command in the command and pressing the <kbd>tab</kbd> key, it will display the full format of the command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-equipment-code-delete-e-code-3"><a class="link" href="#deleting-equipment-code-delete-e-code-3">Deleting equipment: <code>delete-e</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified equipment from the equipment list and the whole details contained under the equipment specified by INDEX</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-e INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-e</code><br>
+<code>delete-e 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-work-list-code-delete-w-code-3"><a class="link" href="#deleting-work-list-code-delete-w-code-3">Deleting work list: <code>delete-w</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified work list from the work list.
+Format: <code>delete-w INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>delete-w 12</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enabling-notification-code-notify-code-3"><a class="link" href="#enabling-notification-code-notify-code-3">Enabling notification: <code>notify</code></a></h3>
+<div class="paragraph">
+<p>Notifies you when an equipment is due for preventive maintenance in 2 days. You can choose to get notifications or not.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="route-planning-code-route-code-3"><a class="link" href="#route-planning-code-route-code-3">Route planning: <code>route</code></a></h3>
+<div class="paragraph">
+<p>With multiple destinations that you plan to visit for preventive maintenance, using the route command can return you with the following details:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A visual representation on the map of the most efficient route you can take</p>
+</li>
+<li>
+<p>A list of location to visit in order.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>route /[worklist id]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>route 120</code></p>
+<div class="literalblock">
+<div class="content">
+<pre>Note to editor: add a png example of the routing of worklist id 120.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code-3"><a class="link" href="#listing-entered-commands-code-history-code-3">Listing entered commands: <code>history</code></a></h3>
+<div class="paragraph">
+<p>Lists all the commands that you have entered in reverse chronological order.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code-3"><a class="link" href="#undoing-previous-command-code-undo-code-3">Undoing previous command: <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Restores Equipment Manager to the state before the previous undoable command was executed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>list</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>list</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-all-the-previously-undone-command-code-redo-code-3"><a class="link" href="#redoing-all-the-previously-undone-command-code-redo-code-3">Redoing all the previously undone command: <code>redo</code></a></h3>
+<div class="paragraph">
+<p>Reverses the most recent <code>undo</code> command.<br>
+Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>redo</code><br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code-3"><a class="link" href="#clearing-all-entries-code-clear-code-3">Clearing all entries: <code>clear</code></a></h3>
+<div class="paragraph">
+<p>If you want to clear out all the client or equipment details in Equipment Manager, you can use the clear command. For example, clear all clients or clear all equipment.<br>
+Format: <code>clear</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit-the-program-code-exit-code-3"><a class="link" href="#exit-the-program-code-exit-code-3">Exit the program: <code>exit</code></a></h3>
+<div class="paragraph">
+<p>When you are done with Equipment Manager, type exit command to exit the application. You can also click on the close button above the menu bar to exit<br>
+Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data-3"><a class="link" href="#saving-the-data-3">Saving the data</a></h3>
+<div class="paragraph">
+<p>Equipment Manager data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code-3"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code-3">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p><em>{explain how the user can enable/disable data encryption}</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq-3"><a class="link" href="#faq-3">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Equipment Manager folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary-3"><a class="link" href="#glossary-3">Glossary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unsure of a few technical terms? We got you covered. Refer to <span class="underline"><a href="#techtable">Technical Terms</a></span> below.</p>
+</div>
+<table id="techtable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. Technical Terms</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autocomplete</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides suggestions while you type into the field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Google Maps</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is a online map service provided by Google.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mainstream Operating System (OS)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows, Linux, Unix and OS-X are operating systems used widely in the world.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User Interface (UI)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows the user to interact with the application through inputs and outputs of data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary-3"><a class="link" href="#command-summary-3">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the last section of the User Guide, but the most useful if you just want a list of commands to try.
+Refer to <a href="#generaltable">General Commands</a> for general commands and <a href="#managetable">Equipment Manager</a> for Equipment Manager.
+For more details on what each command does, please refer to <a href="#Features">Features</a>.</p>
+</div>
+<table id="generaltable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 8. General Commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clear</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
+</tr>
+</tbody>
+</table>
+<table id="managetable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 9. Equipment Manager</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 57.1428%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Command</th>
+<th class="tableblock halign-center valign-middle">Format</th>
+<th class="tableblock halign-center valign-middle">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Select</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">select INDEX</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">s 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Put</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put INDEX [worklist id]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put 1 120</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Find</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">find KEYWORD [MORE_KEYWORDS]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fin punggol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">filter [n/NAME_KEYWORD] [pm/DATE_KEYWORD] [t/TAG_KEYWORD]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fil punggol november ongoing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary-4"><a class="link" href="#glossary-4">Glossary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unsure of a few technical terms? We got you covered. Refer to <span class="underline"><a href="#techtable">Technical Terms</a></span> below.</p>
+</div>
+<table id="techtable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 10. Technical Terms</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autocomplete</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides suggestions while you type into the field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Google Maps</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is a online map service provided by Google.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mainstream Operating System (OS)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows, Linux, Unix and OS-X are operating systems used widely in the world.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User Interface (UI)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows the user to interact with the application through inputs and outputs of data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary-4"><a class="link" href="#command-summary-4">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the last section of the User Guide, but the most useful if you just want a list of commands to try.
+Refer to <a href="#generaltable">General Commands</a> for general commands and <a href="#managetable">Equipment Manager</a> for Equipment Manager.
+For more details on what each command does, please refer to <a href="#Features">Features</a>.</p>
+</div>
+<table id="generaltable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 11. General Commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clear</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
+</tr>
+</tbody>
+</table>
+<table id="managetable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 12. Equipment Manager</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 57.1428%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Command</th>
+<th class="tableblock halign-center valign-middle">Format</th>
+<th class="tableblock halign-center valign-middle">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Select</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">select INDEX</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">s 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Put</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put INDEX [worklist id]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put 1 120</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Find</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">find KEYWORD [MORE_KEYWORDS]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fin punggol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">filter [n/NAME_KEYWORD] [pm/DATE_KEYWORD] [t/TAG_KEYWORD]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fil punggol november ongoing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary-5"><a class="link" href="#command-summary-5">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the last section of the User Guide, but the most useful if you just want a list of commands to try.
+Refer to <a href="#generaltable">General Commands</a> for general commands and <a href="#managetable">Equipment Manager</a> for Equipment Manager.
+For more details on what each command does, please refer to <a href="#Features">Features</a>.</p>
+</div>
+<table id="generaltable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 13. General Commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clear</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
+</tr>
+</tbody>
+</table>
+<table id="managetable" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 14. Equipment Manager</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 57.1428%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Command</th>
+<th class="tableblock halign-center valign-middle">Format</th>
+<th class="tableblock halign-center valign-middle">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Select</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">select INDEX</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">s 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Put</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put INDEX [worklist id]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">put 1 120</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Find</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">find KEYWORD [MORE_KEYWORDS]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fin punggol</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">filter [n/NAME_KEYWORD] [pm/DATE_KEYWORD] [t/TAG_KEYWORD]</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">fil punggol november ongoing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
@@ -234,4 +3319,4 @@
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 16:17:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 16:23:07 UTC</div></div></div></body></html>
