@@ -9,11 +9,16 @@
 <li><a href="#project-code-equipment-manager-code">Project: <code>Equipment Manager</code></a></li>
 <li><a href="#overview">1. Overview</a></li>
 <li><a href="#summary-of-contributions">2. Summary of contributions</a></li>
-<li><a href="#contributions-to-the-user-guide">3. Contributions to the User Guide</a></li>
-<li><a href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a>
+<li><a href="#contributions-to-the-user-guide">3. Contributions to the User Guide</a>
 <ul class="sectlevel2">
-<li><a href="#filter-feature">Filter feature</a></li>
-<li><a href="#sort-feature">Sort feature</a></li>
+<li><a href="#filtering-the-list-code-filter-code">Filtering the list: <code>filter</code></a></li>
+<li><a href="#sort-the-list-code-sort-code">3.1. Sort the list: <code>sort</code></a></li>
+</ul>
+</li>
+<li><a href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a>
+<ul class="sectlevel2">
+<li><a href="#filter-feature">4.1. Filter feature</a></li>
+<li><a href="#sort-feature">4.2. Sort feature</a></li>
 </ul>
 </li>
 </ul>
@@ -266,10 +271,135 @@
 </tbody>
 </table>
 <hr>
+<div class="sect2">
+<h3 id="filtering-the-list-code-filter-code"><a class="link" href="#filtering-the-list-code-filter-code">Filtering the list: <code>filter</code></a></h3>
+<div class="paragraph">
+<p>Filter the current shown list which match the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter [n/NAME_KEYWORD]&#8230;&#8203;[t/TAG_KEYWORD]&#8230;&#8203;[a/ADDRESS_KEYWORD]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least <strong>one</strong> keyword must be provided.</p>
+</li>
+<li>
+<p>Filtering multiple keywords of the same prefix will return equipment/client whose attribute corresponding to the prefix contain
+any one of the keywords.</p>
+</li>
+<li>
+<p>Filtering with keywords of different prefixes will return only equipment/client that matches with all the keywords of
+the different prefixes.</p>
+</li>
+<li>
+<p>The filter is case insensitive, e.g. jurong will match Jurong.</p>
+</li>
+</ul>
+</div>
+<div class="ulist TIP">
+<ul class="TIP">
+<li>
+<p>The user can filter the current shown list with any specified fields, and can filter by multiple fields and keywords.</p>
+</li>
+<li>
+<p>Equipment, client, and worklist can all be filtered, by any fields of them.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter n/jurong</code><br>
+Returns any equipment whose name contains jurong.</p>
+</li>
+<li>
+<p><code>filter a/bedok north</code><br>
+Returns any equipment whose address contains bedok north.</p>
+</li>
+<li>
+<p><code>filter pm/20 May</code><br>
+Returns any equipment whose preventative maintenance date contains 20 May.</p>
+</li>
+<li>
+<p><code>filter s/9888</code><br>
+Returns any equipment whose phone number contains 9888.</p>
+</li>
+<li>
+<p><code>filter s/A200</code><br>
+Returns any equipment whose serial number contains A200.</p>
+</li>
+<li>
+<p><code>filter t/urgent t/west</code><br>
+Returns any equipment whose tags contains urgent and west.</p>
+</li>
+<li>
+<p><code>filter n/jurong a/blk 123 t/urgent</code><br>
+Returns any equipment whose names that contains jurong, address that contains blk 123, and whose tags contains urgent.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-the-list-code-sort-code"><a class="link" href="#sort-the-list-code-sort-code">3.1. Sort the list: <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sort the current shown list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
+</div>
+<div class="paragraph">
+<p>The user can sort the current shown list with any valid field.</p>
+</div>
+<div class="paragraph">
+<p>The sort parameters are case-insensitive.</p>
+</div>
+<div class="paragraph">
+<p>By default, <code>sort</code> sorts the list by name in lexicographical order.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Equipment, client, and work list can only be sorted by address, preventive maintenance date day and phone at the moment.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort</code><br>
+Returns the list sorted by name.</p>
+</li>
+<li>
+<p><code>sort address</code><br>
+Returns the list sorted by address.</p>
+</li>
+<li>
+<p><code>sort date</code><br>
+Returns the list sorted according to the day.</p>
+</li>
+<li>
+<p><code>sort phone</code><br>
+Returns the list sorted by phone number.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -283,9 +413,9 @@
 </table>
 <hr>
 <div class="sect2">
-<h3 id="filter-feature"><a class="link" href="#filter-feature">Filter feature</a></h3>
+<h3 id="filter-feature"><a class="link" href="#filter-feature">4.1. Filter feature</a></h3>
 <div class="sect3">
-<h4 id="introduction-2"><a class="link" href="#introduction-2">Introduction</a></h4>
+<h4 id="introduction-2"><a class="link" href="#introduction-2">4.1.1. Introduction</a></h4>
 <div class="paragraph">
 <p>We have implemented a <code>FilterCommand</code> that allow users to filter the current shown list with the specified fields.</p>
 </div>
@@ -297,7 +427,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <strong>filter</strong> mechanism is supported by <code>FilterCommandParser</code>. It implements <code>Parser</code> that implements the following operation:</p>
 </div>
@@ -376,7 +506,7 @@ attributes - serial number, tags, address, name, preventive maintenance date, ph
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>FilterCommand</code></strong></p>
 </div>
@@ -440,15 +570,15 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-feature"><a class="link" href="#sort-feature">Sort feature</a></h3>
+<h3 id="sort-feature"><a class="link" href="#sort-feature">4.2. Sort feature</a></h3>
 <div class="sect3">
-<h4 id="introduction-3"><a class="link" href="#introduction-3">Introduction</a></h4>
+<h4 id="introduction-3"><a class="link" href="#introduction-3">4.2.1. Introduction</a></h4>
 <div class="paragraph">
 <p>We have implemented a <code>SortCommand</code> that allow users to sort the current shown list with specific fields.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p><code>SortCommand</code> sorts the list by specified field in lexicographical order.</p>
 </div>
@@ -508,7 +638,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>SortCommand</code></strong></p>
 </div>
@@ -545,4 +675,4 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 17:05:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 18:59:40 UTC</div></div></div></body></html>
