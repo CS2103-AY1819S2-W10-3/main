@@ -1230,8 +1230,85 @@ For more details on what each command does, please refer to <a href="#Features">
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="display-feature"><a class="link" href="#display-feature">Display feature</a></h3>
 <div class="paragraph">
-<p>Unresolved directive in yiqun.adoc - include::../DeveloperGuide.adoc[tag=display]</p>
+<p>The display feature allow users to view the location of all equipments in the current shown list on map.</p>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The following sequence diagram shows how the display operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DisplaySequenceDiagram.png" alt="DisplaySequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application, the list of equipments will show in <code>UI</code> and stored in the <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>display</code> command to show all the equipments on the map. The execution of <code>display</code> command will return a <code>CommandResult</code> indicating <code>display</code> which can be checked by <code>CommandResult#isDisplayMap()</code>. The <code>MainWindow</code> will check if the <code>CommandResult</code> is a display map command. Then <code>MainWindow#handleDisplayMap</code> will be called. <code>MainWindow#handleDisplayMap</code> will call <code>Logic#getFilteredPersonList()</code> to get the equipments list, and then call <code>Equipment#getCoordiantes()</code> on each equipments to get its coordinates.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>Equipment#getCoordiantes()</code> calls to <code>Google Map Geocoding API</code> with the address returned by <code>Equipment#getAddress()</code>. The API will return the coordinates of the address. This will be returned as the coordinates of the equipment.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>Google Map Geocoding API</code> is not free to use. You need to have your own API key to use the API. You may check <a href="https://developers.google.com/maps/documentation/javascript/geocoding"><code>Google Map Platform - Geocoding Service</code></a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 4. The coordinates are constructed to form a URL and call a webpages in <code>BrowserPanel</code> to display the map. Currently the map is stord under <code>/docs/staticpages/</code> which will be copied and published by Travis CI robot to <code>github pages</code>. You may either use your own <code>github pages</code> URL by changing <code>BrowserPanel#MAP_PAGE_BASE_URL</code> to your own <code>github pages</code> URL, or use the current URL published by <code>CS2103-AY1819S2-W10-3</code> team.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The webpage receive the coordinates in parameter form. It will first parse the parameters. The standard form of parameters is <code>?coordinates=[[1.3012,103.1233], [1.4323, 103.2012]]&amp;otherfields=["abc", "def"]</code>. The map may be extended to handle more functions, however the current parameter paraser can only handle parameters in the standard format. For now, only coordinates is used, other parameters will be ignored.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-display-the-base-map"><a class="link" href="#aspect-how-to-display-the-base-map">Aspect: How to display the base map</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use separate webpage, pass the coordinates as parameters.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement. Flexible to add more functions. Many JavaScript libraries can be used.</p>
+</li>
+<li>
+<p>Cons: Unexpected behaviors would happen if the WebEngine cannot display the webpage properly.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use third party JavaFX map libraries.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: No unexpected behaviors, and more consistant running on different platforms.</p>
+</li>
+<li>
+<p>Cons: Harder to implement, less flexibility, and limit to extendsions.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1240,4 +1317,4 @@ For more details on what each command does, please refer to <a href="#Features">
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 16:23:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 16:36:33 UTC</div></div></div></body></html>
