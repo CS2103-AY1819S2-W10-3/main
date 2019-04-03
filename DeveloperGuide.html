@@ -28,15 +28,17 @@
 <li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">4. Implementation</a>
+<li><a href="#Implementation-Commons">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#filter-feature">4.1. Filter feature</a></li>
-<li><a href="#sort-feature">4.2. Sort feature</a></li>
-<li><a href="#display-feature">4.3. Display feature</a></li>
-<li><a href="#undo-redo-feature">4.4. Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">4.5. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">4.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.7. Configuration</a></li>
+<li><a href="#equipment-features">4.1. Equipment features</a></li>
+<li><a href="#client-feature">4.2. Client feature</a></li>
+<li><a href="#filter-feature">4.3. Filter feature</a></li>
+<li><a href="#sort-feature">4.4. Sort feature</a></li>
+<li><a href="#display-feature">4.5. Display feature</a></li>
+<li><a href="#user-interface-ui">4.6. User Interface (UI)</a></li>
+<li><a href="#undo-redo-feature">4.7. Undo/Redo feature</a></li>
+<li><a href="#logging">4.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -74,7 +76,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-an-equipment">F.2. Deleting an equipment</a></li>
+<li><a href="#deleting-an-equipment-2">F.2. Deleting an equipment</a></li>
 <li><a href="#saving-data">F.3. Saving data</a></li>
 </ul>
 </li>
@@ -576,15 +578,60 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
+<h2 id="Implementation-Commons"><a class="link" href="#Implementation-Commons">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="filter-feature"><a class="link" href="#filter-feature">4.1. Filter feature</a></h3>
+<h3 id="equipment-features"><a class="link" href="#equipment-features">4.1. Equipment features</a></h3>
 <div class="sect3">
-<h4 id="introduction-2"><a class="link" href="#introduction-2">4.1.1. Introduction</a></h4>
+<h4 id="overview-on-equipment-details"><a class="link" href="#overview-on-equipment-details">4.1.1. Overview on Equipment details</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="current-usage-of-equipment-details"><a class="link" href="#current-usage-of-equipment-details">4.1.2. Current Usage of Equipment Details</a></h4>
+<div class="sect4">
+<h5 id="adding-an-equipment"><a class="link" href="#adding-an-equipment">Adding an equipment</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="editing-an-equipment"><a class="link" href="#editing-an-equipment">Editing an equipment</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="deleting-an-equipment"><a class="link" href="#deleting-an-equipment">Deleting an equipment</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="listing-all-equipments"><a class="link" href="#listing-all-equipments">Listing all equipments</a></h5>
+
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.3. Design Considerations</a></h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="client-feature"><a class="link" href="#client-feature">4.2. Client feature</a></h3>
+<div class="sect3">
+<h4 id="overview-on-client-details"><a class="link" href="#overview-on-client-details">4.2.1. Overview on Client details</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="current-usage-of-client-details"><a class="link" href="#current-usage-of-client-details">4.2.2. Current Usage of Client details</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.3. Design Considerations</a></h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter-feature"><a class="link" href="#filter-feature">4.3. Filter feature</a></h3>
+<div class="sect3">
+<h4 id="introduction-2"><a class="link" href="#introduction-2">4.3.1. Introduction</a></h4>
 <div class="paragraph">
 <p>We have implemented a <code>FilterCommand</code> that allow users to filter the current shown list with the specified fields.</p>
 </div>
@@ -596,7 +643,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.2. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">4.3.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <strong>filter</strong> mechanism is supported by <code>FilterCommandParser</code>. It implements <code>Parser</code> that implements the following operation:</p>
 </div>
@@ -675,7 +722,7 @@ attributes - serial number, tags, address, name, preventive maintenance date, ph
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.3. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>FilterCommand</code></strong></p>
 </div>
@@ -739,15 +786,15 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-feature"><a class="link" href="#sort-feature">4.2. Sort feature</a></h3>
+<h3 id="sort-feature"><a class="link" href="#sort-feature">4.4. Sort feature</a></h3>
 <div class="sect3">
-<h4 id="introduction-3"><a class="link" href="#introduction-3">4.2.1. Introduction</a></h4>
+<h4 id="introduction-3"><a class="link" href="#introduction-3">4.4.1. Introduction</a></h4>
 <div class="paragraph">
 <p>We have implemented a <code>SortCommand</code> that allow users to sort the current shown list with specific fields.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.2. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.4.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p><code>SortCommand</code> sorts the list by specified field in lexicographical order.</p>
 </div>
@@ -807,7 +854,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.3. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>SortCommand</code></strong></p>
 </div>
@@ -844,12 +891,12 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="display-feature"><a class="link" href="#display-feature">4.3. Display feature</a></h3>
+<h3 id="display-feature"><a class="link" href="#display-feature">4.5. Display feature</a></h3>
 <div class="paragraph">
 <p>The display feature allow users to view the location of all equipments in the current shown list on map.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current Implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The following sequence diagram shows how the display operation works:</p>
 </div>
@@ -887,7 +934,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-display-the-base-map"><a class="link" href="#aspect-how-to-display-the-base-map">Aspect: How to display the base map</a></h5>
 <div class="ulist">
@@ -924,9 +971,177 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.4. Undo/Redo feature</a></h3>
+<h3 id="user-interface-ui"><a class="link" href="#user-interface-ui">4.6. User Interface (UI)</a></h3>
+<div class="paragraph">
+<p>The UI of <strong>Equipment Manager</strong> is a combination of JavaFx, HTML and CSS.
+This section describes our overall current implementation for UI as well as
+showing our thinking process for the UI in designs considerations section.</p>
+</div>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.6.1. Current implementation</a></h4>
+<div class="sect4">
+<h5 id="launch-the-application"><a class="link" href="#launch-the-application">Launch the Application</a></h5>
+<div class="imageblock">
+<div class="content">
+<img src="images/applaunchUI.png" alt="%autowidth">
+</div>
+<div class="title">Figure 10. On start of the Equipment Manager application</div>
+</div>
+<div class="paragraph">
+<p>The figure above depicts the interface the user see when the user launches the application.
+The user should be greeted by 9 different regions:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regions of Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1] <strong>Menu Bar</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow users to click <code>File</code> &gt; <code>Exit</code> to exit the application and click <code>Help</code> to navigate to our User Guide page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[2] <strong>Command Box</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User enters the command in the command box. Refer to <strong>User Guide</strong> to learn all the available commands.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[3] <strong>Message box</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message box that shows the result after a command has been executed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[4] <strong>Status Bar</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[5] <strong>Google Map</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipments are at as well as showing user the possible routes to take.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows summarized details on equipment</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[7] <strong>Equipment Details Page</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is a HTML page where it shows more detailed information on an equipment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[8] <strong>Client Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows specifically information related to client such as the name and how many equipment the client owns.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>Work list Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipments whom the user want to carry out preventive maintenance work.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="showcase-client-details"><a class="link" href="#showcase-client-details">Showcase Client details</a></h5>
+<div class="paragraph">
+<p>To avoid cluttering to many information in <strong>Equipment Result Panel</strong>,
+we decided to categorise information related to clients into <strong>Client Result Panel</strong>
+such as showing the name of the client and how many equipments the client owns as seen in the figure below.</p>
+</div>
+<div class="dlist">
+<div class="title">Outcome of a showing client details when using <code>list-c</code> feature</div>
+<dl>
+<dt class="hdlist1">image</dt>
+<dd>
+<p>clientlocationsUI.png[%autowidth]</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="showcase-equipment-details-and-locations"><a class="link" href="#showcase-equipment-details-and-locations">Showcase Equipment details and locations</a></h5>
+<div class="paragraph">
+<p>Similarly, there are many information to be shown in <strong>Equipment Result Panel</strong>.
+Hence, as seen in the figure below, we created a HTML page to show more information
+on equipment. This means there are some information not shown in <strong>Equipment Result Panel</strong> but will instead be shown in <strong>Equipment Details Page</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/equipmentdetailsUI.png" alt="%autowidth">
+</div>
+<div class="title">Figure 11. Incorporating HTML in panel to show more equipment details</div>
+</div>
+<div class="paragraph">
+<p>One of our main feature of <strong>Equipment Manager</strong> is the ability to have a visual representation on 1 or more equipments in a <strong>Google Map</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/clientlocationsUI.png" alt="%autowidth">
+</div>
+<div class="title">Figure 12. Outcome of <code>display</code> feature on UI</div>
+</div>
+<div class="paragraph">
+<p>As seen in the above figure, entering <code>display</code> command will allow a visual representation of all equipment locations in the <strong>Equipment Manager</strong> data storage onto <strong>Google Map</strong>.
+This is one of our main feature of <strong>Equipment Manager</strong> where we provide users to view either 1 equipment location at a time by entering <code>select</code> INDEX or simply by clicking onto the an equipment in <strong>Equipment Result Panel</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspects-information-to-be-displayed-on-respective-panels"><a class="link" href="#aspects-information-to-be-displayed-on-respective-panels">Aspects: Information to be displayed on respective panels</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1: Showing all client, worklist, equipment resulting commands in one panel.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pros</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lesser panels will have lesser clutter to user experience. UX experience will be better.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Harder to implement. Require to work with label that is able to change when panel has changed to serve other purposes such as from displaying equipment details to worklist details in the same panel.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 2 (Current Choice): Show client, worklist, equipment resulting commands in 3 respective panels.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pros</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Easier to implement. To avoid confusion on which panel is being updated, we added a header label above each panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application looks more cluttered with more dividers for different panels.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.7. Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedEquipmentManager</code>.
 It extends <code>EquipmentManager</code> with an undo/redo history, stored internally as an <code>EquipmentManagerStateList</code> and <code>currentStatePointer</code>.
@@ -1056,7 +1271,7 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1126,20 +1341,14 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.5. [Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.6. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1170,7 +1379,7 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1236,7 +1445,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 10. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 13. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2003,7 +2212,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-equipment"><a class="link" href="#deleting-an-equipment">F.2. Deleting an equipment</a></h3>
+<h3 id="deleting-an-equipment-2"><a class="link" href="#deleting-an-equipment-2">F.2. Deleting an equipment</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2055,4 +2264,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-03 02:39:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-03 11:39:24 UTC</div></div></div></body></html>
