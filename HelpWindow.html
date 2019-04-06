@@ -346,6 +346,18 @@ In the panel under the <strong>Equipment details</strong> label, duplicated clie
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Equipment that has overdue preventative maintenance dates are allowed to be added for tracking purposes.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Example:</p>
 </div>
@@ -637,7 +649,7 @@ Format: <code>display</code></p>
 <p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
 </div>
 <div class="paragraph">
-<p>The user can sort the current shown list with any valid field.</p>
+<p>The user can sort the current shown list with specified field.</p>
 </div>
 <div class="paragraph">
 <p>The sort parameters are case-insensitive.</p>
@@ -652,7 +664,7 @@ Format: <code>display</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Equipment, client, and work list can only be sorted by address, preventive maintenance date day and phone at the moment.
+Equipment, client, and work list can only be sorted by preventive maintenance date of the equipment and phone number of the client.
 </td>
 </tr>
 </table>
@@ -667,16 +679,12 @@ Equipment, client, and work list can only be sorted by address, preventive maint
 Returns the list sorted by name.</p>
 </li>
 <li>
-<p><code>sort address</code><br>
-Returns the list sorted by address.</p>
-</li>
-<li>
 <p><code>sort date</code><br>
-Returns the list sorted according to the day.</p>
+Returns the list sorted according to the preventative maintenance date of the equipment.</p>
 </li>
 <li>
 <p><code>sort phone</code><br>
-Returns the list sorted by phone number.</p>
+Returns the list sorted by phone number of the client.</p>
 </li>
 </ul>
 </div>
@@ -699,7 +707,7 @@ Returns the list sorted by phone number.</p>
 any one of the keywords.</p>
 </li>
 <li>
-<p>Filtering with keywords of different prefixes will return only equipment/client that matches with all the keywords of
+<p>Filtering with keywords of different prefixes will return only equipment/client that matches with any of the keywords of
 the different prefixes.</p>
 </li>
 <li>
@@ -710,13 +718,25 @@ the different prefixes.</p>
 <div class="ulist TIP">
 <ul class="TIP">
 <li>
-<p>The user can filter the current shown list with any specified fields, and can filter by multiple fields and keywords.</p>
+<p>The user can filter the list with any specified fields, and can filter by multiple fields and keywords.</p>
 </li>
 <li>
-<p>Equipment, client, and worklist can all be filtered, by any fields of them.</p>
+<p>Equipment, client, and work list can all be filtered, by any fields of them.</p>
 </li>
 </ul>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This command only works on the overall list and not the current shown list.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>For example,</p>
 </div>
@@ -748,7 +768,7 @@ Returns any equipment whose tags contains urgent and west.</p>
 </li>
 <li>
 <p><code>filter n/jurong a/blk 123 t/urgent</code><br>
-Returns any equipment whose names that contains jurong, address that contains blk 123, and whose tags contains urgent.</p>
+Returns any equipment whose names that either contains jurong, address that contains blk 123, or whose tags contains urgent.</p>
 </li>
 </ul>
 </div>
@@ -1132,4 +1152,4 @@ For more details on what each command does, please refer to <a href="#Features">
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-06 02:00:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-06 17:48:06 UTC</div></div></div></body></html>
