@@ -26,12 +26,12 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-an-equipment-code-add-e-code">4.2. Adding an equipment: <code>add-e</code></a></li>
-<li><a href="#creating-a-new-worklist-code-add-w-code">4.3. Creating a new worklist: <code>add-w</code></a></li>
-<li><a href="#adding-to-work-list-code-put-code">4.4. Adding to work list: <code>put</code></a></li>
-<li><a href="#editing-an-equipment-code-edit-e-code">4.5. Editing an equipment: <code>edit-e</code></a></li>
-<li><a href="#list-all-equipments-code-list-e-code">4.6. List all equipments:  <code>list-e</code></a></li>
-<li><a href="#list-all-work-list-code-list-w-code">4.7. List all work list: <code>list-w</code></a></li>
-<li><a href="#list-all-clients-code-list-c-code">4.8. List all clients : <code>list-c</code></a></li>
+<li><a href="#adding-a-client-code-add-c-code">4.3. Adding a client: <code>add-c</code></a></li>
+<li><a href="#creating-a-new-worklist-code-add-w-code">4.4. Creating a new worklist: <code>add-w</code></a></li>
+<li><a href="#adding-to-work-list-code-put-code">4.5. Adding to work list: <code>put</code></a></li>
+<li><a href="#editing-an-equipment-code-edit-e-code">4.6. Editing an equipment: <code>edit-e</code></a></li>
+<li><a href="#list-all-equipments-code-list-e-code">4.7. List all equipments:  <code>list-e</code></a></li>
+<li><a href="#list-all-work-list-code-list-w-code">4.8. List all work list: <code>list-w</code></a></li>
 <li><a href="#selecting-an-equipment-or-work-list-code-select-code">4.9. Selecting an equipment or work list: <code>select</code></a></li>
 <li><a href="#locating-equipment-by-location-code-find-code">4.10. Locating equipment by location: <code>find</code></a></li>
 <li><a href="#show-in-map-code-display-code">4.11. Show in map: <code>display</code></a></li>
@@ -87,34 +87,42 @@ this section will explain the key things to take note of.<br></p>
 <p>The following section provides a quick understanding on each of the legends used throughout the user guide.
 These legends alert reader on special information such as tips, notes and warnings.<br></p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock note">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Legend</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The more information icon indicates any additional tips users can consider while using <strong>Equipment Manager</strong> application.
+</td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/tip.png" alt="tip" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The more information icon indicates any additional tips users can consider while using <strong>Equipment Manager</strong> application.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/lightbulb.png" alt="lightbulb" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lightbulb icon</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/exclamation.png" alt="exclamation" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The exclamation mark icon indicates any warnings that users can take note of while using <strong>Equipment Manager</strong> application.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/advanced.png" alt="advanced" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The book icon indicates that it is an additional information for advanced users.</p></td>
-</tr>
-</tbody>
 </table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+lightbulb ICON
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The exclamation mark icon indicates any warnings that users can take note of while using <strong>Equipment Manager</strong> application.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -310,8 +318,21 @@ You can view help by click the `Help button on the Menu Bar.
 <div class="sect2">
 <h3 id="adding-an-equipment-code-add-e-code"><a class="link" href="#adding-an-equipment-code-add-e-code">4.2. Adding an equipment: <code>add-e</code></a></h3>
 <div class="paragraph">
-<p>Adds an equipment to the Equipment Manager<br>
+<p>Adds an equipment to the <strong>Equipment Manager</strong>. The result of adding an equipment will be reflected on the panel labelled under <strong>Equipment details</strong>. <br>
 Format: <code>add-e n/CLIENT_NAME p/CLIENT_PHONE_NUMBER pm/PM_DATE a/CLIENT_ADDRESS s/SERIAL_NUMBER [t/TAG]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+An equipment can any number of tags (including 0).<br>
+PM_DATE is the annual due date for maintenance work to be carried out by and it should be entered in a date format of <code>DD MONTH YYY</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -320,7 +341,7 @@ Format: <code>add-e n/CLIENT_NAME p/CLIENT_PHONE_NUMBER pm/PM_DATE a/CLIENT_ADDR
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-An equipment can any number of tags (including 0).
+In the panel under the <strong>Equipment details</strong> label, duplicated client names could be added and displayed on the panel because a client can owns multiple equipments as long as the serial numbers of equipment are different.
 </td>
 </tr>
 </table>
@@ -331,13 +352,46 @@ An equipment can any number of tags (including 0).
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/Clementi CC p/98765432 pm/10 May 2019 a/220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</code></p>
+<p><code>add n/Clementi CC p/67762517 pm/10 May 2019 a/ 220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-a-new-worklist-code-add-w-code"><a class="link" href="#creating-a-new-worklist-code-add-w-code">4.3. Creating a new worklist: <code>add-w</code></a></h3>
+<h3 id="adding-a-client-code-add-c-code"><a class="link" href="#adding-a-client-code-add-c-code">4.3. Adding a client: <code>add-c</code></a></h3>
+<div class="paragraph">
+<p>Adds a client to the <strong>Equipment Manager</strong>. The result of adding a client will be reflected on the panel labelled under <strong>Client details</strong>.<br>
+Format: <code>add-c n/CLIENT_NAME</code></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/tip.png" alt="tip" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client is a person or organization that owns the equipment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/lightbulb.png" alt="lightbulb" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In the panel under <strong>Client details</strong> label, there should not be any duplicated client names.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-c n/Clementi CC</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-new-worklist-code-add-w-code"><a class="link" href="#creating-a-new-worklist-code-add-w-code">4.4. Creating a new worklist: <code>add-w</code></a></h3>
 <div class="paragraph">
 <p>Create a worklist in the Equipment Manager by giving the worklist an ID<br>
 Format: <code>add-w d/DATE a/ASSIGNEE i/ID</code></p>
@@ -366,7 +420,7 @@ The user can enter multiple assignees, but only one date and id.
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-to-work-list-code-put-code"><a class="link" href="#adding-to-work-list-code-put-code">4.4. Adding to work list: <code>put</code></a></h3>
+<h3 id="adding-to-work-list-code-put-code"><a class="link" href="#adding-to-work-list-code-put-code">4.5. Adding to work list: <code>put</code></a></h3>
 <div class="paragraph">
 <p>Adds equipment to working list in the Equipment Manager<br>
 Format: <code>put INDEX [worklist id]</code></p>
@@ -396,15 +450,15 @@ The user can enter multiple field name and values.
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-an-equipment-code-edit-e-code"><a class="link" href="#editing-an-equipment-code-edit-e-code">4.5. Editing an equipment: <code>edit-e</code></a></h3>
+<h3 id="editing-an-equipment-code-edit-e-code"><a class="link" href="#editing-an-equipment-code-edit-e-code">4.6. Editing an equipment: <code>edit-e</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing equipment in the <em>Equipment Manager</em>.<br>
-Format: <code>edit INDEX [n/CLIENT_NAME] [p/CLIENT_PHONE] [pm/PM_DATE] [a/CLIENT_ADDRESS] [s/SERIAL_NUMBER] [t/TAG]…​</code></p>
+Format: <code>edit INDEX n/CLIENT_NAME p/CLIENT_PHONE pm/PM_DATE a/CLIENT_ADDRESS s/SERIAL_NUMBER t/TAG…​</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the equipment at the specified INDEX. The index refers to the index number shown in the displayed equipment list. The index must be a positive integer 1, 2, 3, …​</p>
+<p>Edits the equipment at the specified INDEX. The index refers to the index number shown in the <strong>Equipment details</strong> panel. The index must be a positive integer 1, 2, 3, …​</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -426,8 +480,12 @@ Format: <code>edit INDEX [n/CLIENT_NAME] [p/CLIENT_PHONE] [pm/PM_DATE] [a/CLIENT
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/ccc@gmail.com</code><br>
-Edits the client phone number and client date address of the 1st equipment to be 91234567 and <a href="mailto:ccc@gmail.com">ccc@gmail.com</a> respectively.</p>
+<p><code>edit 1 n/Clementi Community Center</code><br>
+Edits the client&#8217;s name of the 1st equipment to Clementi Community Center.</p>
+</li>
+<li>
+<p><code>edit 1 p/91234567 a/220 Clementi Ave 4</code><br>
+Edits the client&#8217;s phone number and address of the 1st equipment to be 91234567 and 220 Clementi Ave 4 respectively.</p>
 </li>
 <li>
 <p><code>edit 2 n/Hougang CC t/</code><br>
@@ -437,9 +495,9 @@ Edits the client name of the 2nd equipment to be Huogang CC and clears all exist
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-all-equipments-code-list-e-code"><a class="link" href="#list-all-equipments-code-list-e-code">4.6. List all equipments:  <code>list-e</code></a></h3>
+<h3 id="list-all-equipments-code-list-e-code"><a class="link" href="#list-all-equipments-code-list-e-code">4.7. List all equipments:  <code>list-e</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all equipments in the Equipment Manager<br>
+<p>Shows a list of all equipments in the Equipment Manager. The result will be displayed in the panel labelled under <strong>Equipment details</strong>.<br>
 Format: <code>list-e</code></p>
 </div>
 <div class="paragraph">
@@ -454,7 +512,7 @@ Format: <code>list-e</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-all-work-list-code-list-w-code"><a class="link" href="#list-all-work-list-code-list-w-code">4.7. List all work list: <code>list-w</code></a></h3>
+<h3 id="list-all-work-list-code-list-w-code"><a class="link" href="#list-all-work-list-code-list-w-code">4.8. List all work list: <code>list-w</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all work list in the Equipment Manager<br>
 Format: <code>list-w</code></p>
@@ -466,26 +524,6 @@ Format: <code>list-w</code></p>
 <ul>
 <li>
 <p><code>list-w</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="list-all-clients-code-list-c-code"><a class="link" href="#list-all-clients-code-list-c-code">4.8. List all clients : <code>list-c</code></a></h3>
-<div class="paragraph">
-<p>Shows a list of all clients in the Equipment Manager<br>
-The client card will shows its client name and the number of equipment this client owns.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>list-c</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list-c</code></p>
 </li>
 </ul>
 </div>
@@ -958,6 +996,10 @@ There is no need to save manually.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preventive Maintenance</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A maintenance work that is regularly performed on a piece of equipment to lessen the likelihood of it failing. It is performed while the equipment is still working so that it does not break down unexpectedly.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autocomplete</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provides suggestions while you type into the field.</p></td>
 </tr>
@@ -1007,6 +1049,10 @@ For more details on what each command does, please refer to <a href="#Features">
 <td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Client</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Work List</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
 </tr>
@@ -1017,10 +1063,6 @@ For more details on what each command does, please refer to <a href="#Features">
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Work List</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*List Client</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list-c</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Equipment</strong></p></td>
@@ -1090,4 +1132,4 @@ For more details on what each command does, please refer to <a href="#Features">
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-05 14:19:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-06 02:00:20 UTC</div></div></div></body></html>
