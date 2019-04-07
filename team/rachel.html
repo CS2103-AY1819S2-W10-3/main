@@ -339,6 +339,48 @@ To aid you in reading this portfolio without any confusion, this section provide
 </table>
 </div>
 <div class="sect2">
+<h3 id="about-an-equipment"><a class="link" href="#about-an-equipment">About an equipment</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The client&#8217;s name who owns the equipment.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The contact number of the client that owns the equipment.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The due date for which maintenance work on the equipment should be carried out by then.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address of the client that owns the equipment.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All equipments have unique serial number and there should not be duplicated serial number.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
 <h3 id="entering-a-command"><a class="link" href="#entering-a-command">Entering a command</a></h3>
 <div class="paragraph">
 <p>Type the command in the Command Box and press <kbd>Enter</kbd> to execute it.<br></p>
@@ -352,54 +394,62 @@ To aid you in reading this portfolio without any confusion, this section provide
 <p><strong><code>help</code></strong>: opens up user guide</p>
 </li>
 <li>
-<p><strong><code>list</code></strong>: lists all contacts</p>
+<p><strong><code>list-e</code></strong>: lists all equipment details</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>add-e</code></strong><code>n/Clementi CC p/98765432 d/01-05-2019 a/Pending Rd s/X14DH9283</code> : adds a contact named <code>Clementi CC</code> to the <strong>Equipment Manager</strong>.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code>: deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete-e</code></strong><code>3</code>: deletes the 3rd equipment detail shown in the current list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong>: exits the app</p>
 </li>
 </ul>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock note">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="#Features">[Features]</a> for details of each command.</p></td>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Refer to <a href="#Features">[Features]</a> for details of each command.
+</td>
 </tr>
-</tbody>
 </table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="adding-a-client-code-add-c-code"><a class="link" href="#adding-a-client-code-add-c-code">Adding a client: <code>add-c</code></a></h3>
 <div class="paragraph">
 <p>Adds a client to the <strong>Equipment Manager</strong>. The result of adding a client will be reflected on the panel labelled under <strong>Client details</strong>.<br>
-Format: <code>add-c n/CLIENT_NAME</code></p>
+Format: <code>add-c n/NAME</code></p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock note">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Client is a person or organization that owns the equipment.</p></td>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Client is a person or organization that owns the equipment.
+</td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/lightbulb.png" alt="lightbulb" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">In the panel under <strong>Client details</strong> label, there should not be any duplicated client names.</p></td>
-</tr>
-</tbody>
 </table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+In the panel under <strong>Client details</strong> label, there should not be any duplicated client names.<br>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Example:</p>
 </div>
@@ -599,18 +649,18 @@ For more details on what each command does, please refer to <a href="#Features">
 <div class="paragraph">
 <p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock tip">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/docs/diagrams">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.</p></td>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+|The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/docs/diagrams">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+</td>
 </tr>
-</tbody>
 </table>
+</div>
 <div class="paragraph">
 <p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/src/main/java/seedu/equipment/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
@@ -687,7 +737,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
-<p>The sections below give more details of each component.</p>
+<p>The sections below will give more details of each component; <strong>UI</strong>, <strong>Logic</strong>, <strong>Model</strong> and <strong>Storage</strong>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -788,25 +838,25 @@ The following class plays an important role at the architecture level:</p>
 <p>stores the <strong>Equipment Manager</strong> data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Equipment&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
 </li>
 </ul>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock tip">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Manager</code>, which <code>Equipment</code> can reference. This would allow <code>Equipment Manager</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Equipment</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br></p></td>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Manager</code>, which <code>Equipment</code> can reference. This would allow <code>Equipment Manager</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Equipment</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+</td>
 </tr>
-</tbody>
 </table>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800">
@@ -840,48 +890,229 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="equipment-features"><a class="link" href="#equipment-features">Equipment features</a></h3>
+<h3 id="equipment-feature"><a class="link" href="#equipment-feature">Equipment feature</a></h3>
+<div class="paragraph">
+<p>To provide users with the best understanding on the attributes of equipments in <strong>Equipment Manager</strong>,
+this section will provide a brief overview on the equipment details as well as how the details of an equipment are
+used for multiple features in the design of Equipment Manager. Not forgetting sharing some design considerations to make the best choice for <strong>Equipment Manager</strong>.</p>
+</div>
 <div class="sect3">
 <h4 id="overview-on-equipment-details"><a class="link" href="#overview-on-equipment-details">Overview on Equipment details</a></h4>
-
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The client&#8217;s name who owns the equipment.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The contact number of the client that owns the equipment.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The due date for which maintenance work on the equipment should be carried out by then.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address of the client that owns the equipment.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All equipments have unique serial number and there should not be duplicated serial number.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="current-usage-of-equipment-details"><a class="link" href="#current-usage-of-equipment-details">Current Usage of Equipment Details</a></h4>
-<div class="sect4">
-<h5 id="adding-an-equipment"><a class="link" href="#adding-an-equipment">Adding an equipment</a></h5>
-
+<div class="paragraph">
+<p>In order to allow users to keep track of the Preventive Maintenance schedule and carry out features provided by Equipment Manager, we have implemented the following commands with the usage of the attributes of an equipment as mentioned in the previous section.</p>
 </div>
-<div class="sect4">
-<h5 id="editing-an-equipment"><a class="link" href="#editing-an-equipment">Editing an equipment</a></h5>
-
+<div class="paragraph">
+<p><strong>An example of how the attributes of equipment are used:</strong></p>
 </div>
-<div class="sect4">
-<h5 id="deleting-an-equipment"><a class="link" href="#deleting-an-equipment">Deleting an equipment</a></h5>
-
+<div class="ulist">
+<ul>
+<li>
+<p>When user execute the <code>AddCommand</code> or <code>EditCommand</code>, there are equipment details stored in <strong>Equipment Manager</strong>.</p>
+</li>
+<li>
+<p>When user uses command like <code>DisplayCommand</code>, <strong>Equipment Manager</strong> will need to use the address details to provide visual representation of the location of client that owns the equipment.</p>
+</li>
+<li>
+<p>When user uses command like <code>SelectCommand</code>, <strong>Equipment Manager</strong> will need to use all the equipment details in order to reflect more detailed information on equipment in the <strong>Equipment Details Page</strong>.</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="listing-all-equipments"><a class="link" href="#listing-all-equipments">Listing all equipments</a></h5>
-
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>Using <code>AddCommand</code> mentioned in previous section as an example,
+the <strong>add equipment</strong> mechanism is facilitated by <code>VersionedEquipmentManager</code> which extends the <code>Equipment Manager</code>.
+The results of this command will be displayed under <strong>Equipment Details</strong> panel.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <strong>add equipment</strong> operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddCommandSD.png" alt="AddCommandSD" width="800">
+</div>
+<div class="title">Figure 11. Sequence diagram for <code>AddCommand</code></div>
+</div>
+<div class="paragraph">
+<p>Step 1</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how the adding of equipment details mechanism behaves at each step after carrying out <code>add-e</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>add-e n/Pending CC d/01-05-2019 p/99887766 a/Pending Rd s/XDH1429387 t/north-west</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. After <code>EquipmentManagerParser</code> detects <code>add-e</code> as the command word, a <code>AddCommandParser#parse()</code> is called.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>AddCommand#execute()</code> is then called.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The parser will parse all the attributes and add into equipment and client models respectively.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. The model now contains details of equipment and client, and returns to GUI for display on <strong>Equipment details</strong> and <strong>Client details</strong> panels respectively.</p>
+</div>
+<div class="paragraph">
+<p>With that, you may refer to <a href="#Display feature">[Display feature]</a> to see how <strong>Equipment Manager</strong> will then use the address details to provide visual representation of the location of client that owns the equipment.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-
+<div class="sect4">
+<h5 id="aspects-what-attributes-are-important-for-equipment-details-to-serve-the-purpose-of-strong-equipment-manager-strong"><a class="link" href="#aspects-what-attributes-are-important-for-equipment-details-to-serve-the-purpose-of-strong-equipment-manager-strong">Aspects: What attributes are important for equipment details to serve the purpose of <strong>Equipment Manager</strong>.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong>: Equipment details contain client details whom own the equipment and equipment unique serial number.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: This allows users to know that each equipment has unique serial number and each client can own multiple equipments. Do not have to make major enhancement, save time on backend work.</p>
+</li>
+<li>
+<p>Cons: Might be confusing to user if user is not clear how Equipment Manager works as it may seem like there is duplicated equipments.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Equipment details only has serial number and create a seperate class to store store name, phone, address, as client details.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: By reading the structure, it is clearer to user that the attributes describe equipment or client.</p>
+</li>
+<li>
+<p>Cons: More backend work needs to be change, takes up a lot of time.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="client-feature"><a class="link" href="#client-feature">Client feature</a></h3>
+<div class="paragraph">
+<p>This section describes features specific to client, how having client details contribute to the features in <strong>Equipment Manager</strong> as well as our design considerations.
+There may contain some repeated explanation when describing this sections
+because attributes of client and equipment are being shared in order to for features to be carried out in <strong>Equipment Manager</strong>.</p>
+</div>
 <div class="sect3">
 <h4 id="overview-on-client-details"><a class="link" href="#overview-on-client-details">Overview on Client details</a></h4>
-
+<div class="paragraph">
+<p>In Equipment Manager, there are <code>Name</code>, <code>Phone</code>, <code>Address</code> attributes stored under <strong>Equipment details</strong> that identify client details.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A client can 0 to numerous equipment which are identified by unique serial number but an equipment cannot be shared by multiple clients.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>There is a <code>CountEquipment</code> method in <strong>Equipment Manager</strong> that counts the number of equipments that each client owns. Since <strong>Equipment Details</strong> panel showcases by each equipment, having a summarized details of each client, allows user to be more aware that the client might own more than 0, 1 or more than 1 equipment.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Each address tells user where 0 to numerous equipment, which each client owns, are located at.</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="current-usage-of-client-details"><a class="link" href="#current-usage-of-client-details">Current Usage of Client details</a></h4>
-
+<div class="paragraph">
+<p>As mentioned in <a href="#current-usage-of-equipment-details">Current Usage of Equipment Details</a>, the <code>Address</code> which belong to the client address, are used in features like <code>DisplayCommand</code> and <code>SelectCommand</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current implementation</a></h4>
+<div class="paragraph">
+<p>There is <code>AddClientCommand</code> that is supported by  <code>AddClientCommandParser</code>.
+This adding of client details mechanism is facilitated by <code>VersionedEquipmentManager</code> which extends the  <code>Equipment Manager</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how the adding of client details mechanism behaves at each step after carrying out <code>add-c</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>add-c n/Pending CC</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. After <code>EquipmentManagerParser</code> detects <code>add-c</code> as the command word, a <code>AddClientCommandParser#parse()</code> is called.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>AddClientCommand#execute()</code> is then called.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The parser will parse the <code>Name</code> attributes and add into client details in the model.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. The model now contains additional client name and returns to GUI for display on <strong>Client details</strong> panels respectively.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the figure in Current Implementation of <a href="#equipment-feature">Equipment feature</a> also explains how <code>AddCommand</code> contributes to the results shown in <strong>Client Details</strong> panel.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
-
+<div class="paragraph">
+<p>Refer to the <strong>Design Considerations</strong> in <a href="#equipment-feature">Equipment feature</a> as we went through the same design considerations to come out with equipment and client details separation.</p>
+</div>
 </div>
 </div>
 </div>
@@ -891,4 +1122,4 @@ The following class plays an important role at the architecture level:</p>
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-07 06:51:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-07 09:54:10 UTC</div></div></div></body></html>
