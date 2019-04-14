@@ -247,7 +247,7 @@ The implementation was challenging as this enhancement requires many changes in 
 <h2 id="quick-start"><a class="link" href="#quick-start">Quick Start</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To get Equipment manager up and running, simply follow these few steps.</p>
+<p>To get Equipment Manager up and running, simply follow these few steps.</p>
 </div>
 <div class="sect2">
 <h3 id="setting-up-of-equipment-manager"><a class="link" href="#setting-up-of-equipment-manager">Setting up of Equipment Manager</a></h3>
@@ -303,11 +303,11 @@ The implementation was challenging as this enhancement requires many changes in 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[4] <strong>Status Bar</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show the total number of equipments in the <strong>Equipment Manager</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the total number of equipment in the <strong>Equipment Manager</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[5] <strong>Google Map</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipments are at as well as showing user the possible routes to take.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipment are at as well as showing user the possible routes to take.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Details</strong> panel</p></td>
@@ -323,7 +323,7 @@ The implementation was challenging as this enhancement requires many changes in 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>My Work List</strong> panel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipments whom the user want to carry out preventive maintenance work.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipment whom the user want to carry out preventive maintenance work.</p></td>
 </tr>
 </tbody>
 </table>
@@ -377,7 +377,7 @@ Please remember the naming convention for the different regions in GUI as they w
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SERIAL_NUMBER</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All equipments have unique serial number and there should not be duplicated serial number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All equipment have unique serial number and there should not be duplicated serial number.</p></td>
 </tr>
 </tbody>
 </table>
@@ -459,7 +459,7 @@ Equipment that has overdue preventative maintenance dates are allowed to be adde
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-As seen in <a href="#duplicate">UI Result after adding 2 equipments owned by the same client</a> below, under <strong>Equipment details</strong> panel, duplicated client details such as name, phone, address could be added and displayed because the details refer to a client&#8217;s details who owns multiple equipments as long as the serial numbers of equipment are different.<br>
+As seen in <a href="#duplicate">UI Result after adding 2 equipment owned by the same client</a> below, under <strong>Equipment details</strong> panel, duplicated client details such as name, phone, address could be added and displayed because the details refer to a client&#8217;s details who owns multiple equipment as long as the serial numbers of equipment are different.<br>
 Under <strong>Client details</strong> panel, duplicated client names will not appear in the panel because the <strong>Client details</strong> panel will only show distinct number of clients in the <strong>Equipment Manager</strong>.
 </td>
 </tr>
@@ -469,12 +469,12 @@ Under <strong>Client details</strong> panel, duplicated client names will not ap
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>The following shows user adding 1 equipment that is own by the client called Serangoon CC.</p>
+<p>The following shows user adding 1 equipment that is owned by the client called Serangoon CC.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-e n/Serangon CC p/64738499 pm/11-06-2019 a/10 Serangoon North Ave 2, Singapore 555877 s/A0293838X t/northeast</code></p>
+<p><code>add-e n/Serangoon CC p/64738499 pm/11-06-2019 a/10 Serangoon North Ave 2, Singapore 555877 s/A0293838X t/northeast</code></p>
 </li>
 </ul>
 </div>
@@ -485,8 +485,8 @@ Under <strong>Client details</strong> panel, duplicated client names will not ap
 <div class="title">Figure 2. UI Result after adding an equipment own by Serangoon CC</div>
 </div>
 <div class="paragraph">
-<p>The following shows user adding 2 equipments that are own by the same client called  Pending CC.
-Under <strong>Equipment details</strong> panel, 2 equipments of the same name Pending CC are displayed. Only the serial number is different which indicates 2 different equipment owned by Pending CC.
+<p>The following shows user adding 2 equipment that are owned by the same client called  Pending CC.
+Under <strong>Equipment details</strong> panel, 2 equipment of the same name Pending CC are displayed. Only the serial number is different which indicates 2 different equipment owned by Pending CC.
 Under <strong>Client details</strong> panel, Pending CC is added to the panel after entering the <code>add-e</code> command.</p>
 </div>
 <div class="ulist">
@@ -501,13 +501,13 @@ Under <strong>Client details</strong> panel, Pending CC is added to the panel af
 <div class="content">
 <img src="../images/PendingCC.png" alt="PendingCC" width="800">
 </div>
-<div class="title">Figure 3. UI Result after adding 2 equipments owned by the same client</div>
+<div class="title">Figure 3. UI Result after adding 2 equipment owned by the same client</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="selecting-a-client-code-select-c-code"><a class="link" href="#selecting-a-client-code-select-c-code">Selecting a client: <code>select-c</code></a></h3>
 <div class="paragraph">
-<p>Selects the client identified by the index number used in the displayed client list panel. All the equipments own by the client will be displayed under <strong>Equipment details</strong> panel.<br>
+<p>Selects the client identified by the index number used in the displayed client list panel. All the equipment owned by the client will be displayed under <strong>Equipment details</strong> panel.<br>
 Format: <code>select-c INDEX</code></p>
 </div>
 <div class="ulist">
@@ -634,7 +634,7 @@ For more details on what each command does, please refer to <a href="#Features">
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit 1 n/Clementi Community Center</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all equipments</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all equipment</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
 </tr>
@@ -984,7 +984,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Man
 <div class="sect2">
 <h3 id="equipment-feature"><a class="link" href="#equipment-feature">Equipment feature</a></h3>
 <div class="paragraph">
-<p>To provide users with the best understanding on the attributes of equipments in <strong>Equipment Manager</strong>,
+<p>To provide users with the best understanding on the attributes of equipment in <strong>Equipment Manager</strong>,
 this section will provide a brief overview on the equipment details as well as how the details of an equipment are
 used for multiple features in the design of Equipment Manager. Not forgetting sharing some design considerations to make the best choice for <strong>Equipment Manager</strong>.</p>
 </div>
@@ -1025,7 +1025,7 @@ used for multiple features in the design of Equipment Manager. Not forgetting sh
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All equipments have unique serial number and there should not be duplicated serial number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All equipment have unique serial number and there should not be duplicated serial number.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1104,10 +1104,10 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: This allows users to know that each equipment has unique serial number and each client can own multiple equipments. Do not have to make major enhancement, save time on backend work.</p>
+<p>Pros: This allows users to know that each equipment has unique serial number and each client can own multiple equipment. Do not have to make major enhancement, save time on backend work.</p>
 </li>
 <li>
-<p>Cons: Might be confusing to user if user is not clear how Equipment Manager works as it may seem like there is duplicated equipments.</p>
+<p>Cons: Might be confusing to user if user is not clear how Equipment Manager works as it may seem like there is duplicated equipment.</p>
 </li>
 </ul>
 </div>
@@ -1145,11 +1145,11 @@ because attributes of client and equipment are being shared in order to for feat
 <div class="ulist">
 <ul>
 <li>
-<p>A client can 0 to numerous equipment which are identified by unique serial number but an equipment cannot be shared by multiple clients.</p>
+<p>A client can have 0 to numerous equipment which are identified by unique serial number but an equipment cannot be shared by multiple clients.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>There is a <code>CountEquipment</code> method in <strong>Equipment Manager</strong> that counts the number of equipments that each client owns. Since <strong>Equipment Details</strong> panel showcases by each equipment, having a summarized details of each client, allows user to be more aware that the client might own more than 0, 1 or more than 1 equipment.</p>
+<p>There is a <code>CountEquipment</code> method in <strong>Equipment Manager</strong> that counts the number of equipment that each client owns. Since <strong>Equipment Details</strong> panel showcases by each equipment, having a summarized details of each client, allows user to be more aware that the client might own more than 0, 1 or more than 1 equipment.</p>
 </li>
 </ul>
 </div>
@@ -1191,7 +1191,7 @@ This selection of client details mechanism is facilitated by <code>VersionedEqui
 <p>Step 5. Using the <code>filter</code> feature, the model will use the <code>Name</code> attributes, filter the equipment list accordingly and displays the client&#8217;s equipment in the <strong>Equipment details</strong> panel.</p>
 </div>
 <div class="paragraph">
-<p>Step 7. The model now contains additional client name and returns to GUI for display on <strong>Client details</strong> panel respectively. The model also contains filtered client&#8217;s equipments and returns the GUI for display on <strong>Equipment details</strong> panel.</p>
+<p>Step 7. The model now contains additional client name and returns to GUI for display on <strong>Client details</strong> panel respectively. The model also contains filtered client&#8217;s equipment and returns the GUI for display on <strong>Equipment details</strong> panel.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1220,7 +1220,7 @@ The figure in Current Implementation of <a href="#equipment-feature">Equipment f
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Making use of exisiting <strong>Equipment details</strong> panel. Easier to implement with lesser changes to the storage, logic, model and ui components within the time constraint.</p>
+<p>Pros: Making use of existing <strong>Equipment details</strong> panel. Easier to implement with lesser changes to the storage, logic, model and ui components within the time constraint.</p>
 </li>
 <li>
 <p>Cons: select followed by a filter command is stored in the history even though user did not use filter command. This is the trade off.</p>
@@ -1253,4 +1253,4 @@ The figure in Current Implementation of <a href="#equipment-feature">Equipment f
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:24:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:56:37 UTC</div></div></div></body></html>

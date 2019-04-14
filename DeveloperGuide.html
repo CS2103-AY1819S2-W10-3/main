@@ -90,7 +90,7 @@
 <p>Welcome to the Developer Guide for <strong>Equipment Manager</strong>!</p>
 </div>
 <div class="paragraph">
-<p><strong>Equipment Manager</strong> is an application that allows engineers to keep track of the Preventive Maintenance schedule of all Resuscitation Devices in Singapore. It will help engineers to plan the number of equipment to carry out preventive maintenance, and also keep track on each equipment details such as status and location.<br></p>
+<p><strong>Equipment Manager</strong> is an application that allows engineers to keep track of the Preventive Maintenance schedule of all Resuscitation Devices in Singapore. It will help engineers plan the number of equipment to carry out preventive maintenance, and also keep track on each equipment details such as status and location.<br></p>
 </div>
 <div class="paragraph">
 <p>Objectives of the application include:</p>
@@ -586,7 +586,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Man
 <div class="sect2">
 <h3 id="equipment-feature"><a class="link" href="#equipment-feature">4.1. Equipment feature</a></h3>
 <div class="paragraph">
-<p>To provide users with the best understanding on the attributes of equipments in <strong>Equipment Manager</strong>,
+<p>To provide users with the best understanding on the attributes of equipment in <strong>Equipment Manager</strong>,
 this section will provide a brief overview on the equipment details as well as how the details of an equipment are
 used for multiple features in the design of Equipment Manager. Not forgetting sharing some design considerations to make the best choice for <strong>Equipment Manager</strong>.</p>
 </div>
@@ -627,7 +627,7 @@ used for multiple features in the design of Equipment Manager. Not forgetting sh
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All equipments have unique serial number and there should not be duplicated serial number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All equipment have unique serial number and there should not be duplicated serial number.</p></td>
 </tr>
 </tbody>
 </table>
@@ -706,10 +706,10 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: This allows users to know that each equipment has unique serial number and each client can own multiple equipments. Do not have to make major enhancement, save time on backend work.</p>
+<p>Pros: This allows users to know that each equipment has unique serial number and each client can own multiple equipment. Do not have to make major enhancement, save time on backend work.</p>
 </li>
 <li>
-<p>Cons: Might be confusing to user if user is not clear how Equipment Manager works as it may seem like there is duplicated equipments.</p>
+<p>Cons: Might be confusing to user if user is not clear how Equipment Manager works as it may seem like there is duplicated equipment.</p>
 </li>
 </ul>
 </div>
@@ -747,11 +747,11 @@ because attributes of client and equipment are being shared in order to for feat
 <div class="ulist">
 <ul>
 <li>
-<p>A client can 0 to numerous equipment which are identified by unique serial number but an equipment cannot be shared by multiple clients.</p>
+<p>A client can have 0 to numerous equipment which are identified by unique serial number but an equipment cannot be shared by multiple clients.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>There is a <code>CountEquipment</code> method in <strong>Equipment Manager</strong> that counts the number of equipments that each client owns. Since <strong>Equipment Details</strong> panel showcases by each equipment, having a summarized details of each client, allows user to be more aware that the client might own more than 0, 1 or more than 1 equipment.</p>
+<p>There is a <code>CountEquipment</code> method in <strong>Equipment Manager</strong> that counts the number of equipment that each client owns. Since <strong>Equipment Details</strong> panel showcases by each equipment, having a summarized details of each client, allows user to be more aware that the client might own more than 0, 1 or more than 1 equipment.</p>
 </li>
 </ul>
 </div>
@@ -793,7 +793,7 @@ This selection of client details mechanism is facilitated by <code>VersionedEqui
 <p>Step 5. Using the <code>filter</code> feature, the model will use the <code>Name</code> attributes, filter the equipment list accordingly and displays the client&#8217;s equipment in the <strong>Equipment details</strong> panel.</p>
 </div>
 <div class="paragraph">
-<p>Step 7. The model now contains additional client name and returns to GUI for display on <strong>Client details</strong> panel respectively. The model also contains filtered client&#8217;s equipments and returns the GUI for display on <strong>Equipment details</strong> panel.</p>
+<p>Step 7. The model now contains additional client name and returns to GUI for display on <strong>Client details</strong> panel respectively. The model also contains filtered client&#8217;s equipment and returns the GUI for display on <strong>Equipment details</strong> panel.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -822,7 +822,7 @@ The figure in Current Implementation of <a href="#equipment-feature">Section 4.1
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Making use of exisiting <strong>Equipment details</strong> panel. Easier to implement with lesser changes to the storage, logic, model and ui components within the time constraint.</p>
+<p>Pros: Making use of existing <strong>Equipment details</strong> panel. Easier to implement with lesser changes to the storage, logic, model and ui components within the time constraint.</p>
 </li>
 <li>
 <p>Cons: select followed by a filter command is stored in the history even though user did not use filter command. This is the trade off.</p>
@@ -915,7 +915,7 @@ It then splits the arguments using <code>ArgumentTokenizer#tokenize()</code> and
 </div>
 </div>
 <div class="paragraph">
-<p>Example</p>
+<p><strong>Example</strong></p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how the filter mechanism behaves at each step when filtering.</p>
@@ -1028,7 +1028,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 <div class="sect3">
 <h4 id="introduction-3"><a class="link" href="#introduction-3">4.4.1. Introduction</a></h4>
 <div class="paragraph">
-<p>We have implemented a <code>SortCommand</code> that allow users to sort the equipment list with specific keyword.</p>
+<p>We have implemented a <code>SortCommand</code> that allow users to sort the equipment list with specific field.</p>
 </div>
 <div class="paragraph">
 <p>The entries in the equipment list is ordered to the time when the entry is entered into the application by default such that the entry entered first is at the top of the equipment list and the latest entry entered is at the bottom of the equipment list.
@@ -1041,7 +1041,7 @@ The <code>sort</code> mechanism allows user to view the equipment list according
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.2. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>sort</code> command sorts the list by specified keyword in lexicographical order.</p>
+<p>The <code>sort</code> command sorts the list by specified field in lexicographical order.</p>
 </div>
 <div class="paragraph">
 <p>Comparators that implement <code>java.util.Comparator</code> interface are used in the <strong>sort</strong> mechanism to perform the comparsion.</p>
@@ -1053,12 +1053,12 @@ The <code>sort</code> mechanism allows user to view the equipment list according
 <ul>
 <li>
 <p><code>SortCommandParser#parse()</code> -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
-It then splits the arguments and checks if the next string is a valid keyword, else, it will throw a ParseException.</p>
+It then splits the arguments and checks if the next string is a valid field, else, it will throw a ParseException.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Valid keywords:</p>
+<p>Valid fields:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1104,7 +1104,7 @@ It then splits the arguments and checks if the next string is a valid keyword, e
 uses FXCollection’s static method <code>sort()</code> to sort the equipment list by name.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. The list is sorted by specified keyword (name) and returned to the GUI.</p>
+<p>Step 5. The list is sorted by specified field (name) and returned to the GUI.</p>
 </div>
 <div class="paragraph">
 <p>Test cases:</p>
@@ -1117,7 +1117,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </ul>
 </div>
 <div class="paragraph">
-<p>Output: An error message will be shown to what keywords are available.</p>
+<p>Output: An error message will be shown to what fields are available.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1180,7 +1180,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice): </strong>Sorts by specific keyword by using the Comparator interface.</p>
+<p><strong>Alternative 1 (current choice): </strong>Sorts by specific field by using the Comparator interface.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1212,7 +1212,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 <div class="sect2">
 <h3 id="display-feature"><a class="link" href="#display-feature">4.5. Display feature</a></h3>
 <div class="paragraph">
-<p>The display feature allow users to view the location of all equipments in the current shown list on map.</p>
+<p>The display feature allow users to view the location of all equipment in the current shown list on map.</p>
 </div>
 <div class="sect3">
 <h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
@@ -1225,10 +1225,10 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </div>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application, the list of equipments will show in <code>UI</code> and stored in the <code>Model</code>.</p>
+<p>Step 1. The user launches the application, the list of equipment will show in <code>UI</code> and stored in the <code>Model</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>display</code> command to show all the equipments on the map. The execution of <code>display</code> command will return a <code>CommandResult</code> indicating <code>display</code> which can be checked by <code>CommandResult#isDisplayMap()</code>. The <code>MainWindow</code> will check if the <code>CommandResult</code> is a display map command. Then <code>MainWindow#handleDisplayMap</code> will be called. <code>MainWindow#handleDisplayMap</code> will call <code>Logic#getFilteredPersonList()</code> to get the equipments list, and then call <code>Equipment#getCoordiantes()</code> on each equipments to get its coordinates.</p>
+<p>Step 2. The user executes <code>display</code> command to show all the equipment on the map. The execution of <code>display</code> command will return a <code>CommandResult</code> indicating <code>display</code> which can be checked by <code>CommandResult#isDisplayMap()</code>. The <code>MainWindow</code> will check if the <code>CommandResult</code> is a display map command. Then <code>MainWindow#handleDisplayMap</code> will be called. <code>MainWindow#handleDisplayMap</code> will call <code>Logic#getFilteredPersonList()</code> to get the equipment list, and then call <code>Equipment#getCoordiantes()</code> on each equipment to get its coordinates.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. The <code>Equipment#getCoordiantes()</code> calls to <code>Google Map Geocoding API</code> with the address returned by <code>Equipment#getAddress()</code>. The API will return the coordinates of the address. This will be returned as the coordinates of the equipment.</p>
@@ -1259,7 +1259,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use separate webpage, pass the coordinates as parameters.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use separate web page, pass the coordinates as parameters.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1276,10 +1276,10 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: No unexpected behaviors, and more consistant running on different platforms.</p>
+<p>Pros: No unexpected behaviors, and more consistent running on different platforms.</p>
 </li>
 <li>
-<p>Cons: Harder to implement, less flexibility, and limit to extendsions.</p>
+<p>Cons: Harder to implement, less flexibility, and limit to extensions.</p>
 </li>
 </ul>
 </div>
@@ -1292,7 +1292,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 <div class="sect2">
 <h3 id="user-interface-ui"><a class="link" href="#user-interface-ui">4.6. User Interface (UI)</a></h3>
 <div class="paragraph">
-<p>The UI of <strong>Equipment Manager</strong> is a combination of JavaFx, HTML and CSS.
+<p>The UI of <strong>Equipment Manager</strong> is a combination of JavaFX, HTML and CSS.
 This section describes our overall current implementation for UI as well as
 showing our thinking process for the UI in designs considerations section.</p>
 </div>
@@ -1338,7 +1338,7 @@ The user should be greeted by 9 different regions:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[5] <strong>Google Map</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipments are at as well as showing user the possible routes to take.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipment are at as well as showing user the possible routes to take.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Result Panel</strong></p></td>
@@ -1354,7 +1354,7 @@ The user should be greeted by 9 different regions:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>Work list Result Panel</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipments whom the user want to carry out preventive maintenance work.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipment whom the user want to carry out preventive maintenance work.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1364,7 +1364,7 @@ The user should be greeted by 9 different regions:</p>
 <div class="paragraph">
 <p>To avoid cluttering to many information in <strong>Equipment Result Panel</strong>,
 we decided to categorise information related to clients into <strong>Client Result Panel</strong>
-such as showing the name of the client and how many equipments the client owns as seen in the figure below.</p>
+such as showing the name of the client and how many equipment the client owns as seen in the figure below.</p>
 </div>
 <div class="dlist">
 <div class="title">Outcome of a showing client details when using <code>add-c</code> feature</div>
@@ -1390,7 +1390,7 @@ on equipment. This means there are some information not shown in <strong>Equipme
 <div class="title">Figure 12. Incorporating HTML in panel to show more equipment details</div>
 </div>
 <div class="paragraph">
-<p>One of our main feature of <strong>Equipment Manager</strong> is the ability to have a visual representation on 1 or more equipments in a <strong>Google Map</strong>.</p>
+<p>One of our main feature of <strong>Equipment Manager</strong> is the ability to have a visual representation on 1 or more equipment in a <strong>Google Map</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2139,7 +2139,7 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: help plan an efficient route for busy engineers to multiple locations and also carrying preventive maintance on multiple equipments in a day.</p>
+<p><strong>Value proposition</strong>: help plan an efficient route for busy engineers to multiple locations and also carrying preventive maintenance on multiple equipment in a day.</p>
 </div>
 </div>
 </div>
@@ -2181,8 +2181,8 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a work list where I can store the equipments I am working on</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of all the equipments that I am assigned to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a work list where I can store the equipment I am working on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of all the equipment that I am assigned to</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -2194,13 +2194,13 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view details of all equipment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know how many equipments there are and what is the individual details of each equipment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know how many equipment there are and what is the individual details of each equipment</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know how many clients have the equipment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">track equipments in group based on client and how many equipment the client owns</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track equipment in group based on client and how many equipment the client owns</p></td>
 </tr>
 </tbody>
 </table>
@@ -2225,7 +2225,7 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filter the list based on some conditions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove all irrelevant equipments and work list showing on the list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove all irrelevant equipment and work list showing on the list</p></td>
 </tr>
 </tbody>
 </table>
@@ -2370,10 +2370,10 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list equipments</p>
+<p>User requests to list equipment</p>
 </li>
 <li>
-<p>Equipment shows a list of equipments</p>
+<p>Equipment shows a list of equipment</p>
 </li>
 <li>
 <p>User requests to delete a specific equipment in the list</p>
@@ -2595,4 +2595,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:24:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:56:37 UTC</div></div></div></body></html>

@@ -31,7 +31,7 @@
 <li><a href="#putting-an-equipment-into-a-work-list-code-put-code">4.4. Putting an equipment into a work list: <code>put</code></a></li>
 <li><a href="#removing-an-equipment-from-a-work-list-code-remove-code">4.5. Removing an equipment from a work list: <code>remove</code></a></li>
 <li><a href="#editing-an-equipment-code-edit-e-code">4.6. Editing an equipment: <code>edit-e</code></a></li>
-<li><a href="#list-all-equipments-code-list-e-code">4.7. List all equipments:  <code>list-e</code></a></li>
+<li><a href="#list-all-equipment-code-list-e-code">4.7. List all equipment:  <code>list-e</code></a></li>
 <li><a href="#list-all-work-list-code-list-w-code">4.8. List all work list: <code>list-w</code></a></li>
 <li><a href="#selecting-an-equipment-or-work-list-code-select-code">4.9. Selecting an equipment or work list: <code>select</code></a></li>
 <li><a href="#selecting-a-client-code-select-c-code">4.10. Selecting a client: <code>select-c</code></a></li>
@@ -131,7 +131,7 @@ The exclamation mark icon indicates any warnings that users can take note of whi
 <h2 id="quick-start"><a class="link" href="#quick-start">3. Quick Start</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To get Equipment manager up and running, simply follow these few steps.</p>
+<p>To get Equipment Manager up and running, simply follow these few steps.</p>
 </div>
 <div class="sect2">
 <h3 id="setting-up-of-equipment-manager"><a class="link" href="#setting-up-of-equipment-manager">3.1. Setting up of Equipment Manager</a></h3>
@@ -187,11 +187,11 @@ The exclamation mark icon indicates any warnings that users can take note of whi
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[4] <strong>Status Bar</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show the total number of equipments in the <strong>Equipment Manager</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the total number of equipment in the <strong>Equipment Manager</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[5] <strong>Google Map</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipments are at as well as showing user the possible routes to take.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipment are at as well as showing user the possible routes to take.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Details</strong> panel</p></td>
@@ -207,7 +207,7 @@ The exclamation mark icon indicates any warnings that users can take note of whi
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>My Work List</strong> panel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipments whom the user want to carry out preventive maintenance work.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipment whom the user want to carry out preventive maintenance work.</p></td>
 </tr>
 </tbody>
 </table>
@@ -261,7 +261,7 @@ Please remember the naming convention for the different regions in GUI as they w
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SERIAL_NUMBER</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All equipments have unique serial number and there should not be duplicated serial number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All equipment have unique serial number and there should not be duplicated serial number.</p></td>
 </tr>
 </tbody>
 </table>
@@ -395,7 +395,7 @@ Equipment that has overdue preventative maintenance dates are allowed to be adde
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-As seen in <a href="#duplicate">Figure 3, &#8220;UI Result after adding 2 equipments owned by the same client&#8221;</a> below, under <strong>Equipment details</strong> panel, duplicated client details such as name, phone, address could be added and displayed because the details refer to a client&#8217;s details who owns multiple equipments as long as the serial numbers of equipment are different.<br>
+As seen in <a href="#duplicate">Figure 3, &#8220;UI Result after adding 2 equipment owned by the same client&#8221;</a> below, under <strong>Equipment details</strong> panel, duplicated client details such as name, phone, address could be added and displayed because the details refer to a client&#8217;s details who owns multiple equipment as long as the serial numbers of equipment are different.<br>
 Under <strong>Client details</strong> panel, duplicated client names will not appear in the panel because the <strong>Client details</strong> panel will only show distinct number of clients in the <strong>Equipment Manager</strong>.
 </td>
 </tr>
@@ -405,12 +405,12 @@ Under <strong>Client details</strong> panel, duplicated client names will not ap
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>The following shows user adding 1 equipment that is own by the client called Serangoon CC.</p>
+<p>The following shows user adding 1 equipment that is owned by the client called Serangoon CC.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-e n/Serangon CC p/64738499 pm/11-06-2019 a/10 Serangoon North Ave 2, Singapore 555877 s/A0293838X t/northeast</code></p>
+<p><code>add-e n/Serangoon CC p/64738499 pm/11-06-2019 a/10 Serangoon North Ave 2, Singapore 555877 s/A0293838X t/northeast</code></p>
 </li>
 </ul>
 </div>
@@ -421,8 +421,8 @@ Under <strong>Client details</strong> panel, duplicated client names will not ap
 <div class="title">Figure 2. UI Result after adding an equipment own by Serangoon CC</div>
 </div>
 <div class="paragraph">
-<p>The following shows user adding 2 equipments that are own by the same client called  Pending CC.
-Under <strong>Equipment details</strong> panel, 2 equipments of the same name Pending CC are displayed. Only the serial number is different which indicates 2 different equipment owned by Pending CC.
+<p>The following shows user adding 2 equipment that are owned by the same client called  Pending CC.
+Under <strong>Equipment details</strong> panel, 2 equipment of the same name Pending CC are displayed. Only the serial number is different which indicates 2 different equipment owned by Pending CC.
 Under <strong>Client details</strong> panel, Pending CC is added to the panel after entering the <code>add-e</code> command.</p>
 </div>
 <div class="ulist">
@@ -437,7 +437,7 @@ Under <strong>Client details</strong> panel, Pending CC is added to the panel af
 <div class="content">
 <img src="images/PendingCC.png" alt="PendingCC" width="800">
 </div>
-<div class="title">Figure 3. UI Result after adding 2 equipments owned by the same client</div>
+<div class="title">Figure 3. UI Result after adding 2 equipment owned by the same client</div>
 </div>
 </div>
 <div class="sect2">
@@ -585,9 +585,9 @@ Edits the client name of the 2nd equipment to be Huogang CC and clears all exist
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-all-equipments-code-list-e-code"><a class="link" href="#list-all-equipments-code-list-e-code">4.7. List all equipments:  <code>list-e</code></a></h3>
+<h3 id="list-all-equipment-code-list-e-code"><a class="link" href="#list-all-equipment-code-list-e-code">4.7. List all equipment:  <code>list-e</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all equipments in the Equipment Manager. The result will be displayed in the panel labelled under <strong>Equipment details</strong>.<br>
+<p>Shows a list of all equipment in the Equipment Manager. The result will be displayed in the panel labelled under <strong>Equipment details</strong>.<br>
 Format: <code>list-e</code></p>
 </div>
 <div class="paragraph">
@@ -663,7 +663,7 @@ Selects the 1st equipment in the results of the find command.</p>
 <div class="sect2">
 <h3 id="selecting-a-client-code-select-c-code"><a class="link" href="#selecting-a-client-code-select-c-code">4.10. Selecting a client: <code>select-c</code></a></h3>
 <div class="paragraph">
-<p>Selects the client identified by the index number used in the displayed client list panel. All the equipments own by the client will be displayed under <strong>Equipment details</strong> panel.<br>
+<p>Selects the client identified by the index number used in the displayed client list panel. All the equipment owned by the client will be displayed under <strong>Equipment details</strong> panel.<br>
 Format: <code>select-c INDEX</code></p>
 </div>
 <div class="ulist">
@@ -694,7 +694,7 @@ Selects the 2nd client in the equipment manager.</p>
 <div class="sect2">
 <h3 id="show-in-map-code-display-code"><a class="link" href="#show-in-map-code-display-code">4.11. Show in map: <code>display</code></a></h3>
 <div class="paragraph">
-<p>Display entries on the list to the map. Addresses of the equipment will be taken to plot marker on map.
+<p>Display entries on the list to the map. Addresses of the equipment will be taken to plot marker on map.<br>
 Format: <code>display</code></p>
 </div>
 <div class="paragraph">
@@ -750,7 +750,7 @@ Format: <code>display</code></p>
 <div class="sect2">
 <h3 id="sorting-the-equipment-list-code-sort-code"><a class="link" href="#sorting-the-equipment-list-code-sort-code">4.13. Sorting the equipment list: <code>sort</code></a></h3>
 <div class="paragraph">
-<p>Sort the current shown list.</p>
+<p>Sort the equipment list.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
@@ -1013,7 +1013,7 @@ Returns any equipment details that either consists of tampines, address that con
 <div class="sect2">
 <h3 id="deleting-a-work-list-code-delete-w-code"><a class="link" href="#deleting-a-work-list-code-delete-w-code">4.17. Deleting a work list: <code>delete-w</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified work list from the work list.
+<p>Deletes the specified work list from the work list.<br>
 Format: <code>delete-w INDEX</code></p>
 </div>
 <div class="paragraph">
@@ -1265,7 +1265,7 @@ For more details on what each command does, please refer to <a href="#Features">
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit 1 n/Clementi Community Center</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all equipments</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all equipment</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
 </tr>
@@ -1342,4 +1342,4 @@ For more details on what each command does, please refer to <a href="#Features">
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:24:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:56:37 UTC</div></div></div></body></html>
