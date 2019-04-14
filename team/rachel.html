@@ -423,6 +423,88 @@ Refer to <a href="#Features">[Features]</a> for details of each command.
 </div>
 </div>
 <div class="sect2">
+<h3 id="adding-an-equipment-code-add-e-code"><a class="link" href="#adding-an-equipment-code-add-e-code">Adding an equipment: <code>add-e</code></a></h3>
+<div class="paragraph">
+<p>Adds an equipment to the <strong>Equipment Manager</strong>. The result of adding an equipment will be reflected on the panel labelled under <strong>Equipment details</strong> and <strong>Client details</strong>. <br>
+Format: <code>add-e n/NAME p/PHONE pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Refer to <a href="#EquipmentPara">About Equipment Parameters</a> to understand each equipment&#8217;s parameter when adding an equipment detail.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Equipment that has overdue preventative maintenance dates are allowed to be added for tracking purposes.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+As seen in <a href="#duplicate">UI Result after adding 2 equipments owned by the same client</a> below, under <strong>Equipment details</strong> panel, duplicated client details such as name, phone, address could be added and displayed because the details refer to a client&#8217;s details who owns multiple equipments as long as the serial numbers of equipment are different.<br>
+Under <strong>Client details</strong> panel, duplicated client names will not appear in the panel because the <strong>Client details</strong> panel will only show distinct number of clients in the <strong>Equipment Manager</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>The following shows user adding 1 equipment that is own by the client called Serangoon CC.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-e n/Serangon CC p/64738499 pm/11-06-2019 a/10 Serangoon North Ave 2, Singapore 555877 s/A0293838X t/northeast</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SerangoonCC.png" alt="SerangoonCC" width="800">
+</div>
+<div class="title">Figure 2. UI Result after adding an equipment own by Serangoon CC</div>
+</div>
+<div class="paragraph">
+<p>The following shows user adding 2 equipments that are own by the same client called  Pending CC.
+Under <strong>Equipment details</strong> panel, 2 equipments of the same name Pending CC are displayed. Only the serial number is different which indicates 2 different equipment owned by Pending CC.
+Under <strong>Client details</strong> panel, Pending CC is added to the panel after entering the <code>add-e</code> command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-e n/Pending CC p/65060900 pm/22-04-2019 a/8 Pending Rd, Singapore 678295 s/A23234567X t/northwest</code><br>
+<code>add-e n/Pending CC p/65060900 pm/22-04-2019 a/8 Pending Rd, Singapore 678295 s/61672453X t/northwest</code></p>
+</li>
+</ul>
+</div>
+<div id="duplicate" class="imageblock">
+<div class="content">
+<img src="../images/PendingCC.png" alt="PendingCC" width="800">
+</div>
+<div class="title">Figure 3. UI Result after adding 2 equipments owned by the same client</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="selecting-a-client-code-select-c-code"><a class="link" href="#selecting-a-client-code-select-c-code">Selecting a client: <code>select-c</code></a></h3>
 <div class="paragraph">
 <p>Selects the client identified by the index number used in the displayed client list panel. All the equipments own by the client will be displayed under <strong>Equipment details</strong> panel.<br>
@@ -654,7 +736,7 @@ For more details on what each command does, please refer to <a href="#Features">
 <div class="content">
 <img src="../images/Architecture.png" alt="Architecture" width="600">
 </div>
-<div class="title">Figure 2. Architecture Diagram</div>
+<div class="title">Figure 4. Architecture Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
@@ -734,7 +816,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
-<div class="title">Figure 3. Class Diagram of the Logic Component</div>
+<div class="title">Figure 5. Class Diagram of the Logic Component</div>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
@@ -744,7 +826,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="../images/SDforDeletePerson.png" alt="SDforDeletePerson" width="800">
 </div>
-<div class="title">Figure 4. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 6. Component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below will give more details of each component; <strong>UI</strong>, <strong>Logic</strong>, <strong>Model</strong> and <strong>Storage</strong>.</p>
@@ -756,7 +838,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
 </div>
-<div class="title">Figure 5. Structure of the UI Component</div>
+<div class="title">Figure 7. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/src/main/java/seedu/equipment/ui/Ui.java"><code>Ui.java</code></a></p>
@@ -790,7 +872,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
-<div class="title">Figure 6. Structure of the Logic Component</div>
+<div class="title">Figure 8. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -822,7 +904,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="../images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
 </div>
-<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 9. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 </div>
 <div class="sect2">
@@ -831,7 +913,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
 </div>
-<div class="title">Figure 8. Structure of the Model Component</div>
+<div class="title">Figure 10. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master//src/main/java/seedu/equipment/model/Model.java"><code>Model.java</code></a></p>
@@ -871,7 +953,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Man
 <div class="content">
 <img src="../images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800">
 </div>
-<div class="title">Figure 9. Class diagram of Model Component</div>
+<div class="title">Figure 11. Class diagram of Model Component</div>
 </div>
 </div>
 <div class="sect2">
@@ -880,7 +962,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Man
 <div class="content">
 <img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 10. Structure of the Storage Component</div>
+<div class="title">Figure 12. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/src/main/java/seedu/equipment/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -984,7 +1066,7 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <div class="content">
 <img src="../images/AddCommandSD.png" alt="AddCommandSD" width="800">
 </div>
-<div class="title">Figure 11. Sequence diagram for <code>AddCommand</code></div>
+<div class="title">Figure 13. Sequence diagram for <code>AddCommand</code></div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how the adding of equipment details mechanism behaves at each step after carrying out <code>add-e</code>.</p>
@@ -1171,4 +1253,4 @@ The figure in Current Implementation of <a href="#equipment-feature">Equipment f
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 07:33:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:24:46 UTC</div></div></div></body></html>

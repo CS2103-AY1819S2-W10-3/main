@@ -395,19 +395,8 @@ Equipment that has overdue preventative maintenance dates are allowed to be adde
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-As seen in the image below, under <strong>Equipment details</strong> panel, duplicated client details such as name, phone, address could be added and displayed because the details refer to a client&#8217;s details who owns multiple equipments as long as the serial numbers of equipment are different.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-As seen in the image below, under <strong>Client details</strong> panel, duplicated client names will not appear in the panel because the <strong>Client details</strong> panel will only show distinct number of clients in the <strong>Equipment Manager</strong>.
+As seen in <a href="#duplicate">Figure 3, &#8220;UI Result after adding 2 equipments owned by the same client&#8221;</a> below, under <strong>Equipment details</strong> panel, duplicated client details such as name, phone, address could be added and displayed because the details refer to a client&#8217;s details who owns multiple equipments as long as the serial numbers of equipment are different.<br>
+Under <strong>Client details</strong> panel, duplicated client names will not appear in the panel because the <strong>Client details</strong> panel will only show distinct number of clients in the <strong>Equipment Manager</strong>.
 </td>
 </tr>
 </table>
@@ -416,25 +405,39 @@ As seen in the image below, under <strong>Client details</strong> panel, duplica
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>The following shows user adding 1 equipment that is own by the client called  Serangoon CC</p>
+<p>The following shows user adding 1 equipment that is own by the client called Serangoon CC.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-e n/Serangon CC p/64738499 pm/11-06-2019 a/10 Serangoon North Ave 2, Singapore 555877 s/A0293838X t/north-east</code></p>
+<p><code>add-e n/Serangon CC p/64738499 pm/11-06-2019 a/10 Serangoon North Ave 2, Singapore 555877 s/A0293838X t/northeast</code></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SerangoonCC.png" alt="SerangoonCC" width="800">
+</div>
+<div class="title">Figure 2. UI Result after adding an equipment own by Serangoon CC</div>
 </div>
 <div class="paragraph">
-<p>The following shows user adding 2 equipments that are own by the same client called  Clementi CC</p>
+<p>The following shows user adding 2 equipments that are own by the same client called  Pending CC.
+Under <strong>Equipment details</strong> panel, 2 equipments of the same name Pending CC are displayed. Only the serial number is different which indicates 2 different equipment owned by Pending CC.
+Under <strong>Client details</strong> panel, Pending CC is added to the panel after entering the <code>add-e</code> command.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-e n/Clementi CC p/67762517 pm/10-06-2019  a/220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</code><br>
-<code>add-e n/Clementi CC p/67762517 pm/10-06-2019 a/220 Clementi Ave 4, Singapore 129880 s/A007723L t/west</code></p>
+<p><code>add-e n/Pending CC p/65060900 pm/22-04-2019 a/8 Pending Rd, Singapore 678295 s/A23234567X t/northwest</code><br>
+<code>add-e n/Pending CC p/65060900 pm/22-04-2019 a/8 Pending Rd, Singapore 678295 s/61672453X t/northwest</code></p>
 </li>
 </ul>
+</div>
+<div id="duplicate" class="imageblock">
+<div class="content">
+<img src="images/PendingCC.png" alt="PendingCC" width="800">
+</div>
+<div class="title">Figure 3. UI Result after adding 2 equipments owned by the same client</div>
 </div>
 </div>
 <div class="sect2">
@@ -1339,4 +1342,4 @@ For more details on what each command does, please refer to <a href="#Features">
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 07:33:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:24:46 UTC</div></div></div></body></html>
