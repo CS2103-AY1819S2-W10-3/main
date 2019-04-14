@@ -187,7 +187,7 @@ The exclamation mark icon indicates any warnings that users can take note of whi
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[4] <strong>Status Bar</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the total number of equipments in the <strong>Equipment Manager</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[5] <strong>Google Map</strong></p></td>
@@ -234,32 +234,32 @@ Please remember the naming convention for the different regions in GUI as they w
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameters</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The client&#8217;s name who owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name should only contain alphanumeric characters and spaces, and it should not be blank.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PHONE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The contact number of the client that owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone numbers should only contain numbers, and it should be at least 3 digits long</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The due date for which maintenance work on the equipment should be carried out by then.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should only contain numbers and hyphens, no blanks allowed. The correct format is  dd-MM-yyyy. For example, 03-05-2019 which means 3 May 2019.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADDRESS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address of the client that owns the equipment.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SERIAL_NUMBER</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All equipments have unique serial number and there should not be duplicated serial number.</p></td>
 </tr>
@@ -319,7 +319,7 @@ Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details o
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add-e n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add-e n/Clementi CC</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/Clementi CC t/urgent</code> or as <code>n/Clementi CC</code>.</p>
@@ -328,7 +328,7 @@ Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details o
 <p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE</code>, <code>p/PHONE n/NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
@@ -362,7 +362,7 @@ You can view help by click the `Help button on the Menu Bar.
 <h3 id="adding-an-equipment-code-add-e-code"><a class="link" href="#adding-an-equipment-code-add-e-code">4.2. Adding an equipment: <code>add-e</code></a></h3>
 <div class="paragraph">
 <p>Adds an equipment to the <strong>Equipment Manager</strong>. The result of adding an equipment will be reflected on the panel labelled under <strong>Equipment details</strong> and <strong>Client details</strong>. <br>
-Format: <code>add-e n/NAME p/PHONE_NUMBER pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG</code></p>
+Format: <code>add-e n/NAME p/PHONE pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1321,4 +1321,4 @@ For more details on what each command does, please refer to <a href="#Features">
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:21:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:53:59 UTC</div></div></div></body></html>
