@@ -7,18 +7,19 @@
 <p>Hello! My name is Tan Mei Yen and I am currently a second year student studying Computer Science at National University of Singapore.<br></p>
 </div>
 <div class="paragraph">
-<p>This Personal Project Portfolio details the contributions which I have made to the Equipment Manager project for CS2103T Software Engineering module. My main responsibilites are implementing command features and ensuring proper documentation.</p>
+<p>This Personal Project Portfolio details the contributions which I have made to the Equipment Manager project for CS2103T Software Engineering module. My main responsibilites are implementing command features which are <code>filter</code> and <code>sort</code> and also ensuring proper documentation in the user and developer guide.
+The following sections illustrate these enhancements in further detail and other relevant sections I have added to the user and developer guides in relation to these enhancements.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-code-equipment-manager-code"><a class="link" href="#project-code-equipment-manager-code">Project: <code>Equipment Manager</code></a></h2>
+<h2 id="project-equipment-manager"><a class="link" href="#project-equipment-manager">Project: Equipment Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="overview"><a class="link" href="#overview">1. Overview</a></h2>
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>Equipment Manager</em> is a desktop CLI (Command Line Interface) application that allows engineers to keep track on the Preventive Maintenance schedule of all Resuscitation Devices in Singapore. It has a GUI (Graphic User Interface) that allows users to get further information on each equipment.<br></p>
@@ -49,7 +50,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">2. Summary of contributions</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
 <hr>
 <div class="paragraph">
@@ -58,21 +59,11 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Code contributed</strong>:</p>
+<p><strong>Enhancement 1</strong>: added the ability to <strong>filter the equipment list according to specified fields</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#=undefined&amp;search=bendymochi">Click here</a> to view my code on the CS2103T Project Code Dashboard.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Enhancement 1</strong>: Implement filter feature to <strong>filter the current shown list according to specified keywords</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: This feature allows the user to filter the current shown list which matches the given keywords:</p>
+<p>What it does: The <code>filter</code> command allows the user to filter the equipment list which matches the given fields:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -97,30 +88,33 @@
 </div>
 </li>
 <li>
-<p>Justification: The user can filter the current shown list with certain keywords, expediting the search process, and reducing the time needed to find a specific equipment or client.</p>
+<p>Justification: The user can filter the list with certain fields, expediting the search process, and reducing the time needed to find an equipment and its details.</p>
 </li>
 <li>
 <p>Highlights:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The command is simple to use and allows multiple keywords to filter by.</p>
+<p>The command is simple to use and allows multiple fields to filter by.</p>
 </li>
 <li>
-<p>If users were to forget what are the fields/keywords available, error messages would guide them to execute the commands correctly.</p>
-</li>
-</ul>
-</div>
+<p>If users were to forget what are the fields available, error messages would guide them to execute the commands correctly.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Enhancement 2</strong>: Implement sort feature to <strong>sort the current shown list according to specified fields</strong></p>
+<p>Credits: Code from <code>FindCommand</code> was referenced in the implementation of <code>FilterCommand</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Enhancement 2</strong>: added the ability to <strong>sort the equipment list according to specified keywords</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: This feature allows the user to sort the current shown list by the given fields:</p>
+<p>What it does: The <code>sort</code> command allows the user to sort the equipment list by the given keywords:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -130,20 +124,26 @@
 <p>Date</p>
 </li>
 <li>
+<p>Serial Number</p>
+</li>
+<li>
 <p>Phone</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Justification: The user can sort the current shown list in lexicographical order for better viewing purposes.</p>
+<p>Justification: The user can sort the equipment list in lexicographical order for better viewing purposes.</p>
 </li>
 <li>
 <p>Highlights:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The command is simple to use and sort by.</p>
+<p>The command is simple to use and allows the user to sort the list by their own preferences.</p>
+</li>
+<li>
+<p>If users were to forget what are the keywords available, error messages would guide them to execute the commands correctly.</p>
 </li>
 </ul>
 </div>
@@ -152,7 +152,27 @@
 <p>Filter Command: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/94">#94</a>] [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/60">#60</a>] [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/52">#52</a>]</p>
 </li>
 <li>
-<p>Sort Command: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/75">#75</a>] [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/39">#39</a>]</p>
+<p>Sort Command: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/178">#178</a>] [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/75">#75</a>] [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/39">#39</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#=undefined&amp;search=bendymochi">Click here</a> to view my code on the CS2103T Project Code Dashboard.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enhancements to existing features:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -173,13 +193,6 @@
 </ul>
 </div>
 </li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Other contributions</strong>:</p>
-<div class="ulist">
-<ul>
 <li>
 <p>Documentation:</p>
 <div class="ulist">
@@ -188,7 +201,8 @@
 <p>Helped write the user stories in User Guide</p>
 </li>
 <li>
-<p>Updated contents of the User Guide and Developer Guide with new features</p>
+<p>Updated contents of the User Guide and Developer Guide with new features
+[<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/101">#101</a>]<br></p>
 </li>
 <li>
 <p>Changed UI colors
@@ -203,9 +217,14 @@
 <ul>
 <li>
 <p>PRs reviewed
+[<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/181">#181</a>],
+[<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/111">#111</a>],
 [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/79">#79</a>],
 [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/59">#59</a>],
 [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/45">#45</a>].</p>
+</li>
+<li>
+<p>Reported bugs and offered suggestions for other teams in the class [examples: [<a href="https://github.com/CS2103-AY1819S2-W15-1/main/issues/128">1</a>, <a href="https://github.com/CS2103-AY1819S2-W15-1/main/issues/114">2</a>, <a href="https://github.com/CS2103-AY1819S2-W15-1/main/issues/123">3</a>]</p>
 </li>
 </ul>
 </div>
@@ -218,8 +237,9 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">3. Contributions to the User Guide</a></h2>
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
+<hr>
 <div class="paragraph">
 <p>Given below are sections I contributed to the User Guide, which consists of documentation of filter and sort commands. They showcase my ability to write documentation targeting end-users.</p>
 </div>
@@ -237,25 +257,22 @@
 <p>At least <strong>one</strong> keyword must be provided.</p>
 </li>
 <li>
-<p>Filtering multiple keywords of the same prefix will return equipment/client whose attribute corresponding to the prefix contain
+<p>Filtering multiple keywords of the same prefix will return equipment whose attribute corresponding to the prefix contain
 any one of the keywords.</p>
 </li>
 <li>
-<p>Filtering with keywords of different prefixes will return only equipment/client that matches with any of the keywords of
+<p>Filtering with keywords of different prefixes will return only equipment that matches with any of the keywords of
 the different prefixes.</p>
 </li>
 <li>
-<p>The filter is case insensitive, e.g. jurong will match Jurong.</p>
+<p>The filter is case insensitive, e.g. hougang will match Hougang.</p>
 </li>
 </ul>
 </div>
 <div class="ulist TIP">
 <ul class="TIP">
 <li>
-<p>The user can filter the list with any specified fields, and can filter by multiple fields and keywords.</p>
-</li>
-<li>
-<p>Equipment, client, and work list can all be filtered, by any fields of them.</p>
+<p>The user can filter the equipment list with any specified fields, and can filter by multiple fields and keywords.</p>
 </li>
 </ul>
 </div>
@@ -267,48 +284,107 @@ the different prefixes.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="exclamation.png" alt="exclamation" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This command only works on the overall list and not the current shown list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This command only works on the overall equipment list and not the current shown equipment list.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>For example,</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="filtername.png" alt="filtername" width="800">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>filter n/jurong</code><br>
-Returns any equipment whose name contains jurong.</p>
+<p><code>filter n/hougang</code><br>
+Returns any equipment whose name consists of 'hougang'.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="filteraddress.png" alt="filteraddress" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter a/bedok north</code><br>
-Returns any equipment whose address contains bedok north.</p>
+<p><code>filter a/bedok</code><br>
+Returns any equipment whose address consists of 'bedok'.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="filterdate.png" alt="filterdate" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter pm/20 May</code><br>
-Returns any equipment whose preventative maintenance date contains 20 May.</p>
+<p><code>filter pm/27-09</code><br>
+Returns any equipment whose preventative maintenance date consists of '27-09'.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="filterphone.png" alt="filterphone" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter s/9888</code><br>
-Returns any equipment whose phone number contains 9888.</p>
+<p><code>filter p/6783</code><br>
+Returns any equipment whose phone number consists of 6783.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="filterserial.png" alt="filterserial" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter s/A200</code><br>
-Returns any equipment whose serial number contains A200.</p>
+<p><code>filter s/03071</code><br>
+Returns any equipment whose serial number consists of 03071.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="filtertags.png" alt="filtertags" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>filter t/urgent t/west</code><br>
-Returns any equipment whose tags contains urgent and west.</p>
+Returns any equipment details whose tags consists of urgent or west.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="filtermultiple.png" alt="filtermultiple" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter n/jurong a/blk 123 t/urgent</code><br>
-Returns any equipment whose names that either contains jurong, address that contains blk 123, or whose tags contains urgent.</p>
+<p><code>filter n/tampines a/41 t/urgent</code><br>
+Returns any equipment details that either consists of tampines, address that consists of 41, or whose tags consists of urgent.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-the-equipment-list-code-sort-code"><a class="link" href="#sorting-the-equipment-list-code-sort-code">3.1. Sorting the equipment list: <code>sort</code></a></h3>
+<h3 id="sorting-the-equipment-list-code-sort-code"><a class="link" href="#sorting-the-equipment-list-code-sort-code">Sorting the equipment list: <code>sort</code></a></h3>
 <div class="paragraph">
 <p>Sort the current shown list.</p>
 </div>
@@ -316,7 +392,7 @@ Returns any equipment whose names that either contains jurong, address that cont
 <p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
 </div>
 <div class="paragraph">
-<p>The user can sort the current shown list with specified field.</p>
+<p>The user can sort the equipment list with specified field.</p>
 </div>
 <div class="paragraph">
 <p>The sort parameters are case-insensitive.</p>
@@ -331,7 +407,7 @@ Returns any equipment whose names that either contains jurong, address that cont
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Equipment, client, and work list can only be sorted by preventive maintenance date of the equipment and phone number of the client.
+Equipment list can only be sorted by <code>name</code>, <code>date</code>, <code>phone</code> and <code>serial</code>.
 </td>
 </tr>
 </table>
@@ -339,54 +415,103 @@ Equipment, client, and work list can only be sorted by preventive maintenance da
 <div class="paragraph">
 <p>For example,</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="sortName.png" alt="sortName" width="800">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>sort</code><br>
-Returns the list sorted by name.</p>
+<p><code>sort name</code><br>
+Returns the list sorted in alphabetical order of the client&#8217;s name.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sortDate.png" alt="sortDate" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>sort date</code><br>
-Returns the list sorted according to the preventative maintenance date of the equipment.</p>
+Returns the list sorted in an ascending order of the preventative maintenance date of the equipment.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sortPhone.png" alt="sortPhone" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>sort phone</code><br>
 Returns the list sorted by phone number of the client.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="sortSerial.png" alt="sortSerial" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort serial</code><br>
+Returns the list sorted by serial number of the equipment.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This command only works on the overall equipment list and not the current shown equipment list.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a></h2>
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
+<hr>
 <div class="paragraph">
 <p>Given below are sections I contributed to the Developer Guide, which consists of documentation of filter and sort commands and user stories. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</p>
 </div>
 <div class="sect2">
-<h3 id="filter-feature"><a class="link" href="#filter-feature">4.1. Filter feature</a></h3>
+<h3 id="filter-feature"><a class="link" href="#filter-feature">Filter feature</a></h3>
 <div class="sect3">
-<h4 id="introduction-2"><a class="link" href="#introduction-2">4.1.1. Introduction</a></h4>
+<h4 id="introduction-2"><a class="link" href="#introduction-2">Introduction</a></h4>
 <div class="paragraph">
-<p>We have implemented a <code>FilterCommand</code> that allow users to filter the current shown list with the specified fields.</p>
+<p>We have implemented a <code>FilterCommand</code> that allow users to filter the equipment list with the specified fields.</p>
 </div>
 <div class="paragraph">
-<p>The filter feature allow users to filter the overall list with any specified fields, and also can filter by multiple fields.</p>
+<p>The filter feature allow users to filter the equipment list with any specified fields, and also can filter by multiple fields.</p>
 </div>
 <div class="paragraph">
-<p>The <code>FilterCommand</code> is able to filter the overall list according to the user&#8217;s preference at a time.</p>
+<p>The <code>FilterCommand</code> is able to filter the equipment list according to the user&#8217;s preference at a time.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.2. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <strong>filter</strong> mechanism is supported by <code>FilterCommandParser</code>. It implements <code>Parser</code> that implements the following operation:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>FilterCommand#execute()</code>  -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
+<p><code>FilterCommandParser#parse()</code>  -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
 It then splits the arguments using <code>ArgumentTokenizer#tokenize()</code> and returns an ArgumentMultimap. Keywords of the same prefix are then grouped using <code>ArgumentMultimap#getAllValues()</code>.</p>
 </li>
 </ul>
@@ -395,7 +520,7 @@ It then splits the arguments using <code>ArgumentTokenizer#tokenize()</code> and
 <p>The <strong>filter</strong> mechanism is also facilitated by <code>FilterCommand</code>. It extends <code>Command</code> and implements the following operation:</p>
 </div>
 <div class="paragraph">
-<p><code>FilterCommand#execute()</code>  — Executes the command by updating the current <code>FilteredPersonList</code> with the <code>EquipmentContainsKeywordPredicate</code>.</p>
+<p><code>FilterCommand#execute()</code>  —  Executes the command by updating the current <code>FilteredPersonList</code> with the <code>EquipmentContainsKeywordPredicate</code>.</p>
 </div>
 <div class="paragraph">
 <p><code>EquipmentContainsKeywordsPredicate</code> takes in the lists of keywords for the following:</p>
@@ -421,6 +546,9 @@ It then splits the arguments using <code>ArgumentTokenizer#tokenize()</code> and
 <p>Serial Number</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the filter operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -456,9 +584,21 @@ attributes - serial number, tags, address, name, preventive maintenance date, ph
 <div class="paragraph">
 <p>Step 7. The argument is filtered against the predicate and returned to the GUI.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<code>FilterCommand</code> only filters the equipment list.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.3. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>FilterCommand</code></strong></p>
 </div>
@@ -470,7 +610,7 @@ Supports multiple fields in the same command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: It is easy to implement and easy to match keyword against a Equipment if the matching attribute is known.</p>
+<p>Pros: It is easy to implement and easy to match keyword against an equipment if the matching attribute is known.</p>
 </li>
 <li>
 <p>Pros: User has more control over the results returned.</p>
@@ -483,7 +623,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 <p>Cons: User is required to type slightly more.</p>
 </li>
 <li>
-<p>Cons: It only filters the overall list.</p>
+<p>Cons: It only filters the equipment list.</p>
 </li>
 </ul>
 </div>
@@ -525,26 +665,87 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-feature"><a class="link" href="#sort-feature">4.2. Sort feature</a></h3>
+<h3 id="sort-feature"><a class="link" href="#sort-feature">Sort feature</a></h3>
 <div class="sect3">
-<h4 id="introduction-3"><a class="link" href="#introduction-3">4.2.1. Introduction</a></h4>
+<h4 id="introduction-3"><a class="link" href="#introduction-3">Introduction</a></h4>
 <div class="paragraph">
-<p>We have implemented a <code>SortCommand</code> that allow users to sort the current shown list with specific fields.</p>
+<p>We have implemented a <code>SortCommand</code> that allow users to sort the equipment list with specific keyword.</p>
+</div>
+<div class="paragraph">
+<p>The entries in the equipment list is ordered to the time when the entry is entered into the application by default such that the entry entered first is at the top of the equipment list and the latest entry entered is at the bottom of the equipment list.
+The <code>sort</code> mechanism allows user to view the equipment list according to their preferences.</p>
+</div>
+<div class="paragraph">
+<p>The <code>SortCommand</code> is able to sort the equipment list according to the user&#8217;s preferences at a time.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.2. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
 <div class="paragraph">
-<p><code>SortCommand</code> sorts the list by specified field in lexicographical order.</p>
+<p>The <code>sort</code> command sorts the list by specified keyword in lexicographical order.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and add equipment.</p>
+<p>Comparators that implement <code>java.util.Comparator</code> interface are used in the <strong>sort</strong> mechanism to perform the comparsion.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>sort [FIELD]</code></p>
+<p>The <strong>sort</strong> mechanism is supported by <code>SortCommandParser</code>. It implements <code>Parser</code> that implements the following operation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SortCommandParser#parse()</code> -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
+It then splits the arguments and checks if the next string is a valid keyword, else, it will throw a ParseException.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Step 3. The list is sorted by specified field and returned to the GUI.</p>
+<p>Valid keywords:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>name</p>
+</li>
+<li>
+<p>date</p>
+</li>
+<li>
+<p>phone</p>
+</li>
+<li>
+<p>serial</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the sort operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="SortCommandSequenceDiagram.png" alt="SortCommandSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Example</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how the sort mechanism behaves at each step when sorting.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>sort name</code> command to sort the equipment list by name.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>SortCommandParser#parse()</code> creates a new <code>NameComparator()</code> object and passes it into <code>SortCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>EquipmentManager#sortEquipmentList(comparator)</code> calls <code>UniqueEquipmentList#sortEquipmentList(comparator)</code>, which then
+uses FXCollection’s static method <code>sort()</code> to sort the equipment list by name.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The list is sorted by specified keyword (name) and returned to the GUI.</p>
 </div>
 <div class="paragraph">
 <p>Test cases:</p>
@@ -557,7 +758,17 @@ e.g: <code>filter n/jurong t/west</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Output: By default, the list is sorted in alphabetical order of the client names.</p>
+<p>Output: An error message will be shown to what keywords are available.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Input: <code>sort name</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Output: The list is sorted in the name in alphabetical order.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -577,7 +788,17 @@ e.g: <code>filter n/jurong t/west</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Output: The list is sorted in ascending order by the phone numbers of the client.</p>
+<p>Output: The list is sorted in ascending order by the phone number of the client.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Input: <code>sort serial</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Output: The list is sorted in ascending order by the serial number of the equipment.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -586,28 +807,28 @@ e.g: <code>filter n/jurong t/west</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<code>SortCommand</code> only supports sorting by date and phone number.
+<code>SortCommand</code> only sorts the equipment list.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.3. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>SortCommand</code></strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Sorts by specific field.</p>
+<p><strong>Alternative 1 (current choice): </strong>Sorts by specific keyword by using the Comparator interface.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement. Flexible to add more functions. Many JavaScript libraries can be used.</p>
+<p>Pros: Sorting can be done based on different fields (name, date, phone number and serial number)</p>
 </li>
 <li>
-<p>Cons: The overall list is not 100% sorted by specific field</p>
+<p>Cons: A new class that implements the interface Comparator needs to be created for the fields.</p>
 </li>
 </ul>
 </div>
@@ -630,4 +851,4 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 05:39:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:21:45 UTC</div></div></div></body></html>

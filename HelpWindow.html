@@ -754,7 +754,7 @@ Format: <code>display</code></p>
 <p>Format: <code>sort [FIELD_NAME to be sorted by]</code></p>
 </div>
 <div class="paragraph">
-<p>The user can sort the current shown list with specified field.</p>
+<p>The user can sort the equipment list with specified field.</p>
 </div>
 <div class="paragraph">
 <p>The sort parameters are case-insensitive.</p>
@@ -769,7 +769,7 @@ Format: <code>display</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Equipment, client, and work list can only be sorted by preventive maintenance date of the equipment and phone number of the client.
+Equipment list can only be sorted by <code>name</code>, <code>date</code>, <code>phone</code> and <code>serial</code>.
 </td>
 </tr>
 </table>
@@ -777,22 +777,70 @@ Equipment, client, and work list can only be sorted by preventive maintenance da
 <div class="paragraph">
 <p>For example,</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/sortName.png" alt="sortName" width="800">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>sort</code><br>
-Returns the list sorted by name.</p>
+<p><code>sort name</code><br>
+Returns the list sorted in alphabetical order of the client&#8217;s name.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/sortDate.png" alt="sortDate" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>sort date</code><br>
-Returns the list sorted according to the preventative maintenance date of the equipment.</p>
+Returns the list sorted in an ascending order of the preventative maintenance date of the equipment.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/sortPhone.png" alt="sortPhone" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>sort phone</code><br>
 Returns the list sorted by phone number of the client.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/sortSerial.png" alt="sortSerial" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort serial</code><br>
+Returns the list sorted by serial number of the equipment.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/exclamation.png" alt="exclamation" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This command only works on the overall equipment list and not the current shown equipment list.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="filtering-the-equipment-list-code-filter-code"><a class="link" href="#filtering-the-equipment-list-code-filter-code">4.14. Filtering the equipment list: <code>filter</code></a></h3>
@@ -808,25 +856,22 @@ Returns the list sorted by phone number of the client.</p>
 <p>At least <strong>one</strong> keyword must be provided.</p>
 </li>
 <li>
-<p>Filtering multiple keywords of the same prefix will return equipment/client whose attribute corresponding to the prefix contain
+<p>Filtering multiple keywords of the same prefix will return equipment whose attribute corresponding to the prefix contain
 any one of the keywords.</p>
 </li>
 <li>
-<p>Filtering with keywords of different prefixes will return only equipment/client that matches with any of the keywords of
+<p>Filtering with keywords of different prefixes will return only equipment that matches with any of the keywords of
 the different prefixes.</p>
 </li>
 <li>
-<p>The filter is case insensitive, e.g. jurong will match Jurong.</p>
+<p>The filter is case insensitive, e.g. hougang will match Hougang.</p>
 </li>
 </ul>
 </div>
 <div class="ulist TIP">
 <ul class="TIP">
 <li>
-<p>The user can filter the list with any specified fields, and can filter by multiple fields and keywords.</p>
-</li>
-<li>
-<p>Equipment, client, and work list can all be filtered, by any fields of them.</p>
+<p>The user can filter the equipment list with any specified fields, and can filter by multiple fields and keywords.</p>
 </li>
 </ul>
 </div>
@@ -838,42 +883,101 @@ the different prefixes.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="images/exclamation.png" alt="exclamation" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This command only works on the overall list and not the current shown list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This command only works on the overall equipment list and not the current shown equipment list.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>For example,</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/filtername.png" alt="filtername" width="800">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>filter n/jurong</code><br>
-Returns any equipment whose name contains jurong.</p>
+<p><code>filter n/hougang</code><br>
+Returns any equipment whose name consists of 'hougang'.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/filteraddress.png" alt="filteraddress" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter a/bedok north</code><br>
-Returns any equipment whose address contains bedok north.</p>
+<p><code>filter a/bedok</code><br>
+Returns any equipment whose address consists of 'bedok'.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/filterdate.png" alt="filterdate" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter pm/20 May</code><br>
-Returns any equipment whose preventative maintenance date contains 20 May.</p>
+<p><code>filter pm/27-09</code><br>
+Returns any equipment whose preventative maintenance date consists of '27-09'.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/filterphone.png" alt="filterphone" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter s/9888</code><br>
-Returns any equipment whose phone number contains 9888.</p>
+<p><code>filter p/6783</code><br>
+Returns any equipment whose phone number consists of 6783.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/filterserial.png" alt="filterserial" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter s/A200</code><br>
-Returns any equipment whose serial number contains A200.</p>
+<p><code>filter s/03071</code><br>
+Returns any equipment whose serial number consists of 03071.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/filtertags.png" alt="filtertags" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>filter t/urgent t/west</code><br>
-Returns any equipment whose tags contains urgent and west.</p>
+Returns any equipment details whose tags consists of urgent or west.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/filtermultiple.png" alt="filtermultiple" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>filter n/jurong a/blk 123 t/urgent</code><br>
-Returns any equipment whose names that either contains jurong, address that contains blk 123, or whose tags contains urgent.</p>
+<p><code>filter n/tampines a/41 t/urgent</code><br>
+Returns any equipment details that either consists of tampines, address that consists of 41, or whose tags consists of urgent.</p>
 </li>
 </ul>
 </div>
@@ -1217,4 +1321,4 @@ For more details on what each command does, please refer to <a href="#Features">
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 05:39:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:21:45 UTC</div></div></div></body></html>

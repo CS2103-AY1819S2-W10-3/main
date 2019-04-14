@@ -853,13 +853,13 @@ The figure in Current Implementation of <a href="#equipment-feature">Section 4.1
 <div class="sect3">
 <h4 id="introduction-2"><a class="link" href="#introduction-2">4.3.1. Introduction</a></h4>
 <div class="paragraph">
-<p>We have implemented a <code>FilterCommand</code> that allow users to filter the current shown list with the specified fields.</p>
+<p>We have implemented a <code>FilterCommand</code> that allow users to filter the equipment list with the specified fields.</p>
 </div>
 <div class="paragraph">
-<p>The filter feature allow users to filter the overall list with any specified fields, and also can filter by multiple fields.</p>
+<p>The filter feature allow users to filter the equipment list with any specified fields, and also can filter by multiple fields.</p>
 </div>
 <div class="paragraph">
-<p>The <code>FilterCommand</code> is able to filter the overall list according to the user&#8217;s preference at a time.</p>
+<p>The <code>FilterCommand</code> is able to filter the equipment list according to the user&#8217;s preference at a time.</p>
 </div>
 </div>
 <div class="sect3">
@@ -870,7 +870,7 @@ The figure in Current Implementation of <a href="#equipment-feature">Section 4.1
 <div class="ulist">
 <ul>
 <li>
-<p><code>FilterCommand#execute()</code>  -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
+<p><code>FilterCommandParser#parse()</code>  -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
 It then splits the arguments using <code>ArgumentTokenizer#tokenize()</code> and returns an ArgumentMultimap. Keywords of the same prefix are then grouped using <code>ArgumentMultimap#getAllValues()</code>.</p>
 </li>
 </ul>
@@ -879,7 +879,7 @@ It then splits the arguments using <code>ArgumentTokenizer#tokenize()</code> and
 <p>The <strong>filter</strong> mechanism is also facilitated by <code>FilterCommand</code>. It extends <code>Command</code> and implements the following operation:</p>
 </div>
 <div class="paragraph">
-<p><code>FilterCommand#execute()</code>  — Executes the command by updating the current <code>FilteredPersonList</code> with the <code>EquipmentContainsKeywordPredicate</code>.</p>
+<p><code>FilterCommand#execute()</code>  —  Executes the command by updating the current <code>FilteredPersonList</code> with the <code>EquipmentContainsKeywordPredicate</code>.</p>
 </div>
 <div class="paragraph">
 <p><code>EquipmentContainsKeywordsPredicate</code> takes in the lists of keywords for the following:</p>
@@ -905,6 +905,9 @@ It then splits the arguments using <code>ArgumentTokenizer#tokenize()</code> and
 <p>Serial Number</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the filter operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -940,6 +943,18 @@ attributes - serial number, tags, address, name, preventive maintenance date, ph
 <div class="paragraph">
 <p>Step 7. The argument is filtered against the predicate and returned to the GUI.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<code>FilterCommand</code> only filters the equipment list.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.3. Design Considerations</a></h4>
@@ -954,7 +969,7 @@ Supports multiple fields in the same command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: It is easy to implement and easy to match keyword against a Equipment if the matching attribute is known.</p>
+<p>Pros: It is easy to implement and easy to match keyword against an equipment if the matching attribute is known.</p>
 </li>
 <li>
 <p>Pros: User has more control over the results returned.</p>
@@ -967,7 +982,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 <p>Cons: User is required to type slightly more.</p>
 </li>
 <li>
-<p>Cons: It only filters the overall list.</p>
+<p>Cons: It only filters the equipment list.</p>
 </li>
 </ul>
 </div>
@@ -1013,22 +1028,83 @@ e.g: <code>filter n/jurong t/west</code></p>
 <div class="sect3">
 <h4 id="introduction-3"><a class="link" href="#introduction-3">4.4.1. Introduction</a></h4>
 <div class="paragraph">
-<p>We have implemented a <code>SortCommand</code> that allow users to sort the current shown list with specific fields.</p>
+<p>We have implemented a <code>SortCommand</code> that allow users to sort the equipment list with specific keyword.</p>
+</div>
+<div class="paragraph">
+<p>The entries in the equipment list is ordered to the time when the entry is entered into the application by default such that the entry entered first is at the top of the equipment list and the latest entry entered is at the bottom of the equipment list.
+The <code>sort</code> mechanism allows user to view the equipment list according to their preferences.</p>
+</div>
+<div class="paragraph">
+<p>The <code>SortCommand</code> is able to sort the equipment list according to the user&#8217;s preferences at a time.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.2. Current Implementation</a></h4>
 <div class="paragraph">
-<p><code>SortCommand</code> sorts the list by specified field in lexicographical order.</p>
+<p>The <code>sort</code> command sorts the list by specified keyword in lexicographical order.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application and add equipment.</p>
+<p>Comparators that implement <code>java.util.Comparator</code> interface are used in the <strong>sort</strong> mechanism to perform the comparsion.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>sort [FIELD]</code></p>
+<p>The <strong>sort</strong> mechanism is supported by <code>SortCommandParser</code>. It implements <code>Parser</code> that implements the following operation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SortCommandParser#parse()</code> -  Checks the arguments for empty strings and throws a ParseException if empty string is found.
+It then splits the arguments and checks if the next string is a valid keyword, else, it will throw a ParseException.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Step 3. The list is sorted by specified field and returned to the GUI.</p>
+<p>Valid keywords:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>name</p>
+</li>
+<li>
+<p>date</p>
+</li>
+<li>
+<p>phone</p>
+</li>
+<li>
+<p>serial</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the sort operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SortCommandSequenceDiagram.png" alt="SortCommandSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Example</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of how the sort mechanism behaves at each step when sorting.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>sort name</code> command to sort the equipment list by name.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>SortCommandParser#parse()</code> creates a new <code>NameComparator()</code> object and passes it into <code>SortCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>EquipmentManager#sortEquipmentList(comparator)</code> calls <code>UniqueEquipmentList#sortEquipmentList(comparator)</code>, which then
+uses FXCollection’s static method <code>sort()</code> to sort the equipment list by name.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The list is sorted by specified keyword (name) and returned to the GUI.</p>
 </div>
 <div class="paragraph">
 <p>Test cases:</p>
@@ -1041,7 +1117,17 @@ e.g: <code>filter n/jurong t/west</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Output: By default, the list is sorted in alphabetical order of the client names.</p>
+<p>Output: An error message will be shown to what keywords are available.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Input: <code>sort name</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Output: The list is sorted in the name in alphabetical order.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1061,7 +1147,17 @@ e.g: <code>filter n/jurong t/west</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Output: The list is sorted in ascending order by the phone numbers of the client.</p>
+<p>Output: The list is sorted in ascending order by the phone number of the client.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Input: <code>sort serial</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Output: The list is sorted in ascending order by the serial number of the equipment.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1070,7 +1166,7 @@ e.g: <code>filter n/jurong t/west</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<code>SortCommand</code> only supports sorting by date and phone number.
+<code>SortCommand</code> only sorts the equipment list.
 </td>
 </tr>
 </table>
@@ -1084,14 +1180,14 @@ e.g: <code>filter n/jurong t/west</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Sorts by specific field.</p>
+<p><strong>Alternative 1 (current choice): </strong>Sorts by specific keyword by using the Comparator interface.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement. Flexible to add more functions. Many JavaScript libraries can be used.</p>
+<p>Pros: Sorting can be done based on different fields (name, date, phone number and serial number)</p>
 </li>
 <li>
-<p>Cons: The overall list is not 100% sorted by specific field</p>
+<p>Cons: A new class that implements the interface Comparator needs to be created for the fields.</p>
 </li>
 </ul>
 </div>
@@ -1398,7 +1494,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete-e 5</code> command to delete the 5th equipment in the <strong>Equipment Manager</strong>. The <code>delete</code> command calls <code>Model#commitEquipmentManager()</code>, causing the modified state of the <strong>Equipment Manager</strong> after the <code>delete 5</code> command executes to be saved in the <code>equipmentManagerStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted *Equipment Manager*r state.</p>
+<p>Step 2. The user executes <code>delete-e 5</code> command to delete the 5th equipment in the <strong>Equipment Manager</strong>. The <code>delete-e</code> command calls <code>Model#commitEquipmentManager()</code>, causing the modified state of the <strong>Equipment Manager</strong> after the <code>delete-e 5</code> command executes to be saved in the <code>equipmentManagerStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted *Equipment Manager*r state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1477,7 +1573,7 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitEquipmentManager()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>equipmentManagerStateList</code>, all <strong>Equipment Manager</strong> states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitEquipmentManager()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>equipmentManagerStateList</code>, all <strong>Equipment Manager</strong> states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/Clementi CC &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1517,7 +1613,7 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the equipment being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete-e</code>, just save the equipment being deleted).</p>
 </li>
 <li>
 <p>Cons: We must ensure that the implementation of each individual command are correct.</p>
@@ -2499,4 +2595,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 05:39:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:21:45 UTC</div></div></div></body></html>
