@@ -19,7 +19,7 @@
 <ul class="sectlevel2">
 <li><a href="#setting-up-of-equipment-manager">3.1. Setting up of Equipment Manager</a></li>
 <li><a href="#graphical-user-interface-gui">3.2. Graphical User Interface (GUI)</a></li>
-<li><a href="#about-an-equipment">3.3. About an equipment</a></li>
+<li><a href="#about-equipment-parameters">3.3. About Equipment Parameters</a></li>
 <li><a href="#entering-a-command">3.4. Entering a command</a></li>
 </ul>
 </li>
@@ -225,7 +225,7 @@ Please remember the naming convention for the different regions in GUI as they w
 </div>
 </div>
 <div class="sect2">
-<h3 id="about-an-equipment"><a class="link" href="#about-an-equipment">3.3. About an equipment</a></h3>
+<h3 id="about-equipment-parameters"><a class="link" href="#about-equipment-parameters">3.3. About Equipment Parameters</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -483,7 +483,7 @@ ID number beginning with 0 is not valid, for example, 002 should be 2.
 <h3 id="putting-an-equipment-into-a-work-list-code-put-code"><a class="link" href="#putting-an-equipment-into-a-work-list-code-put-code">4.4. Putting an equipment into a work list: <code>put</code></a></h3>
 <div class="paragraph">
 <p>Adds an equipment into a working list in the Equipment Manager<br>
-Format: <code>put i/WorkListID s/EquipmentSerialNumber</code></p>
+Format: <code>put i/WorkListID s/SERIAL_NUMBER</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -512,7 +512,7 @@ Please make sure that the respective Equipment and WorkList exist in the equipme
 <h3 id="removing-an-equipment-from-a-work-list-code-remove-code"><a class="link" href="#removing-an-equipment-from-a-work-list-code-remove-code">4.5. Removing an equipment from a work list: <code>remove</code></a></h3>
 <div class="paragraph">
 <p>Removes an equipment from a working list in the Equipment Manager<br>
-Format: <code>remove i/WorkListID s/EquipmentSerialNumber</code></p>
+Format: <code>remove i/WorkListID s/SERIAL_NUMBER</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -726,7 +726,7 @@ Format: <code>display</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Format: <code>route /[worklist id]</code></p>
+<p>Format: <code>route [worklist id]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1220,105 +1220,124 @@ For more details on what each command does, please refer to <a href="#Features">
 <table id="generaltable" class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. General Commands</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Command</th>
 <th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Adding an equipment</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e n/NAME p/PHONE_NUMBER pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-e n/Clementi CC p/67762517 pm/10-06-2019 a/220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creating a new Work List</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-w d/DATE a/ASSIGNEE i/ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add-w d/09-05-2019 a/Mei Yen i/13</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Putting an equipment into work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">put</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">put i/WorkListID s/SERIAL_NUMBER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">put i/1 s/A008812X</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Removing an equipment from work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove i/WorkListID s/SERIAL_NUMBER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove i/1 s/A008866X</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Editing an equipment</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit-e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit INDEX n/NAME p/PHONE pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG…​</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit 1 n/Clementi Community Center</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all equipments</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all work list</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selecting an Equipment or work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">select</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select 1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selecting a client</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">select-c</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Locating equipment by location</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select-c INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select-c 2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show equipment location(s) in map</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">display</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">display</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Route planning</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">route</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">route /[worklist id]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">route 120</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sort the equipment list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort [FIELD_NAME to be sorted by]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filtering the equipment list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter [n/NAME_KEYWORD]…​[t/TAG_KEYWORD]…​[a/ADDRESS_KEYWORD]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter n/hougang</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting an equipment</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e 1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting a work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w 2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Listing entered commands</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undoing previous commands</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redoing all the previously undone command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clearing all entries</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit the program</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 06:53:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 07:08:24 UTC</div></div></div></body></html>
