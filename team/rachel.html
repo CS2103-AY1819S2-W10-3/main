@@ -69,42 +69,36 @@ To aid you in reading this portfolio without any confusion, this section provide
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of Contributions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section shows a summary of my coding, documentation, and other helpful contributions to the team project.</p>
+<p>In this section, I have put together a summary of my coding, documentation and other helpful contributions to the team project.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Enhancement 1</strong>: I added a <code>add-c</code> command and enhance existing basic commands to allow users to keep track on the details of clients that own the equipment.</p>
+<p><strong>Enhancement 1</strong>: I create a <em>UI</em> specifically for displaying <strong>Client details</strong> and added a <code>select-c</code> command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: This enhancement allows user to know the details of the clients such as client&#8217;s name and the number of equipment the client owns.</p>
+<p>What it does: This enhancement allows user to have a quick look on the distinct number of client <strong>Equiment Manager</strong> has, under <strong>Client details</strong> panel. With a selection on the desired client, users can get a view on all the equipment and its details the client owns.</p>
 </li>
 <li>
-<p>Justification: Having the details of the client improves the overall efficiency of carrying our <em>PM</em>.</p>
+<p>Justification: Having a list of distinct client displayed provides option and improve overall planning process as explained below:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>It gives the option for user to carry out maintenance work on equipments under a specific client.</p>
+<p>As a client can own zero to infinite equipment, knowing how many equipment a client owns, allows user to be aware that there are equivalent number of equipment to carry out maintenance work at the client&#8217;s address.</p>
 </li>
 <li>
-<p>Client address can be represented on google map for planning of efficient routes to take.</p>
+<p>In addition to the ability to track each equipment individually, by displaying a list of distinct client, it gives user the options to track down several equipment in a group based on how many equipment the client owns.</p>
 </li>
 <li>
-<p>Knowing how many equipment a client owns, allows user to be aware that there are equivalent number of equipment to carry out maintenance work at that location.</p>
+<p>Planning process would be greatly reduced as user can now target the equipment in groups based on a client location instead of having to sieve out individual equipment details that may not be sorted together.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Highlights: The <code>add-c</code> command and further enhancement on existing <em>CRUD</em> commands are implemented to provide my team with the ability to use this attributes for other features in the project.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>For example, adding client details allow user to use the address for visual representation on Google Map.</p>
-</li>
-</ul>
-</div>
+<p>Highlights: This enhancement was done as I realized the possible lack of flexibility and confusion since user was initially only given the choice to view all the equipment individually under equipment details panel but is interested to know how many clients there are and how many equipment they actually owns.
+Under time constraint, I made use of the existing <code>filter</code> command and panel labelled under <strong>Equipment details</strong> to incorporate the ability to view all equipment the selected client owns.</p>
 </li>
 <li>
 <p>Codes contributed: <a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=E0191632&amp;sort=searchPath&amp;since=2019-02-10&amp;until=2019-04-05&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Click here</a> to view my code on the CS2103T Project Code Dashboard.</p>
@@ -113,30 +107,31 @@ To aid you in reading this portfolio without any confusion, this section provide
 </div>
 </li>
 <li>
-<p><strong>Enhancement 2</strong>: I enhanced the initial Person model to <strong>Equipment model</strong></p>
+<p><strong>Enhancement 2</strong>: I enhanced the a Person model from initial Address Book 4 application  to <strong>Equipment model</strong> in our own <strong>Equipment Manager</strong> application.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: All the <code>commands</code> carried out by user will be based on details of an Equipment. Specifically, an equipment has a serial number, a due date to carry out preventive maintenance and a sub-location where the equipment is installed.</p>
+<p>What it does: All the <code>commands</code> carried out by user require details of an Equipment and/or Client. Specifically, equipment will now have a serial number and a due date to carry out preventive maintenance. The name, phone, address and where the equipment is located at (address) refer to client&#8217;s details.</p>
 </li>
 <li>
-<p>Justification: This enhancement allow users to get access to detailed information of an equipment easily and for tracking purposes in the program. Main tracking purposes include:</p>
+<p>Justification: With all the equipment and client details, this enhancement allows users to carry out features of Equipment Manager. For example:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Knowing specifically where equipment is installed. For example, in the client&#8217;s level 1 reception counter, level 2 ball room and etc.</p>
+<p>In the event, user wants to have a visual respresentation of an equipment, the address where the equipment is located at is retrieved and displayed on google map.</p>
 </li>
 <li>
-<p>Alerting when preventive maintenance due date is nearing</p>
+<p>It helps users to be more organized with their work plan because the application allows assignation of each selected equipment with its details into their work agenda under <strong>My Work List</strong> panel.</p>
 </li>
 <li>
-<p>Allow assignation of each selected equipment with all its details into work agenda</p>
+<p>Overall, it allows users to keep track of equipment details and provide visual representation of the equipment locations</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Highlights: This enhancement modifies the existing UI, specifically the selected equipment details in <code>ResultPanel</code> and showing full details of a selected equipment on <code>FullResultPanel</code>.</p>
+<p>Highlights: This enhancement provides the ability for my team mates to use the relevant details of equipment and client to build a feature for <strong>Equipment Manager</strong>. An in-depth analysis of design alteratives was necessary to ensure all enhancement of equipment or client details played a part in providing user with details to keep track of the equipment.
+The implementation was challenging as this enhancement requires many changes in all logic, ui, storage, model components as well as writing new system testings for it.</p>
 </li>
 <li>
 <p>Codes contributed:</p>
@@ -146,10 +141,17 @@ To aid you in reading this portfolio without any confusion, this section provide
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="../images/tip.png" alt="tip" width="40"></span>
-<code>commands</code>
-: add-e, edit-e, filter, find, list-e</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<code>commands</code>: add-e, edit-e, filter, list-e, delete-e, display, select, put
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <ul>
@@ -308,7 +310,7 @@ To aid you in reading this portfolio without any confusion, this section provide
 <td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipments are at as well as showing user the possible routes to take.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Details</strong> panel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows summarized details on equipment</p></td>
 </tr>
 <tr>
@@ -316,27 +318,27 @@ To aid you in reading this portfolio without any confusion, this section provide
 <td class="tableblock halign-left valign-top"><p class="tableblock">This is a HTML page where it shows more detailed information on an equipment.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[8] <strong>Client Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[8] <strong>Client Details</strong> panel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows specifically information related to client such as the name and how many equipment the client owns.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>Work list Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>My Work List</strong> panel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipments whom the user want to carry out preventive maintenance work.</p></td>
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
+<div class="admonitionblock tip">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../images/exclamation.png" alt="exclamation" width="40"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Please remember the naming convention for the different regions in GUI as they will be used to explain when explaining Equipment Manager.</p></td>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Please remember the naming convention for the different regions in GUI as they will be used to explain when explaining Equipment Manager.
+</td>
 </tr>
-</tbody>
 </table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="about-an-equipment"><a class="link" href="#about-an-equipment">About an equipment</a></h3>
@@ -397,7 +399,7 @@ To aid you in reading this portfolio without any confusion, this section provide
 <p><strong><code>list-e</code></strong>: lists all equipment details</p>
 </li>
 <li>
-<p><strong><code>add-e</code></strong><code>n/Clementi CC p/98765432 d/01-05-2019 a/Pending Rd s/X14DH9283</code> : adds a contact named <code>Clementi CC</code> to the <strong>Equipment Manager</strong>.</p>
+<p><strong><code>add-e</code></strong><code>n/Clementi CC p/6776 2517 d/01-05-2019 a/220 Clementi Ave 4, Singapore 129880 Rd s/X14DH9283</code> : adds a contact named <code>Clementi CC</code> to the <strong>Equipment Manager</strong>.</p>
 </li>
 <li>
 <p><strong><code>delete-e</code></strong><code>3</code>: deletes the 3rd equipment detail shown in the current list</p>
@@ -421,42 +423,32 @@ Refer to <a href="#Features">[Features]</a> for details of each command.
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-client-code-add-c-code"><a class="link" href="#adding-a-client-code-add-c-code">Adding a client: <code>add-c</code></a></h3>
+<h3 id="selecting-a-client-code-select-c-code"><a class="link" href="#selecting-a-client-code-select-c-code">Selecting a client: <code>select-c</code></a></h3>
 <div class="paragraph">
-<p>Adds a client to the <strong>Equipment Manager</strong>. The result of adding a client will be reflected on the panel labelled under <strong>Client details</strong>.<br>
-Format: <code>add-c n/NAME</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Client is a person or organization that owns the equipment.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-In the panel under <strong>Client details</strong> label, there should not be any duplicated client names.<br>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Example:</p>
+<p>Selects the client identified by the index number used in the displayed client list panel. All the equipments own by the client will be displayed under <strong>Equipment details</strong> panel.<br>
+Format: <code>select-c INDEX</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-c n/Clementi CC</code></p>
+<p>Selects the client at the specified INDEX and loads the client&#8217;s equipment in the <strong>Equipment details</strong> panel.<br></p>
+</li>
+<li>
+<p>The index refers to the index number shown in the <strong>Client details</strong> panel.<br></p>
+</li>
+<li>
+<p>The index must be a positive integer 1, 2, 3, …​<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>select 2</code><br>
+Selects the 2nd client in the equipment manager.</p>
 </li>
 </ul>
 </div>
@@ -511,7 +503,7 @@ In the panel under <strong>Client details</strong> label, there should not be an
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the last section of the User Guide, but the most useful if you just want a list of commands to try.
-Refer to <a href="#generaltable">General Commands</a> for general commands and <a href="#managetable">Equipment Manager</a> for Equipment Manager.
+Refer to <a href="#generaltable">General Commands</a> for a summary of all the commands with quick command format guide.
 For more details on what each command does, please refer to <a href="#Features">[Features]</a>.</p>
 </div>
 <table id="generaltable" class="tableblock frame-all grid-all spread">
@@ -532,89 +524,88 @@ For more details on what each command does, please refer to <a href="#Features">
 <td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Adding an equipment</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Client</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add-e</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creating a new Work List</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add-w</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Putting an equipment into work list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">put</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Removing an equipment from work list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Editing an equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all equipments</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all work list</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Equipment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selecting an Equipment or work list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selecting a client</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select-c</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Locating equipment by location</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show equipment location(s) in map</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">display</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Route planning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">route</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sort the equipment list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filtering the equipment list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting an equipment</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete-e</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Work List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting a work list</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete-w</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undo</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redo</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clear</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>History</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Listing entered commands</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undoing previous commands</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redoing all the previously undone command</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clearing all entries</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit the program</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
-</tr>
-</tbody>
-</table>
-<table id="managetable" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Equipment Manager</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 57.1428%;">
-<col style="width: 28.5715%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle">Command</th>
-<th class="tableblock halign-center valign-middle">Format</th>
-<th class="tableblock halign-center valign-middle">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Select</strong></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">select INDEX</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">s 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Put</strong></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">put INDEX [worklist id]</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">put 1 120</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Find</strong></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">find KEYWORD [MORE_KEYWORDS]</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">fin punggol</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>Filter</strong></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">filter [n/NAME_KEYWORD] [pm/DATE_KEYWORD] [t/TAG_KEYWORD]</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">fil punggol november ongoing</p></td>
 </tr>
 </tbody>
 </table>
@@ -977,9 +968,6 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <div class="title">Figure 11. Sequence diagram for <code>AddCommand</code></div>
 </div>
 <div class="paragraph">
-<p>Step 1</p>
-</div>
-<div class="paragraph">
 <p>Given below is an example usage scenario of how the adding of equipment details mechanism behaves at each step after carrying out <code>add-e</code>.</p>
 </div>
 <div class="paragraph">
@@ -1080,38 +1068,80 @@ because attributes of client and equipment are being shared in order to for feat
 <div class="sect3">
 <h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current implementation</a></h4>
 <div class="paragraph">
-<p>There is <code>AddClientCommand</code> that is supported by  <code>AddClientCommandParser</code>.
-This adding of client details mechanism is facilitated by <code>VersionedEquipmentManager</code> which extends the  <code>Equipment Manager</code>.</p>
+<p>There is <code>SelectClientCommand</code> that is supported by  <code>SelectClientCommandParser</code>.
+This selection of client details mechanism is facilitated by <code>VersionedEquipmentManager</code> which extends the  <code>Equipment Manager</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario of how the adding of client details mechanism behaves at each step after carrying out <code>add-c</code>.</p>
+<p>Given below is an example usage scenario of how the selection of client details mechanism behaves at each step after carrying out <code>select-c</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 1. The user launches the application.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>add-c n/Pending CC</code> command.</p>
+<p>Step 2. The user executes <code>select-c 1</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. After <code>EquipmentManagerParser</code> detects <code>add-c</code> as the command word, a <code>AddClientCommandParser#parse()</code> is called.</p>
+<p>Step 3. After <code>EquipmentManagerParser</code> detects <code>select-c</code> as the command word, a <code>SelectClientCommandParser#parse()</code> is called.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. <code>AddClientCommand#execute()</code> is then called.</p>
+<p>Step 4. <code>SelectClientCommand#execute()</code> is then called and set the selected client in the model with the filtered client list.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. The parser will parse the <code>Name</code> attributes and add into client details in the model.</p>
+<p>Step 5. Using the <code>filter</code> feature, the model will use the <code>Name</code> attributes, filter the equipment list accordingly and displays the client&#8217;s equipment in the <strong>Equipment details</strong> panel.</p>
 </div>
 <div class="paragraph">
-<p>Step 7. The model now contains additional client name and returns to GUI for display on <strong>Client details</strong> panels respectively.</p>
+<p>Step 7. The model now contains additional client name and returns to GUI for display on <strong>Client details</strong> panel respectively. The model also contains filtered client&#8217;s equipments and returns the GUI for display on <strong>Equipment details</strong> panel.</p>
 </div>
-<div class="paragraph">
-<p>In addition, the figure in Current Implementation of <a href="#equipment-feature">Equipment feature</a> also explains how <code>AddCommand</code> contributes to the results shown in <strong>Client Details</strong> panel.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The figure in Current Implementation of <a href="#equipment-feature">Equipment feature</a> also explains how <code>AddCommand</code> contributes to the results shown in <strong>Client Details</strong> panel.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="paragraph">
 <p>Refer to the <strong>Design Considerations</strong> in <a href="#equipment-feature">Equipment feature</a> as we went through the same design considerations to come out with equipment and client details separation.</p>
+</div>
+<div class="sect4">
+<h5 id="aspects-with-a-list-of-client-displayed-in-strong-client-details-strong-panel-how-should-the-client-s-equipment-details-be-displayed"><a class="link" href="#aspects-with-a-list-of-client-displayed-in-strong-client-details-strong-panel-how-should-the-client-s-equipment-details-be-displayed">Aspects: With a list of client displayed in <strong>Client details</strong> panel, how should the client&#8217;s equipment details be displayed?</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong>: Making use of the <code>filter</code> command to show client&#8217;s equipment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Making use of exisiting <strong>Equipment details</strong> panel. Easier to implement with lesser changes to the storage, logic, model and ui components within the time constraint.</p>
+</li>
+<li>
+<p>Cons: select followed by a filter command is stored in the history even though user did not use filter command. This is the trade off.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Add a new equipment panel and card for displaying client&#8217;s equipment when selecting the client</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Do not have the issue of filter command being tracked in history even though user did not use the filter command.</p>
+</li>
+<li>
+<p>Cons: Too many different panels in one main window display may cause confusion and lower user&#8217;s experience.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1122,4 +1152,4 @@ This adding of client details mechanism is facilitated by <code>VersionedEquipme
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-13 12:53:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 05:39:26 UTC</div></div></div></body></html>
