@@ -100,9 +100,6 @@ To aid you in reading this portfolio without any confusion, this section provide
 <p>Highlights: This enhancement was done as I realized the possible lack of flexibility and confusion since user was initially only given the choice to view all the equipment individually under equipment details panel but is interested to know how many clients there are and how many equipment they actually owns.
 Under time constraint, I made use of the existing <code>filter</code> command and panel labelled under <strong>Equipment details</strong> to incorporate the ability to view all equipment the selected client owns.</p>
 </li>
-<li>
-<p>Codes contributed: <a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=E0191632&amp;sort=searchPath&amp;since=2019-02-10&amp;until=2019-04-05&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Click here</a> to view my code on the CS2103T Project Code Dashboard.</p>
-</li>
 </ul>
 </div>
 </li>
@@ -133,9 +130,6 @@ Under time constraint, I made use of the existing <code>filter</code> command an
 <p>Highlights: This enhancement provides the ability for my team mates to use the relevant details of equipment and client to build a feature for <strong>Equipment Manager</strong>. An in-depth analysis of design alteratives was necessary to ensure all enhancement of equipment or client details played a part in providing user with details to keep track of the equipment.
 The implementation was challenging as this enhancement requires many changes in all logic, ui, storage, model components as well as writing new system testings for it.</p>
 </li>
-<li>
-<p>Codes contributed:</p>
-</li>
 </ul>
 </div>
 </li>
@@ -155,6 +149,9 @@ The implementation was challenging as this enhancement requires many changes in 
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p>Codes contributed: <a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=e0&amp;sort=displayName&amp;since=2019-02-10&amp;until=2019-04-15&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Collated code</a></p>
+</li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
@@ -241,187 +238,6 @@ The implementation was challenging as this enhancement requires many changes in 
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">Quick Start</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To get Equipment Manager up and running, simply follow these few steps.</p>
-</div>
-<div class="sect2">
-<h3 id="setting-up-of-equipment-manager"><a class="link" href="#setting-up-of-equipment-manager">Setting up of Equipment Manager</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
-</li>
-<li>
-<p>Download the latest <code>equipmentmanager.jar</code> <a href="https://github.com/CS2103-AY1819S2-W10-3/main/releases/">here</a>.</p>
-</li>
-<li>
-<p>Copy the file to the folder you want to use as the home folder for your Equipment Manager.</p>
-</li>
-<li>
-<p>Double-click the file to start the app. The <em>Graphical User Interface</em> (GUI) should appear in a few seconds.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="graphical-user-interface-gui"><a class="link" href="#graphical-user-interface-gui">Graphical User Interface (GUI)</a></h3>
-<div id="GUI" class="imageblock">
-<div class="content">
-<img src="../images/ui_labelled.png" alt="ui labelled" width="790">
-</div>
-<div class="title">Figure 1. A total of nine regions to note in our GUI</div>
-</div>
-<div class="paragraph">
-<p>The GUI for <em>Equipment Manager</em> as shown in <a href="#GUI">A total of nine regions to note in our GUI</a> consists of nine regions:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Regions of Application</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1] <strong>Menu Bar</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allow users to click <code>File</code> &gt; <code>Exit</code> to exit the application and click <code>Help</code> to navigate to our User Guide page.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[2] <strong>Command Box</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User enters the command in the command box. Refer to <strong>User Guide</strong> to learn all the available commands.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[3] <strong>Message box</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message box that shows the result after a command has been executed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[4] <strong>Status Bar</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show the total number of equipment in the <strong>Equipment Manager</strong>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[5] <strong>Google Map</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipment are at as well as showing user the possible routes to take.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Details</strong> panel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows summarized details on equipment</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[7] <strong>Equipment Details Page</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is a HTML page where it shows more detailed information on an equipment.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[8] <strong>Client Details</strong> panel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows specifically information related to client such as the name and how many equipment the client owns.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>My Work List</strong> panel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipment whom the user want to carry out preventive maintenance work.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Please remember the naming convention for the different regions in GUI as they will be used to explain when explaining Equipment Manager.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="EquipmentPara"><a class="link" href="#EquipmentPara">About Equipment Parameters</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameters</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The client&#8217;s name who owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name should only contain alphanumeric characters and spaces, and it should not be blank.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PHONE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The contact number of the client that owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Phone numbers should only contain numbers, and it should be at least 3 digits long</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DATE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The due date for which maintenance work on the equipment should be carried out by then.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Should only contain numbers and hyphens, no blanks allowed. The correct format is  dd-MM-yyyy. For example, 03-05-2019 which means 3 May 2019.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ADDRESS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The address of the client that owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SERIAL_NUMBER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All equipment have unique serial number and there should not be duplicated serial number.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="entering-a-command"><a class="link" href="#entering-a-command">Entering a command</a></h3>
-<div class="paragraph">
-<p>Type the command in the Command Box and press <kbd>Enter</kbd> to execute it.<br></p>
-</div>
-<div class="paragraph">
-<p><strong>Some basic commands you can try to get started:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><code>help</code></strong>: opens up user guide</p>
-</li>
-<li>
-<p><strong><code>list-e</code></strong>: lists all equipment details</p>
-</li>
-<li>
-<p><strong><code>add-e</code></strong><code>n/Clementi CC p/6776 2517 d/01-05-2019 a/220 Clementi Ave 4, Singapore 129880 Rd s/X14DH9283</code> : adds a contact named <code>Clementi CC</code> to the <strong>Equipment Manager</strong>.</p>
-</li>
-<li>
-<p><strong><code>delete-e</code></strong><code>3</code>: deletes the 3rd equipment detail shown in the current list</p>
-</li>
-<li>
-<p><strong><code>exit</code></strong>: exits the app</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Refer to <a href="#Features">[Features]</a> for details of each command.
-</td>
-</tr>
-</table>
-</div>
-</div>
 <div class="sect2">
 <h3 id="adding-an-equipment-code-add-e-code"><a class="link" href="#adding-an-equipment-code-add-e-code">Adding an equipment: <code>add-e</code></a></h3>
 <div class="paragraph">
@@ -435,7 +251,7 @@ Format: <code>add-e n/NAME p/PHONE pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG</code
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Refer to <a href="#EquipmentPara">About Equipment Parameters</a> to understand each equipment&#8217;s parameter when adding an equipment detail.
+Refer to <a href="#EquipmentPara">[EquipmentPara]</a> to understand each equipment&#8217;s parameter when adding an equipment detail.
 </td>
 </tr>
 </table>
@@ -482,7 +298,7 @@ Under <strong>Client details</strong> panel, duplicated client names will not ap
 <div class="content">
 <img src="../images/SerangoonCC.png" alt="SerangoonCC" width="800">
 </div>
-<div class="title">Figure 2. UI Result after adding an equipment own by Serangoon CC</div>
+<div class="title">Figure 1. UI Result after adding an equipment own by Serangoon CC</div>
 </div>
 <div class="paragraph">
 <p>The following shows user adding 2 equipment that are owned by the same client called  Pending CC.
@@ -501,7 +317,7 @@ Under <strong>Client details</strong> panel, Pending CC is added to the panel af
 <div class="content">
 <img src="../images/PendingCC.png" alt="PendingCC" width="800">
 </div>
-<div class="title">Figure 3. UI Result after adding 2 equipment owned by the same client</div>
+<div class="title">Figure 2. UI Result after adding 2 equipment owned by the same client</div>
 </div>
 </div>
 <div class="sect2">
@@ -538,181 +354,6 @@ Selects the 2nd client in the equipment manager.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">Glossary</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Unsure of a few technical terms? We got you covered. Refer to <span class="underline"><a href="#techtable">Technical Terms</a></span> below.</p>
-</div>
-<table id="techtable" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Technical Terms</caption>
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 71.4286%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Term</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preventive Maintenance</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A maintenance work that is regularly performed on a piece of equipment to lessen the likelihood of it failing. It is performed while the equipment is still working so that it does not break down unexpectedly.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autocomplete</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides suggestions while you type into the field.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Google Maps</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">It is a online map service provided by Google.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mainstream Operating System (OS)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Windows, Linux, Unix and OS-X are operating systems used widely in the world.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User Interface (UI)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allows the user to interact with the application through inputs and outputs of data.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This is the last section of the User Guide, but the most useful if you just want a list of commands to try.
-Refer to <a href="#generaltable">General Commands</a> for a summary of all the commands with quick command format guide.
-For more details on what each command does, please refer to <a href="#Features">[Features]</a>.</p>
-</div>
-<table id="generaltable" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2. General Commands</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Format</th>
-<th class="tableblock halign-left valign-top">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Help</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Adding an equipment</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add-e n/NAME p/PHONE_NUMBER pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add-e n/Clementi CC p/67762517 pm/10-06-2019 a/220 Clementi Ave 4, Singapore 129880 s/A008844L t/west</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creating a new Work List</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add-w d/DATE a/ASSIGNEE i/ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add-w d/09-05-2019 a/Mei Yen i/13</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Putting an equipment into work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">put i/WorkListID s/SERIAL_NUMBER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">put i/1 s/A008812X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Removing an equipment from work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove i/WorkListID s/SERIAL_NUMBER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove i/1 s/A008866X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Editing an equipment</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit INDEX n/NAME p/PHONE pm/DATE a/ADDRESS s/SERIAL_NUMBER t/TAG…​</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit 1 n/Clementi Community Center</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all equipment</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list-e</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List all work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list-w</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selecting an Equipment or work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">select INDEX</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">select 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selecting a client</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">select-c INDEX</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">select-c 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show equipment location(s) in map</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">display</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">display</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Route planning</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">route /[worklist id]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">route 120</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sort the equipment list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort [FIELD_NAME to be sorted by]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filtering the equipment list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter [n/NAME_KEYWORD]…​[t/TAG_KEYWORD]…​[a/ADDRESS_KEYWORD]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter n/hougang</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting an equipment</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e INDEX</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete-e 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting a work list</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w INDEX</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete-w 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Listing entered commands</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Undoing previous commands</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Redoing all the previously undone command</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clearing all entries</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exit the program</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">exit</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
@@ -725,266 +366,10 @@ For more details on what each command does, please refer to <a href="#Features">
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="design"><a class="link" href="#design">Design</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/Architecture.png" alt="Architecture" width="600">
-</div>
-<div class="title">Figure 4. Architecture Diagram</div>
-</div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-|The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/docs/diagrams">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/src/main/java/seedu/equipment/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
-</li>
-<li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
-The following class plays an important role at the architecture level:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The rest of the App consists of four components.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
-</li>
-<li>
-<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
-</li>
-<li>
-<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
-</li>
-<li>
-<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Each of the four components</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
-</li>
-<li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
-</div>
-<div class="title">Figure 5. Class Diagram of the Logic Component</div>
-</div>
-<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
-<div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/SDforDeletePerson.png" alt="SDforDeletePerson" width="800">
-</div>
-<div class="title">Figure 6. Component interactions for <code>delete 1</code> command</div>
-</div>
-<div class="paragraph">
-<p>The sections below will give more details of each component; <strong>UI</strong>, <strong>Logic</strong>, <strong>Model</strong> and <strong>Storage</strong>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
-</div>
-<div class="title">Figure 7. Structure of the UI Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/src/main/java/seedu/equipment/ui/Ui.java"><code>Ui.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="{repoURL}/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="{repoURL}/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component shows webpages e.g. <code>DisplayGmap.html</code> hosted somewhere on the Internet. To host a webpage yourself, you may put your webpage into <code>\docs\staticpages</code>. All pages in <code>\docs\staticpages</code> will be copied to <code>gh-pages</code> branch and hosted on <code>gh-pages</code>.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
-</li>
-<li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
-<div class="content">
-<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
-</div>
-<div class="title">Figure 8. Structure of the Logic Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/src/main/java/seedu/equipment/logic/Logic.java"><code>Logic.java</code></a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>Logic</code> uses the <code>EquipmentManagerParser</code> class to parse the user command.</p>
-</li>
-<li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding an equipment).</p>
-</li>
-<li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
-</li>
-<li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
-</div>
-<div class="title">Figure 9. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
-</div>
-<div class="title">Figure 10. Structure of the Model Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master//src/main/java/seedu/equipment/model/Model.java"><code>Model.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Model</code>,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
-</li>
-<li>
-<p>stores the <strong>Equipment Manager</strong> data.</p>
-</li>
-<li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Equipment&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
-<li>
-<p>does not depend on any of the other three components.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Manager</code>, which <code>Equipment</code> can reference. This would allow <code>Equipment Manager</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Equipment</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800">
-</div>
-<div class="title">Figure 11. Class diagram of Model Component</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
-</div>
-<div class="title">Figure 12. Structure of the Storage Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S2-W10-3/main/tree/master/src/main/java/seedu/equipment/storage/Storage.java"><code>Storage.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Storage</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
-</li>
-<li>
-<p>can save the <strong>Equipment Manager</strong> data in json format and read it back.</p>
-</li>
-</ul>
-</div>
-</div>
 <div class="sect2">
 <h3 id="equipment-feature"><a class="link" href="#equipment-feature">Equipment feature</a></h3>
 <div class="paragraph">
-<p>To provide users with the best understanding on the attributes of equipment in <strong>Equipment Manager</strong>,
+<p>To provide users with the best understanding on the parameters of equipment in <strong>Equipment Manager</strong>,
 this section will provide a brief overview on the equipment details as well as how the details of an equipment are
 used for multiple features in the design of Equipment Manager. Not forgetting sharing some design considerations to make the best choice for <strong>Equipment Manager</strong>.</p>
 </div>
@@ -998,32 +383,32 @@ used for multiple features in the design of Equipment Manager. Not forgetting sh
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Equipment Parameters</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The client&#8217;s name who owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name should only contain alphanumeric characters and spaces, and it should not be blank.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PHONE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The contact number of the client that owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone numbers should only contain numbers, and it should be at least 3 digits long</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The due date for which maintenance work on the equipment should be carried out by then.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should only contain numbers and hyphens, no blanks allowed. The correct format is  dd-MM-yyyy. For example, 03-05-2019 which means 3 May 2019.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADDRESS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address of the client that owns the equipment.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SERIAL_NUMBER</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All equipment have unique serial number and there should not be duplicated serial number.</p></td>
 </tr>
@@ -1033,10 +418,10 @@ used for multiple features in the design of Equipment Manager. Not forgetting sh
 <div class="sect3">
 <h4 id="current-usage-of-equipment-details"><a class="link" href="#current-usage-of-equipment-details">Current Usage of Equipment Details</a></h4>
 <div class="paragraph">
-<p>In order to allow users to keep track of the Preventive Maintenance schedule and carry out features provided by Equipment Manager, we have implemented the following commands with the usage of the attributes of an equipment as mentioned in the previous section.</p>
+<p>In order to allow users to keep track of the Preventive Maintenance schedule and carry out features provided by Equipment Manager, we have implemented the following commands with the usage of the equipment parameters as mentioned in the previous section.</p>
 </div>
 <div class="paragraph">
-<p><strong>An example of how the attributes of equipment are used:</strong></p>
+<p><strong>An example of how the parameters of equipment are used:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1066,7 +451,7 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <div class="content">
 <img src="../images/AddCommandSD.png" alt="AddCommandSD" width="800">
 </div>
-<div class="title">Figure 13. Sequence diagram for <code>AddCommand</code></div>
+<div class="title">Figure 3. Sequence diagram for <code>AddCommand</code></div>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario of how the adding of equipment details mechanism behaves at each step after carrying out <code>add-e</code>.</p>
@@ -1075,7 +460,7 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <p>Step 1. The user launches the application.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>add-e n/Pending CC d/01-05-2019 p/99887766 a/Pending Rd s/XDH1429387 t/north-west</code> command.</p>
+<p>Step 2. The user executes <code>add-e n/Pending CC pm/01-05-2019 p/99887766 a/8 Pending Rd, Singapore 678295 s/XDH1429387 t/north-west</code> command.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. After <code>EquipmentManagerParser</code> detects <code>add-e</code> as the command word, a <code>AddCommandParser#parse()</code> is called.</p>
@@ -1149,7 +534,7 @@ because attributes of client and equipment are being shared in order to for feat
 <div class="ulist">
 <ul>
 <li>
-<p>There is a <code>CountEquipment</code> method in <strong>Equipment Manager</strong> that counts the number of equipment that each client owns. Since <strong>Equipment Details</strong> panel showcases by each equipment, having a summarized details of each client, allows user to be more aware that the client might own more than 0, 1 or more than 1 equipment.</p>
+<p>By using <code>select-c</code> to select the desired client name in <strong>Client details</strong> pabel, we can view a list of equipments that are owned by the client.</p>
 </li>
 </ul>
 </div>
@@ -1246,6 +631,66 @@ The figure in Current Implementation of <a href="#equipment-feature">Equipment f
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="use-case-select-client"><a class="link" href="#use-case-select-client">Use Case: Select Client</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SelectClientUC.png" alt="%autowidth">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User selects the client name under Client details panel</p>
+</li>
+<li>
+<p>The client name under Client details panel is selected</p>
+</li>
+<li>
+<p>Equipment details panel shows a list of equipment that is owned by the client name</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The client name is listed in CLient details panel</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The given index is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. The client does not own any equipment (as of now). Zero equipment listed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1253,4 +698,4 @@ The figure in Current Implementation of <a href="#equipment-feature">Equipment f
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 11:19:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:29:56 UTC</div></div></div></body></html>

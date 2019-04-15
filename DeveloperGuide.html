@@ -70,14 +70,19 @@
 </li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-delete-equipment">C.1. Use case: Delete equipment</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-an-equipment">F.2. Deleting an equipment</a></li>
-<li><a href="#saving-data">F.3. Saving data</a></li>
+<li><a href="#equipment-feature-2">F.2. Equipment feature</a></li>
+<li><a href="#client-feature-2">F.3. Client feature</a></li>
+<li><a href="#saving-data">F.4. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -586,7 +591,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Equipment Man
 <div class="sect2">
 <h3 id="equipment-feature"><a class="link" href="#equipment-feature">4.1. Equipment feature</a></h3>
 <div class="paragraph">
-<p>To provide users with the best understanding on the attributes of equipment in <strong>Equipment Manager</strong>,
+<p>To provide users with the best understanding on the parameters of equipment in <strong>Equipment Manager</strong>,
 this section will provide a brief overview on the equipment details as well as how the details of an equipment are
 used for multiple features in the design of Equipment Manager. Not forgetting sharing some design considerations to make the best choice for <strong>Equipment Manager</strong>.</p>
 </div>
@@ -600,32 +605,32 @@ used for multiple features in the design of Equipment Manager. Not forgetting sh
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Equipment Parameters</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The client&#8217;s name who owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name should only contain alphanumeric characters and spaces, and it should not be blank.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PHONE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The contact number of the client that owns the equipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone numbers should only contain numbers, and it should be at least 3 digits long</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The due date for which maintenance work on the equipment should be carried out by then.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should only contain numbers and hyphens, no blanks allowed. The correct format is  dd-MM-yyyy. For example, 03-05-2019 which means 3 May 2019.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADDRESS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The address of the client that owns the equipment.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SERIAL_NUMBER</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The serial number of an equipment</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All equipment have unique serial number and there should not be duplicated serial number.</p></td>
 </tr>
@@ -635,10 +640,10 @@ used for multiple features in the design of Equipment Manager. Not forgetting sh
 <div class="sect3">
 <h4 id="current-usage-of-equipment-details"><a class="link" href="#current-usage-of-equipment-details">4.1.2. Current Usage of Equipment Details</a></h4>
 <div class="paragraph">
-<p>In order to allow users to keep track of the Preventive Maintenance schedule and carry out features provided by Equipment Manager, we have implemented the following commands with the usage of the attributes of an equipment as mentioned in the previous section.</p>
+<p>In order to allow users to keep track of the Preventive Maintenance schedule and carry out features provided by Equipment Manager, we have implemented the following commands with the usage of the equipment parameters as mentioned in the previous section.</p>
 </div>
 <div class="paragraph">
-<p><strong>An example of how the attributes of equipment are used:</strong></p>
+<p><strong>An example of how the parameters of equipment are used:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -677,7 +682,7 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <p>Step 1. The user launches the application.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>add-e n/Pending CC d/01-05-2019 p/99887766 a/Pending Rd s/XDH1429387 t/north-west</code> command.</p>
+<p>Step 2. The user executes <code>add-e n/Pending CC pm/01-05-2019 p/99887766 a/8 Pending Rd, Singapore 678295 s/XDH1429387 t/north-west</code> command.</p>
 </div>
 <div class="paragraph">
 <p>Step 3. After <code>EquipmentManagerParser</code> detects <code>add-e</code> as the command word, a <code>AddCommandParser#parse()</code> is called.</p>
@@ -751,7 +756,7 @@ because attributes of client and equipment are being shared in order to for feat
 <div class="ulist">
 <ul>
 <li>
-<p>There is a <code>CountEquipment</code> method in <strong>Equipment Manager</strong> that counts the number of equipment that each client owns. Since <strong>Equipment Details</strong> panel showcases by each equipment, having a summarized details of each client, allows user to be more aware that the client might own more than 0, 1 or more than 1 equipment.</p>
+<p>By using <code>select-c</code> to select the desired client name in <strong>Client details</strong> pabel, we can view a list of equipments that are owned by the client.</p>
 </li>
 </ul>
 </div>
@@ -1302,9 +1307,9 @@ showing our thinking process for the UI in designs considerations section.</p>
 <h5 id="launch-the-application"><a class="link" href="#launch-the-application">Launch the Application</a></h5>
 <div class="imageblock">
 <div class="content">
-<img src="images/applaunchUI.png" alt="%autowidth">
+<img src="images/ui_labelled.png" alt="ui labelled" width="790">
 </div>
-<div class="title">Figure 11. On start of the Equipment Manager application</div>
+<div class="title">Figure 11. On start of the Equipment Manager application, UI with labels</div>
 </div>
 <div class="paragraph">
 <p>The figure above depicts the interface the user see when the user launches the application.
@@ -1334,14 +1339,14 @@ The user should be greeted by 9 different regions:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[4] <strong>Status Bar</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show the total number of equipment in the <strong>Equipment Manager</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[5] <strong>Google Map</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Google map serves as a visual representation for where equipment are at as well as showing user the possible routes to take.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[6] <strong>Equipment details</strong> panel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows summarized details on equipment</p></td>
 </tr>
 <tr>
@@ -1349,45 +1354,42 @@ The user should be greeted by 9 different regions:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This is a HTML page where it shows more detailed information on an equipment.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[8] <strong>Client Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[8] <strong>Client Details</strong> panel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This panel shows specifically information related to client such as the name and how many equipment the client owns.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>Work list Result Panel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[9] <strong>My Work List</strong> panel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This panels shows the work schedule of a person when the user assigns equipment whom the user want to carry out preventive maintenance work.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="showcase-client-details"><a class="link" href="#showcase-client-details">Showcase Client details</a></h5>
+<h5 id="showcasing-client-details"><a class="link" href="#showcasing-client-details">Showcasing Client details</a></h5>
 <div class="paragraph">
-<p>To avoid cluttering to many information in <strong>Equipment Result Panel</strong>,
-we decided to categorise information related to clients into <strong>Client Result Panel</strong>
-such as showing the name of the client and how many equipment the client owns as seen in the figure below.</p>
+<p>To avoid cluttering to many information in <strong>Equipment details</strong> panel,
+we decided to categorise information related to clients into <strong>Client details</strong> panel
+such as showing all the unique client names in Equipment Manager as seen in the figure below.</p>
 </div>
-<div class="dlist">
-<div class="title">Outcome of a showing client details when using <code>add-c</code> feature</div>
-<dl>
-<dt class="hdlist1">image</dt>
-<dd>
-<p>AddClientDetailsUI.png[%autowidth]</p>
-</dd>
-</dl>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddClientDetailsUI.png" alt="%autowidth">
+</div>
+<div class="title">Figure 12. Client name listed under Client details panel</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="showcase-equipment-details-and-locations"><a class="link" href="#showcase-equipment-details-and-locations">Showcase Equipment details and locations</a></h5>
+<h5 id="showcasing-equipment-details-and-locations"><a class="link" href="#showcasing-equipment-details-and-locations">Showcasing Equipment details and locations</a></h5>
 <div class="paragraph">
-<p>Similarly, there are many information to be shown in <strong>Equipment Result Panel</strong>.
+<p>Similarly, there are many information to be shown in <strong>Equipment details</strong> panel.
 Hence, as seen in the figure below, we created a HTML page to show more information
-on equipment. This means there are some information not shown in <strong>Equipment Result Panel</strong> but will instead be shown in <strong>Equipment Details Page</strong>.</p>
+on equipment. This means that there are some information not shown in <strong>Equipment details</strong> panel but will instead be shown in <strong>Equipment Details Page</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/equipmentdetailsUI.png" alt="%autowidth">
 </div>
-<div class="title">Figure 12. Incorporating HTML in panel to show more equipment details</div>
+<div class="title">Figure 13. Incorporating HTML in panel to show more equipment details</div>
 </div>
 <div class="paragraph">
 <p>One of our main feature of <strong>Equipment Manager</strong> is the ability to have a visual representation on 1 or more equipment in a <strong>Google Map</strong>.</p>
@@ -1396,11 +1398,11 @@ on equipment. This means there are some information not shown in <strong>Equipme
 <div class="content">
 <img src="images/clientlocationsUI.png" alt="%autowidth">
 </div>
-<div class="title">Figure 13. Outcome of <code>display</code> feature on UI</div>
+<div class="title">Figure 14. Outcome of <code>display</code> feature on UI</div>
 </div>
 <div class="paragraph">
 <p>As seen in the above figure, entering <code>display</code> command will allow a visual representation of all equipment locations in the <strong>Equipment Manager</strong> data storage onto <strong>Google Map</strong>.
-This is one of our main feature of <strong>Equipment Manager</strong> where we provide users to view either 1 equipment location at a time by entering <code>select</code> INDEX or simply by clicking onto the an equipment in <strong>Equipment Result Panel</strong>.</p>
+This is one of our main feature of <strong>Equipment Manager</strong> where we provide users to view either 1 equipment location at a time by entering <code>select</code> INDEX or simply by clicking onto the an equipment in <strong>Equipment details</strong> panel.</p>
 </div>
 </div>
 </div>
@@ -1764,7 +1766,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 14. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 15. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2361,9 +2363,68 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <strong>Equipment Manager</strong> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>For all use cases below, the <strong>System</strong> is the <strong>Equipment Manager</strong> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise.</p>
 </div>
-<h3 id="use-case-delete-equipment" class="discrete">Use case: Delete equipment</h3>
+<h3 id="use-case-select-client" class="discrete">Use Case: Select Client</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SelectClientUC.png" alt="%autowidth">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User selects the client name under Client details panel</p>
+</li>
+<li>
+<p>The client name under Client details panel is selected</p>
+</li>
+<li>
+<p>Equipment details panel shows a list of equipment that is owned by the client name</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The client name is listed in CLient details panel</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The given index is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. The client does not own any equipment (as of now). Zero equipment listed.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-equipment"><a class="link" href="#use-case-delete-equipment">C.1. Use case: Delete equipment</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2417,6 +2478,7 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
 <div class="sectionbody">
@@ -2441,9 +2503,6 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 <p>Should be user-friendly for someone who have never used a CLI or software before to keep track of preventive maintenance schedule or route planning.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -2538,24 +2597,67 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-equipment"><a class="link" href="#deleting-an-equipment">F.2. Deleting an equipment</a></h3>
+<h3 id="equipment-feature-2"><a class="link" href="#equipment-feature-2">F.2. Equipment feature</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a equipment while all equipment are listed</p>
+<p>Adding an equipment (identified by serial number)</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all equipment using the <code>list</code> command. Multiple equipment in the list.</p>
+<p>Prerequisites: Add an equipment using the <code>add-e n/Clementi CC p/67762517 pm/01-05-2019 a/220 Clementi Ave 4, Singapore 129880 Rd s/X14DH9283</code> command. Note that this equipment has serial number X14DH9283.</p>
+</li>
+<li>
+<p>Test case: <code>add-e n/Clementi CC p/67762517 pm/01-05-2019 a/220 Clementi Ave 4, Singapore 129880 Rd s/X14DH9283</code><br>
+Expected: Duplicated equipment serial number, this equipment already exists in the equipment manager.</p>
+</li>
+<li>
+<p>Test case: <code>add-e n/Clementi CC</code>
+Expected: Invalid command format. Error details shown in message box.</p>
+</li>
+<li>
+<p>Other incorrect edit commands to try: <code>add</code> (without giving the correct parameters)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing an equipment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Starts off with an empty equipment list. To check, use <code>list-e</code> command. If it is not empty, use <code>clear</code> command to clear all datas.</p>
+</li>
+<li>
+<p>Test case: <code>edit-e 1 n/Pending CC</code><br>
+Expected: The equipment index provided is invalid.</p>
+</li>
+<li>
+<p>Test case: <code>add-e n/Clementi CC p/67762517 pm/01-05-2019 a/220 Clementi Ave 4, Singapore 129880 Rd s/X14DH9283</code> + <code>edit-e 1 n/Pending CC p/65060900 a/8 Pending Rd, Singapore 678295</code><br>
+Expected: Equipment successfully modified.</p>
+</li>
+<li>
+<p>Test case: <code>edit-e 0 n/Pending CC</code><br>
+Expected: Invalid index given.</p>
+</li>
+<li>
+<p>Other incorrect edit commands to try: <code>edit</code>, <code>edit-e 1</code> (without giving the parameters)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting an equipment while all equipment are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all equipment using the <code>list-e</code> command. Multiple equipment in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete-e 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First equipment is deleted from the list. Details of the deleted equipment shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete-e 0</code><br>
@@ -2570,12 +2672,34 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="client-feature-2"><a class="link" href="#client-feature-2">F.3. Client feature</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selecting a client name</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: App launch will provide list of equipment and client details displayed under <strong>Equipment details</strong> and <strong>Client details</strong> panel respectively.</p>
+</li>
+<li>
+<p>Test case: <code>select-c 1</code><br>
+Expected: First client is selected from the client list. Equipments that are owned by this client will be listed under the <strong>Equipment details</strong> panel.</p>
+</li>
+<li>
+<p>Test case: <code>select 1</code><br>
+Expected: First equipment is selected from the equipment list, resulting in equipment details displayed in <strong>Equipment result page</strong> but this is not the correct command to select client from client list.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">F.4. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2583,16 +2707,25 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Prerequisites: You must know where the data files are stored. By default, this will be at the data/ directory at the path of the jar file.</p>
 </li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
+<li>
+<p>Test case: Delete the data directory and launch the app</p>
 <div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<p>Expected: A sample folder is present when the app launches (although it is not committed to storage until a persistent change is made).</p>
+</div>
+</li>
+<li>
+<p>Test case: Insert a non-json file/corrupted json file in the data directory and launch the app</p>
+<div class="paragraph">
+<p>Expected: The valid json files have folders with their corresponding names present. The non-json file/corrupted json file remains unaffected.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 11:19:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:29:56 UTC</div></div></div></body></html>
