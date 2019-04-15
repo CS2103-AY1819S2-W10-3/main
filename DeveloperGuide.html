@@ -83,7 +83,9 @@
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
 <li><a href="#equipment-feature-2">F.2. Equipment feature</a></li>
 <li><a href="#client-feature-2">F.3. Client feature</a></li>
-<li><a href="#saving-data">F.4. Saving data</a></li>
+<li><a href="#sorting-the-equipment-list">F.4. Sorting the equipment list</a></li>
+<li><a href="#filtering-the-equipment-list">F.5. Filtering the equipment list</a></li>
+<li><a href="#saving-data">F.6. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -1123,7 +1125,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </ul>
 </div>
 <div class="paragraph">
-<p>Output: An error message will be shown to what fields are available.</p>
+<p>Output: An error message will be displayed to show what are the fields available.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1133,7 +1135,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </ul>
 </div>
 <div class="paragraph">
-<p>Output: The list is sorted in the name in alphabetical order.</p>
+<p>Output: The list is sorted by the name in alphabetical order.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2702,7 +2704,71 @@ Expected: First equipment is selected from the equipment list, resulting in equi
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.4. Saving data</a></h3>
+<h3 id="sorting-the-equipment-list"><a class="link" href="#sorting-the-equipment-list">F.4. Sorting the equipment list</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sort the equipment list by specific fields</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Equipment list must have some entries in it.</p>
+</li>
+<li>
+<p>Test case: <code>sort name</code><br>
+Expected: List is sorted by the name in alphabetical order.</p>
+</li>
+<li>
+<p>Test case: <code>sort date</code><br>
+Expected: List is sorted in ascending order by the the preventative maintenance date of the equipment.</p>
+</li>
+<li>
+<p>Test case: <code>sort phone</code><br>
+Expected: List is sorted in ascending order by the phone number of the client.</p>
+</li>
+<li>
+<p>Test case: <code>sort serial</code><br>
+Expected: List is sorted in ascending order by the serial number of the equipment.</p>
+</li>
+<li>
+<p>Test case: <code>sort</code><br>
+Expected: List will not be sorted. An error message will be displayed of what are the fields that are available.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-the-equipment-list"><a class="link" href="#filtering-the-equipment-list">F.5. Filtering the equipment list</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Filter the equipment list to find specific equipment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Equipment list must have some entries in it.</p>
+</li>
+<li>
+<p>User requests to view equipment that matches certain criteria.</p>
+</li>
+<li>
+<p>Equipment Manager displays equipment that matches the fields specified by the user.<br></p>
+</li>
+<li>
+<p>Test case: User enters an invalid prefix for a field or does not specify any field.<br>
+Expected: An error message will be displayed to show the correct input.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.6. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2731,4 +2797,4 @@ Expected: First equipment is selected from the equipment list, resulting in equi
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 13:54:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 14:08:32 UTC</div></div></div></body></html>
