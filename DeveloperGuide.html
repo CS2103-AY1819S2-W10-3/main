@@ -31,15 +31,16 @@
 <li><a href="#Implementation-Commons">4. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#equipment-feature">4.1. Equipment feature</a></li>
-<li><a href="#client-feature">4.2. Client feature</a></li>
-<li><a href="#filter-feature">4.3. Filter feature</a></li>
-<li><a href="#sort-feature">4.4. Sort feature</a></li>
-<li><a href="#display-feature">4.5. Display feature</a></li>
-<li><a href="#route-feature">4.6. Route feature</a></li>
-<li><a href="#user-interface-ui">4.7. User Interface (UI)</a></li>
-<li><a href="#undo-redo-feature">4.8. Undo/Redo feature</a></li>
-<li><a href="#logging">4.9. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.10. Configuration</a></li>
+<li><a href="#worklist-feature">4.2. WorkList feature</a></li>
+<li><a href="#client-feature">4.3. Client feature</a></li>
+<li><a href="#filter-feature">4.4. Filter feature</a></li>
+<li><a href="#sort-feature">4.5. Sort feature</a></li>
+<li><a href="#display-feature">4.6. Display feature</a></li>
+<li><a href="#route-feature">4.7. Route feature</a></li>
+<li><a href="#user-interface-ui">4.8. User Interface (UI)</a></li>
+<li><a href="#undo-redo-feature">4.9. Undo/Redo feature</a></li>
+<li><a href="#logging">4.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -703,7 +704,7 @@ The results of this command will be displayed under <strong>Equipment Details</s
 <p>Step 7. The model now contains details of equipment and client, and returns to GUI for display on <strong>Equipment details</strong> and <strong>Client details</strong> panels respectively.</p>
 </div>
 <div class="paragraph">
-<p>With that, you may refer to <a href="#display-feature">Section 4.5, &#8220;Display feature&#8221;</a> to see how <strong>Equipment Manager</strong> will then use the address details to provide visual representation of the location of client that owns the equipment.</p>
+<p>With that, you may refer to <a href="#display-feature">Section 4.6, &#8220;Display feature&#8221;</a> to see how <strong>Equipment Manager</strong> will then use the address details to provide visual representation of the location of client that owns the equipment.</p>
 </div>
 </div>
 <div class="sect3">
@@ -744,14 +745,156 @@ The results of this command will be displayed under <strong>Equipment Details</s
 </div>
 </div>
 <div class="sect2">
-<h3 id="client-feature"><a class="link" href="#client-feature">4.2. Client feature</a></h3>
+<h3 id="worklist-feature"><a class="link" href="#worklist-feature">4.2. WorkList feature</a></h3>
+<div class="paragraph">
+<p>To help users understand how this feature, <strong>WorkList</strong>, works in <strong>Equipment Manager</strong>,
+this section will give an overview on the WorkList details and how users can interact with WorkList based on the commands implemented
+in the design of Equipment Manager. It also provides some design considerations to give users an insight of how the current solutions are worked out.</p>
+</div>
+<div class="sect3">
+<h4 id="overview-on-worklist-details"><a class="link" href="#overview-on-worklist-details">4.2.1. Overview on WorkList details</a></h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tentative maintenance date on the equipments in the WorkList.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the person who is assigned to conduct the maintenance work.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WorkListId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of a WorkList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All WorkLists should have unique id and there should not be duplicated id.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="current-usage-of-worklist-details"><a class="link" href="#current-usage-of-worklist-details">4.2.2. Current Usage of WorkList Details</a></h4>
+<div class="paragraph">
+<p>In order to allow users to user WorkList to help them organize their equipments and assign their work, we have implemented several
+commands as follows with the usage of WorkList details and also some Equipment details.</p>
+</div>
+<div class="paragraph">
+<p><strong>An example of how the attributes of WorkList are used:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When user execute the <code>AddWorkListCommand</code> or <code>DeleteWorkListCommand</code>, the added WorkList details stored in <strong>Equipment Manager</strong>,
+and the deleted WorkList details will be deleted from <strong>Equipment Manager</strong>.</p>
+</li>
+<li>
+<p>When user uses command like <code>PutCommand</code>, <strong>Equipment Manager</strong> will help users to put the selected Equipment into the specified
+WorkList, such that they will know those equipment are in the WorkList with one specified assignee and date.</p>
+</li>
+<li>
+<p>When user uses command like <code>RemoveWorkListCommand</code>, <strong>Equipment Manager</strong> will remove the selected Equipment from a
+specified WorkList, it could be the case that users put the equipment into a wrong WorkList, they want to put the equipment
+into a different WorkList or they just finished maintaining that equipment so they want to remove it from the WorkList.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.3. Current Implementation</a></h4>
+<div class="paragraph">
+<p>Using <code>AddWorkListCommand</code> mentioned in previous section as an example,
+the <strong>add WorkList</strong> mechanism is facilitated by <code>VersionedEquipmentManager</code> which extends the <code>Equipment Manager</code>.
+The results of this command will be displayed under <strong>WorkList Details</strong> panel.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <strong>add WorkList</strong> operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddWorkListCommandSD.png" alt="AddWorkListCommandSD" width="800">
+</div>
+<div class="title">Figure 11. Sequence diagram for <code>AddWorkListCommand</code></div>
+</div>
+<div class="paragraph">
+<p>Below is an example of the step-by-step mechanism of <code>add-w</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>add-w d/09-05-2019 a/Mary i/13</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. After <code>EquipmentManagerParser</code> detects <code>add-w</code> as the command word, a <code>AddWorkListCommandParser#parse()</code> is called.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>AddWorkListCommand#execute()</code> is then called.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The parser will parse all the attributes and add into WorkList models.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. The model now contains details of WorkList, and returns to GUI for display on <strong>WorkList details</strong> panels.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.4. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspects-what-should-be-the-relationship-between-the-worklist-and-equipments"><a class="link" href="#aspects-what-should-be-the-relationship-between-the-worklist-and-equipments">Aspects: What should be the relationship between the WorkList and Equipments.</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice)</strong>: The WorkList is a independent class and can contains a list of Equipment objects.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: This is more organized and it is clear that WorkList contains some Equipments.</p>
+</li>
+<li>
+<p>Cons: Might be confusing the users that why there are so many relationships and these classes are interacting with each other.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2</strong>: Equipment is our major work and WorkList is just contains some Serial Numbers just for displaying purposes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and users are able to know which part they should focusing on more, which is Equipment in this case.</p>
+</li>
+<li>
+<p>Cons: It is hard to do more. If in the future, we intend to do some features like display the equipments in some certain WorkList,
+then it will be quite hard to implement such a feature.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="client-feature"><a class="link" href="#client-feature">4.3. Client feature</a></h3>
 <div class="paragraph">
 <p>This section describes features specific to client, how having client details contribute to the features in <strong>Equipment Manager</strong> as well as our design considerations.
 There may contain some repeated explanation when describing this sections
 because attributes of client and equipment are being shared in order to for features to be carried out in <strong>Equipment Manager</strong>.</p>
 </div>
 <div class="sect3">
-<h4 id="overview-on-client-details"><a class="link" href="#overview-on-client-details">4.2.1. Overview on Client details</a></h4>
+<h4 id="overview-on-client-details"><a class="link" href="#overview-on-client-details">4.3.1. Overview on Client details</a></h4>
 <div class="paragraph">
 <p>In Equipment Manager, there are <code>Name</code>, <code>Phone</code>, <code>Address</code> attributes stored under <strong>Equipment details</strong> that identify client details.</p>
 </div>
@@ -774,13 +917,13 @@ because attributes of client and equipment are being shared in order to for feat
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-usage-of-client-details"><a class="link" href="#current-usage-of-client-details">4.2.2. Current Usage of Client details</a></h4>
+<h4 id="current-usage-of-client-details"><a class="link" href="#current-usage-of-client-details">4.3.2. Current Usage of Client details</a></h4>
 <div class="paragraph">
 <p>As mentioned in <a href="#current-usage-of-equipment-details">Section 4.1.2, &#8220;Current Usage of Equipment Details&#8221;</a>, the <code>Address</code> which belong to the client address, are used in features like <code>DisplayCommand</code> and <code>SelectCommand</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.3. Current implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.3. Current implementation</a></h4>
 <div class="paragraph">
 <p>There is <code>SelectClientCommand</code> that is supported by  <code>SelectClientCommandParser</code>.
 This selection of client details mechanism is facilitated by <code>VersionedEquipmentManager</code> which extends the  <code>Equipment Manager</code>.</p>
@@ -820,7 +963,7 @@ The figure in Current Implementation of <a href="#equipment-feature">Section 4.1
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.4. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.4. Design Considerations</a></h4>
 <div class="paragraph">
 <p>Refer to the <strong>Design Considerations</strong> in <a href="#equipment-feature">Section 4.1, &#8220;Equipment feature&#8221;</a> as we went through the same design considerations to come out with equipment and client details separation.</p>
 </div>
@@ -860,9 +1003,9 @@ The figure in Current Implementation of <a href="#equipment-feature">Section 4.1
 </div>
 </div>
 <div class="sect2">
-<h3 id="filter-feature"><a class="link" href="#filter-feature">4.3. Filter feature</a></h3>
+<h3 id="filter-feature"><a class="link" href="#filter-feature">4.4. Filter feature</a></h3>
 <div class="sect3">
-<h4 id="introduction-2"><a class="link" href="#introduction-2">4.3.1. Introduction</a></h4>
+<h4 id="introduction-2"><a class="link" href="#introduction-2">4.4.1. Introduction</a></h4>
 <div class="paragraph">
 <p>We have implemented a <code>FilterCommand</code> that allow users to filter the equipment list with the specified fields.</p>
 </div>
@@ -874,7 +1017,7 @@ The figure in Current Implementation of <a href="#equipment-feature">Section 4.1
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.2. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <strong>filter</strong> mechanism is supported by <code>FilterCommandParser</code>. It implements <code>Parser</code> that implements the following operation:</p>
 </div>
@@ -968,7 +1111,7 @@ attributes - serial number, tags, address, name, preventive maintenance date, ph
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.3. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>FilterCommand</code></strong></p>
 </div>
@@ -1035,9 +1178,9 @@ e.g: <code>filter n/jurong t/west</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-feature"><a class="link" href="#sort-feature">4.4. Sort feature</a></h3>
+<h3 id="sort-feature"><a class="link" href="#sort-feature">4.5. Sort feature</a></h3>
 <div class="sect3">
-<h4 id="introduction-3"><a class="link" href="#introduction-3">4.4.1. Introduction</a></h4>
+<h4 id="introduction-3"><a class="link" href="#introduction-3">4.5.1. Introduction</a></h4>
 <div class="paragraph">
 <p>We have implemented a <code>SortCommand</code> that allow users to sort the equipment list with specific field.</p>
 </div>
@@ -1050,7 +1193,7 @@ The <code>sort</code> mechanism allows user to view the equipment list according
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.2. Current Implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>sort</code> command sorts the list by specified field in lexicographical order.</p>
 </div>
@@ -1184,7 +1327,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.3. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Implementation of <code>SortCommand</code></strong></p>
 </div>
@@ -1221,12 +1364,12 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </div>
 </div>
 <div class="sect2">
-<h3 id="display-feature"><a class="link" href="#display-feature">4.5. Display feature</a></h3>
+<h3 id="display-feature"><a class="link" href="#display-feature">4.6. Display feature</a></h3>
 <div class="paragraph">
 <p>The display feature allow users to view the location of all equipment in the current shown list on map.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The following activity diagram shows each action is done by which component.</p>
 </div>
@@ -1272,7 +1415,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-display-the-base-map"><a class="link" href="#aspect-how-to-display-the-base-map">Aspect: How to display the base map</a></h5>
 <div class="ulist">
@@ -1375,7 +1518,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </div>
 </div>
 <div class="sect2">
-<h3 id="route-feature"><a class="link" href="#route-feature">4.6. Route feature</a></h3>
+<h3 id="route-feature"><a class="link" href="#route-feature">4.7. Route feature</a></h3>
 <div class="paragraph">
 <p>The route feature allow users to know the best order to traverse through all equipments listed in the equipment panel. The order will be shown on the map.</p>
 </div>
@@ -1388,7 +1531,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
+<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>Step 1. The user launches the application, the list of equipments will show in <code>UI</code> and stored in the <code>Model</code>.</p>
 </div>
@@ -1421,7 +1564,7 @@ uses FXCollection’s static method <code>sort()</code> to sort the equipment li
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-passing-addresses-or-coordinates-to-web-page"><a class="link" href="#aspect-passing-addresses-or-coordinates-to-web-page">Aspect: Passing addresses or coordinates to web page</a></h5>
 <div class="ulist">
@@ -1536,21 +1679,21 @@ Calling <code>Google Map JavaScript API</code> to retrieve the route is much mor
 </div>
 </div>
 <div class="sect2">
-<h3 id="user-interface-ui"><a class="link" href="#user-interface-ui">4.7. User Interface (UI)</a></h3>
+<h3 id="user-interface-ui"><a class="link" href="#user-interface-ui">4.8. User Interface (UI)</a></h3>
 <div class="paragraph">
 <p>The UI of <strong>Equipment Manager</strong> is a combination of JavaFX, HTML and CSS.
 This section describes our overall current implementation for UI as well as
 showing our thinking process for the UI in designs considerations section.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.7.1. Current implementation</a></h4>
+<h4 id="current-implementation-8"><a class="link" href="#current-implementation-8">4.8.1. Current implementation</a></h4>
 <div class="sect4">
 <h5 id="launch-the-application"><a class="link" href="#launch-the-application">Launch the Application</a></h5>
 <div class="imageblock">
 <div class="content">
 <img src="images/ui_labelled.png" alt="ui labelled" width="790">
 </div>
-<div class="title">Figure 11. On start of the Equipment Manager application, UI with labels</div>
+<div class="title">Figure 12. On start of the Equipment Manager application, UI with labels</div>
 </div>
 <div class="paragraph">
 <p>The figure above depicts the interface the user see when the user launches the application.
@@ -1616,7 +1759,7 @@ such as showing all the unique client names in Equipment Manager as seen in the 
 <div class="content">
 <img src="images/AddClientDetailsUI.png" alt="%autowidth">
 </div>
-<div class="title">Figure 12. Client name listed under Client details panel</div>
+<div class="title">Figure 13. Client name listed under Client details panel</div>
 </div>
 </div>
 <div class="sect4">
@@ -1630,7 +1773,7 @@ on equipment. This means that there are some information not shown in <strong>Eq
 <div class="content">
 <img src="images/equipmentdetailsUI.png" alt="%autowidth">
 </div>
-<div class="title">Figure 13. Incorporating HTML in panel to show more equipment details</div>
+<div class="title">Figure 14. Incorporating HTML in panel to show more equipment details</div>
 </div>
 <div class="paragraph">
 <p>One of our main feature of <strong>Equipment Manager</strong> is the ability to have a visual representation on 1 or more equipment in a <strong>Google Map</strong>.</p>
@@ -1639,7 +1782,7 @@ on equipment. This means that there are some information not shown in <strong>Eq
 <div class="content">
 <img src="images/clientlocationsUI.png" alt="%autowidth">
 </div>
-<div class="title">Figure 14. Outcome of <code>display</code> feature on UI</div>
+<div class="title">Figure 15. Outcome of <code>display</code> feature on UI</div>
 </div>
 <div class="paragraph">
 <p>As seen in the above figure, entering <code>display</code> command will allow a visual representation of all equipment locations in the <strong>Equipment Manager</strong> data storage onto <strong>Google Map</strong>.
@@ -1648,7 +1791,7 @@ This is one of our main feature of <strong>Equipment Manager</strong> where we p
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.2. Design Considerations</a></h4>
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspects-information-to-be-displayed-on-respective-panels"><a class="link" href="#aspects-information-to-be-displayed-on-respective-panels">Aspects: Information to be displayed on respective panels</a></h5>
 <div class="ulist">
@@ -1701,9 +1844,9 @@ This is one of our main feature of <strong>Equipment Manager</strong> where we p
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.8. Undo/Redo feature</a></h3>
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">4.9. Undo/Redo feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-8"><a class="link" href="#current-implementation-8">4.8.1. Current Implementation</a></h4>
+<h4 id="current-implementation-9"><a class="link" href="#current-implementation-9">4.9.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedEquipmentManager</code>.
 It extends <code>EquipmentManager</code> with an undo/redo history, stored internally as an <code>EquipmentManagerStateList</code> and <code>currentStatePointer</code>.
@@ -1833,7 +1976,7 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">4.9.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1903,14 +2046,14 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.9. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.10, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1941,7 +2084,7 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.10. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2007,7 +2150,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 15. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 16. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2441,6 +2584,37 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 </tr>
 </tbody>
 </table>
+<h3 id="put-remove" class="discrete">Put, Remove</h3>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">put an equipment into a work list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arrange my equipments and put into a work list if I want to keep track of these equipments.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove an equipment from a work list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove an equipment if I put it wrongly or I finished maintaining this equipment so I want to remove it from this work list.</p></td>
+</tr>
+</tbody>
+</table>
 <h3 id="filter" class="discrete">Filter</h3>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
@@ -2600,7 +2774,7 @@ e.g. <code>seedu.equipment.logic.LogicManagerTest</code></p>
 <div class="content">
 <img src="images/SelectClientUC.png" alt="SelectClientUC" width="250">
 </div>
-<div class="title">Figure 16. Use case diagram for Select Client</div>
+<div class="title">Figure 17. Use case diagram for Select Client</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3255,4 +3429,4 @@ Expected: Only a marker shwon on the map, no routes calculated. Map will still d
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:30:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:32:53 UTC</div></div></div></body></html>

@@ -1,22 +1,30 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Liu Xuan - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Equipment Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S2-W10-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Liu Xuan - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hi, I am Liu Xuan, a year 2 Computer Science student, studying at National University of Singapore.</p>
+</div>
+<div class="paragraph">
+<p>I am working on a software product with my project teammates, Rachel, Mei Yen and Sun Yiqun. This project portfolio will
+specify and illustrate which part I was working on.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="project-equipment-manager"><a class="link" href="#project-equipment-manager">PROJECT: Equipment Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Equipment Manager</strong> is a Preventive Maintenance (PM) planner application that allows users, specifically the engineers,
- to keep track of the PM schedule of all Resuscitation Equipment in Singapore. <strong>Equipment Manager</strong> is designed to allow
-  engineers assign the equipment they are going to carry out maintenance work to their own work schedule. When they are
-   carrying out maintenance work on multiple equipments in their work schedule, they are able to have a visual
-    representation on the locations of all equipment. In order to carry out maintenance work efficiently, <strong>Equipment
-     Manager</strong> provide engineers with an efficient route to take for visiting multiple locations, minimizing the chance
-      that the resuscitation devices will fail and cause costly unscheduled downtime.</p>
+<p><strong>Equipment Manager</strong> is a Command Line Interface Software Product, which helps engineers to better manage their equipments.
+This application allows users to arrange and organize their equipments, assign the equipment maintenance work into a person and a specified
+date, and have a best routing plan.</p>
 </div>
 </div>
 </div>
@@ -39,50 +47,63 @@ equipment maintenance work to their staff.</p>
 <li>
 <p>Highlights: This enhancement affects the whole model and structure. It required an in-depth analysis of the
 relationships between the WorkList and the Equipment. In addition, it also required more commands to be added into
-this software. The implementation too was challenging as it required changes to the model and the commands.</p>
+this software. The implementation too was challenging as it required changes to the model and the commands. This feature
+also helps users to better organize their equipments and assign the maintenance work to some person.</p>
+</li>
+<li>
+<p>AddWorkListCommand: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/79">#79</a>] [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/97">#97</a>]</p>
+</li>
+<li>
+<p>DeleteWorkListCommand: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/182">#182</a>]</p>
+</li>
+<li>
+<p>PutCommand: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/109">#109</a>]</p>
+</li>
+<li>
+<p>RemoveCommand: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/181">#181</a>]</p>
+</li>
+<li>
+<p>ListWorkListCommand: [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/65">#65</a>]</p>
+</li>
+<li>
+<p>Credits: Code from <code>AddWorkListCommand</code> and <code>DeleteWorkListCommand</code> was referenced in the implementation of <code>AddCommand</code> and <code>DeleteCommand</code> respectively</p>
+</li>
+<li>
+<p>Credits: Code from <code>ListWorkListCommand</code> was referenced in the implementation of <code>ListEquipmentCommand</code></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
-</li>
+<p><strong>Code contributed</strong>:</p>
+<div class="ulist">
+<ul>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><a href="https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#=undefined&amp;search=LiuXuanIan">Click here</a> to view my code on the CS2103T Project Code Dashboard.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
+<p>Enhancements to existing UI:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Adding Labels for both Equipments and WorkLists. (Pull requests [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/114">#114</a>], [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/193">#193</a>])</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Enhancements to existing features:</p>
+<p>Refactor ParseEmail to ParseDate</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Documentation:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Refactor the name ParseEmail to ParseDate to better fit our product. (Pull requests [<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/84">#84</a>])</p>
 </li>
 </ul>
 </div>
@@ -92,29 +113,11 @@ this software. The implementation too was challenging as it required changes to 
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>PRs reviewed:
+[<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/191">#191</a>],
+[<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/115">#115</a>],
+[<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/98">#98</a>],
+[<a href="https://github.com/CS2103-AY1819S2-W10-3/main/pull/83">#83</a>].</p>
 </li>
 </ul>
 </div>
@@ -123,9 +126,6 @@ this software. The implementation too was challenging as it required changes to 
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -143,9 +143,10 @@ this software. The implementation too was challenging as it required changes to 
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command: <code>undo</code></a></h3>
+<h3 id="removing-an-equipment-from-a-work-list-code-remove-code"><a class="link" href="#removing-an-equipment-from-a-work-list-code-remove-code">Removing an equipment from a work list: <code>remove</code></a></h3>
 <div class="paragraph">
-<p>Restores <strong>Equipment Manager</strong> to the state before the previous undoable command was executed.</p>
+<p>Removes an equipment from a working list in the Equipment Manager<br>
+Format: <code>remove i/WorkListID s/SERIAL_NUMBER</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -154,74 +155,125 @@ this software. The implementation too was challenging as it required changes to 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the equipment manager&#8217;s content (<code>add-e</code>, <code>delete-e</code>, <code>edit-e</code> and <code>clear</code>).</p>
-</div>
+Please make sure that the respective Equipment and WorkList exist in the equipment manager.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete-e 1</code><br>
-<code>list-e</code><br>
-<code>undo</code> (reverses the <code>delete-e 1</code> command)<br></p>
-</li>
-<li>
-<p><code>select-e 1</code><br>
-<code>list-e</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete-e 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete-e 1</code> command)<br></p>
+<p><code>remove i/1 s/A008866X</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-all-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-all-the-previously-undone-command-code-redo-code">Redoing all the previously undone command: <code>redo</code></a></h3>
+<h3 id="putting-an-equipment-into-a-work-list-code-put-code"><a class="link" href="#putting-an-equipment-into-a-work-list-code-put-code">Putting an equipment into a work list: <code>put</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>Adds an equipment into a working list in the Equipment Manager<br>
+Format: <code>put i/WorkListID s/SERIAL_NUMBER</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please make sure that the respective Equipment and WorkList exist in the equipment manager.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete-e 1</code><br>
-<code>undo</code> (reverses the <code>delete-e 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete-e 1</code> command)<br></p>
-</li>
-<li>
-<p><code>delete-e 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete-e 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete-e 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete-e 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<p><code>put i/1 s/A008866X</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="creating-a-new-work-list-code-add-w-code"><a class="link" href="#creating-a-new-work-list-code-add-w-code">Creating a new work list: <code>add-w</code></a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Create a worklist in the Equipment Manager by giving the worklist an ID<br>
+Format: <code>add-w d/DATE a/ASSIGNEE i/ID</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The user can enter multiple assignees, but only one date and id.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+ID number beginning with 0 is not valid, for example, 002 should be 2.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-w d/09-05-2019 a/Mary i/13</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-work-list-code-delete-w-code"><a class="link" href="#deleting-a-work-list-code-delete-w-code">Deleting a work list: <code>delete-w</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified work list from the work list.<br>
+Format: <code>delete-w INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code><br>
+<code>delete-w 12</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-work-list-code-list-w-code"><a class="link" href="#list-all-work-list-code-list-w-code">List all work list: <code>list-w</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all work list in the Equipment Manager<br>
+Format: <code>list-w</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-w</code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -240,198 +292,138 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo feature</a></h3>
-<div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<h3 id="worklist-feature"><a class="link" href="#worklist-feature">WorkList feature</a></h3>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedEquipmentManager</code>.
-It extends <code>EquipmentManager</code> with an undo/redo history, stored internally as an <code>EquipmentManagerStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
+<p>To help users understand how this feature, <strong>WorkList</strong>, works in <strong>Equipment Manager</strong>,
+this section will give an overview on the WorkList details and how users can interact with WorkList based on the commands implemented
+in the design of Equipment Manager. It also provides some design considerations to give users an insight of how the current solutions are worked out.</p>
+</div>
+<div class="sect3">
+<h4 id="overview-on-worklist-details"><a class="link" href="#overview-on-worklist-details">Overview on WorkList details</a></h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Things to Note</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tentative maintenance date on the equipments in the WorkList.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignee</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the person who is assigned to conduct the maintenance work.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WorkListId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of a WorkList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All WorkLists should have unique id and there should not be duplicated id.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="current-usage-of-worklist-details"><a class="link" href="#current-usage-of-worklist-details">Current Usage of WorkList Details</a></h4>
+<div class="paragraph">
+<p>In order to allow users to user WorkList to help them organize their equipments and assign their work, we have implemented several
+commands as follows with the usage of WorkList details and also some Equipment details.</p>
+</div>
+<div class="paragraph">
+<p><strong>An example of how the attributes of WorkList are used:</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedEquipmentManager#commit()</code>&#8201;&#8212;&#8201;Saves the current <strong>Equipment Manager</strong> state in its history.</p>
+<p>When user execute the <code>AddWorkListCommand</code> or <code>DeleteWorkListCommand</code>, the added WorkList details stored in <strong>Equipment Manager</strong>,
+and the deleted WorkList details will be deleted from <strong>Equipment Manager</strong>.</p>
 </li>
 <li>
-<p><code>VersionedEquipmentManager#undo()</code>&#8201;&#8212;&#8201;Restores the previous <strong>Equipment Manager</strong> state from its history.</p>
+<p>When user uses command like <code>PutCommand</code>, <strong>Equipment Manager</strong> will help users to put the selected Equipment into the specified
+WorkList, such that they will know those equipment are in the WorkList with one specified assignee and date.</p>
 </li>
 <li>
-<p><code>VersionedEquipmentManager#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone <strong>Equipment Manager</strong>  state from its history.</p>
+<p>When user uses command like <code>RemoveWorkListCommand</code>, <strong>Equipment Manager</strong> will remove the selected Equipment from a
+specified WorkList, it could be the case that users put the equipment into a wrong WorkList, they want to put the equipment
+into a different WorkList or they just finished maintaining that equipment so they want to remove it from the WorkList.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitEquipmentManager()</code>, <code>Model#undoEquipmentManager()</code> and <code>Model#redoEquipmentManager()</code> respectively.</p>
+<p>Using <code>AddWorkListCommand</code> mentioned in previous section as an example,
+the <strong>add WorkList</strong> mechanism is facilitated by <code>VersionedEquipmentManager</code> which extends the <code>Equipment Manager</code>.
+The results of this command will be displayed under <strong>WorkList Details</strong> panel.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedEquipmentManager</code> will be initialized with the initial <strong>Equipment Manager</strong> state, and the <code>currentStatePointer</code> pointing to that single <strong>equipment manager</strong> state.</p>
+<p>The following sequence diagram shows how the <strong>add WorkList</strong> operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
+<img src="../images/AddWorkListCommandSD.png" alt="AddWorkListCommandSD" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete-e 5</code> command to delete the 5th equipment in the <strong>Equipment Manager</strong>. The <code>delete-e</code> command calls <code>Model#commitEquipmentManager()</code>, causing the modified state of the <strong>Equipment Manager</strong> after the <code>delete-e 5</code> command executes to be saved in the <code>equipmentManagerStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted *Equipment Manager*r state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
-</div>
+<div class="title">Figure 1. Sequence diagram for <code>AddWorkListCommand</code></div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add-e n/Clementi CC &#8230;&#8203;</code> to add a new equipment. The <code>add</code> command also calls <code>Model#commitEquipmentManager()</code>, causing another modified <strong>Equipment Manager</strong> state to be saved into the <code>equipmentManagerStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitEquipmentManager()</code>, so the <strong>Equipment Manager</strong> state will not be saved into the <code>equipmentManagerStateList</code>.
-</td>
-</tr>
-</table>
+<p>Below is an example of the step-by-step mechanism of <code>add-w</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the equipment was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoEquipmentManager()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous <strong>Equipment Manager</strong> state, and restores the <strong>Equipment Manager</strong> to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial <strong>Equipment Manager</strong> state, then there are no previous <strong>Equipment Manager</strong> states to restore. The <code>undo</code> command uses <code>Model#canUndoEquipmentManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
+<p>Step 1. The user launches the application.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
+<p>Step 2. The user executes <code>add-w d/09-05-2019 a/Mary i/13</code> command.</p>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoEquipmentManager()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the <strong>Equipment Manager</strong> to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateList.size() - 1</code>, pointing to the latest <strong>Equipment Manager</strong> state, then there are no undone <strong>Equipment Manager</strong> states to restore. The <code>redo</code> command uses <code>Model#canRedoEquipmentManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
+<p>Step 3. After <code>EquipmentManagerParser</code> detects <code>add-w</code> as the command word, a <code>AddWorkListCommandParser#parse()</code> is called.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the <strong>Equipment Manager</strong>, such as <code>list</code>, will usually not call <code>Model#commitEquipmentManager()</code>, <code>Model#undoEquipmentManager()</code> or <code>Model#redoEquipmentManager()</code>. Thus, the <code>equipmentManagerStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
+<p>Step 4. <code>AddWorkListCommand#execute()</code> is then called.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitEquipmentManager()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>equipmentManagerStateList</code>, all <strong>Equipment Manager</strong> states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/Clementi CC &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
+<p>Step 5. The parser will parse all the attributes and add into WorkList models.</p>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
-</div>
+<p>Step 7. The model now contains details of WorkList, and returns to GUI for display on <strong>WorkList details</strong> panels.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<h5 id="aspects-what-should-be-the-relationship-between-the-worklist-and-equipments"><a class="link" href="#aspects-what-should-be-the-relationship-between-the-worklist-and-equipments">Aspects: What should be the relationship between the WorkList and Equipments.</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire <strong>Equipment Manager</strong>.</p>
+<p><strong>Alternative 1 (current choice)</strong>: The WorkList is a independent class and can contains a list of Equipment objects.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement.</p>
+<p>Pros: This is more organized and it is clear that WorkList contains some Equipments.</p>
 </li>
 <li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
+<p>Cons: Might be confusing the users that why there are so many relationships and these classes are interacting with each other.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<p><strong>Alternative 2</strong>: Equipment is our major work and WorkList is just contains some Serial Numbers just for displaying purposes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete-e</code>, just save the equipment being deleted).</p>
+<p>Pros: Easy to implement and users are able to know which part they should focusing on more, which is Equipment in this case.</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of <strong>Equipment Manager</strong> states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedEquipmentManager</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+<p>Cons: It is hard to do more. If in the future, we intend to do some features like display the equipments in some certain WorkList,
+then it will be quite hard to implement such a feature.</p>
 </li>
 </ul>
 </div>
@@ -442,13 +434,4 @@ If the <code>currentStatePointer</code> is at index <code>equipmentManagerStateL
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:30:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-15 15:32:54 UTC</div></div></div></body></html>
